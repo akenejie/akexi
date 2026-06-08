@@ -1,0 +1,114 @@
+/**  This file is part of the KDE project
+ *
+ *  Copyright (C) 2011 Adam Pigg <adam@piggz.co.uk>
+ *
+ *  This library is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU Library General Public
+ *  License as published by the Free Software Foundation; either
+ *  version 2 of the License, or (at your option) any later version.
+ *
+ *  This library is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  Library General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Library General Public License
+ *  along with this library; see the file COPYING.LIB.  If not, write to
+ *  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ *  Boston, MA 02110-1301, USA.
+ */
+
+/*
+ * Copyright (C) 2026 アケネＪ / Akenejie
+ *
+ * Modified by akenejie and released under the GNU Affero General Public License v3.0.
+ * See the LICENSE.AGPLv3 file in the project root for more details.
+ */
+
+
+#include "KexiMobileToolbar.h"
+#include <KexiIcon.h>
+
+#include <QAction>
+#include <QDebug>
+#include <QPushButton>
+
+#include <core/KexiRecordNavigatorHandler.h>
+
+KexiMobileToolbar::KexiMobileToolbar(QWidget* parent): QToolBar(parent),
+                m_recordHandler(0)
+{
+    setOrientation(Qt::Vertical);
+
+    m_gotoNavigatorAction = new QAction(koIcon("application-vnd.oasis.opendocument.database"), xi18n("Project"), this);
+
+
+    m_previousRecord = new QAction(koIcon("go-previous"), xi18n("Previous"), this);
+    m_nextRecord = new QAction(koIcon("go-next"), xi18n("Next"), this);
+    m_recordNumber = new QAction(xi18n("0 of 0"), this);
+
+    setIconSize(QSize(48,48));
+
+    addAction(m_gotoNavigatorAction);
+
+    QWidget* spacer = new QWidget();
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    addWidget(spacer);
+
+    addAction(m_previousRecord);
+    addAction(m_recordNumber);
+    addAction(m_nextRecord);
+
+    connect(m_gotoNavigatorAction, SIGNAL(triggered(bool)), this, SLOT(gotoNavigatorClicked()));
+
+    connect(m_nextRecord, SIGNAL(triggered(bool)), this, SLOT(recordNext()));
+    connect(m_previousRecord, SIGNAL(triggered(bool)), this, SLOT(recordPrevious()));
+}
+
+KexiMobileToolbar::~KexiMobileToolbar()
+{
+
+}
+
+void KexiMobileToolbar::gotoNavigatorClicked()
+{
+    qDebug() << "Goto Navigator";
+    emit(pageNavigator());
+}
+
+void KexiMobileToolbar::openFileClicked()
+{
+    qDebug() << "Open File";
+    emit(pageOpenFile());
+}
+
+void KexiMobileToolbar::recordNext()
+{
+    if (m_recordHandler) {
+        m_recordHandler->moveToNextRecordRequested();
+        updatePage();
+    }
+}
+
+void KexiMobileToolbar::recordPrevious()
+{
+    if (m_recordHandler) {
+        m_recordHandler->moveToPreviousRecordRequested();
+        updatePage();
+    }
+}
+
+void KexiMobileToolbar::setRecordHandler(KexiRecordNavigatorHandler* handler)
+{
+    qDebug() << handler;
+    m_recordHandler = handler;
+    updatePage();
+}
+
+void KexiMobileToolbar::updatePage()
+{
+    if (m_recordHandler) {
+        m_recordNumber->setText(QString("%1 of %2").arg(m_recordHandler->currentRecord()).arg(m_recordHandler->recordCount()));
+    }
+}
+

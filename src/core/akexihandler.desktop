@@ -1,0 +1,71 @@
+[Desktop Entry]
+Type=ServiceType
+X-KDE-ServiceType=Akexi/Handler
+Comment=Akexi Project Handlers
+Comment[ca]=Gestors de projectes del Akexi
+Comment[ca@valencia]=Gestors de projectes del Akexi
+Comment[cs]=Ovladač projektů Akexi
+Comment[de]=Akexi-Projektverwaltung
+Comment[en_GB]=Akexi Project Handlers
+Comment[es]=Controladores de proyecto de Akexi
+Comment[fi]=Akexin projektikäsittelijät
+Comment[fr]=Gestionnaires de projet Akexi
+Comment[gl]=Xestores de proxectos de Akexi
+Comment[it]=Gestione progetto di Akexi
+Comment[ja]=Akexi プロジェクトハンドラ
+Comment[nb]=Akexi prosjektbehandlere
+Comment[nl]=Akexi projectbehandelaars
+Comment[pl]=Pliki obsługi projektu Akexi
+Comment[pt]=Gestores de Projectos do Akexi
+Comment[pt_BR]=Gerenciadores de projetos do Akexi
+Comment[se]=Akexi-prošeaktagieđaheaddjit
+Comment[sk]=Spracovanie projektov Akexi
+Comment[sv]=Akexi-projektfil
+Comment[uk]=Обробники проекту Akexi
+Comment[x-test]=xxAkexi Project Handlersxx
+Comment[zh_CN]=Akexi 项目处理器
+
+[PropertyDef::X-Kexi-PartVersion]
+Type=int
+
+[PropertyDef::X-Kexi-TypeName]
+Type=QString
+
+[PropertyDef::X-Kexi-Class]
+Type=QString
+
+[PropertyDef::X-Kexi-ItemIcon]
+Type=QString
+
+[PropertyDef::X-Kexi-NoObject]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsDataView]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsDesignView]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsTextView]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsDataViewInUserMode]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsDesignViewInUserMode]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsTextViewInUserMode]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsExecution]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsDataExport]
+Type=bool
+
+[PropertyDef::X-Kexi-SupportsPrinting]
+Type=bool
+
+[PropertyDef::X-Kexi-PropertyEditorAlwaysVisibleInDesignMode]
+Type=bool

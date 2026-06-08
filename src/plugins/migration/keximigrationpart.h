@@ -1,0 +1,50 @@
+/* This file is part of the KDE project
+   Copyright (C) 2004 Jarosław Staniek <staniek@kde.org>
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public License
+   along with this library; see the file COPYING.LIB.  If not, write to
+   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+*/
+
+/*
+ * Copyright (C) 2026 アケネＪ / Akenejie
+ *
+ * Modified by akenejie and released under the GNU Affero General Public License v3.0.
+ * See the LICENSE.AGPLv3 file in the project root for more details.
+ */
+
+#ifndef KEXI_MIGRATION_PART_H
+#define KEXI_MIGRATION_PART_H
+
+#include <core/kexiinternalpart.h>
+
+/*! @short Internal part for data/project migration wizard. */
+class KexiMigrationPart : public KexiInternalPart
+{
+    Q_OBJECT
+public:
+    KexiMigrationPart(QObject *parent, const QVariantList &args);
+    virtual ~KexiMigrationPart();
+
+    /*! Reimplement this if your internal part has to return widgets
+     or QDialog objects. */
+    QWidget *createWidget(const char *widgetClass, QWidget *parent, const char *objName = nullptr,
+                          QMap<QString, QString> *args = nullptr) override;
+
+    QObject *createObject(const char* objectClass,
+                          QObject * parent, const char * objName = nullptr,
+                          QMap<QString, QString>* args = nullptr) override;
+};
+
+#endif

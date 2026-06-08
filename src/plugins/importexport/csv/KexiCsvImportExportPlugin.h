@@ -1,0 +1,51 @@
+/* This file is part of the KDE project
+   Copyright (C) 2005 Jarosław Staniek <staniek@kde.org>
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Library General Public License for more details.
+
+   You should have received a copy of the GNU Library General Public License
+   along with this library; see the file COPYING.LIB.  If not, write to
+   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+*/
+
+/*
+ * Copyright (C) 2026 アケネＪ / Akenejie
+ *
+ * Modified by akenejie and released under the GNU Affero General Public License v3.0.
+ * See the LICENSE.AGPLv3 file in the project root for more details.
+ */
+
+#ifndef KEXI_CSVIMPORTEXPORT_PART_H
+#define KEXI_CSVIMPORTEXPORT_PART_H
+
+#include <core/kexiinternalpart.h>
+#include "kexicsvexportwizard.h"
+
+//! Internal plugin for CSV import/export
+class KexiCsvImportExportPlugin : public KexiInternalPart
+{
+    Q_OBJECT
+public:
+    KexiCsvImportExportPlugin(QObject *parent, const QVariantList &args);
+    virtual ~KexiCsvImportExportPlugin();
+
+    /*! Reimplemented to return wizard object. */
+    QWidget *createWidget(const char *widgetClass, QWidget *parent, const char *objName = nullptr,
+                          QMap<QString, QString> *args = nullptr) override;
+
+    /*! Reimplemented to execute a command \a commandName (nonvisual). The result are put into the \a args. */
+    virtual bool executeCommand(const char* commandName, QMap<QString, QString>* args = 0);
+
+protected:
+};
+
+#endif

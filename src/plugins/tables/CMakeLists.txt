@@ -1,0 +1,25 @@
+include_directories(${CMAKE_SOURCE_DIR}/src/core ${CMAKE_SOURCE_DIR}/src/widget
+ ${CMAKE_SOURCE_DIR}/src/widget/tableview)
+
+# the main plugin
+set(akexi_tableplugin_SRCS
+    kexitablepart.cpp
+    kexitabledesignerview.cpp
+    kexitabledesigner_dataview.cpp
+    kexitabledesignercommands.cpp
+    kexitabledesignerview_p.cpp
+    kexilookupcolumnpage.cpp
+)
+
+add_library(akexi_tableplugin MODULE ${akexi_tableplugin_SRCS})
+kcoreaddons_desktop_to_json(akexi_tableplugin akexi_tableplugin.desktop)
+
+target_link_libraries(akexi_tableplugin
+    PRIVATE
+        kexidataviewcommon
+        kexidatatable
+        kexiextendedwidgets
+        kexiundo
+)
+
+install(TARGETS akexi_tableplugin DESTINATION ${KEXI_PLUGIN_INSTALL_DIR})

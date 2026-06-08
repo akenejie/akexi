@@ -1,0 +1,6325 @@
+# Japanese translation overrides for Kexi (akexi fork)
+# Form Design tab + Property internals: mixed English/Japanese
+# Everything else: all Japanese
+#
+
+
+# from KexiProjectSelector.ui (recent projects label)
+#: src/widget/KexiProjectSelector.ui
+msgid ""
+"<b>There are Kexi or Akexi projects you have recently opened.</b> Select one you wish to open:\n"
+msgstr ""
+"<b>最近開いたKexiまたはAkexiプロジェクトがあります。</b> 開きたいものを選択してください。\n"
+
+#: src/widget/KexiProjectSelector.ui
+msgid "Project Name"
+msgstr "プロジェクト名"
+
+#: src/widget/KexiProjectSelector.ui
+msgid "Connection"
+msgstr "接続"
+
+
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@option:check CSV import: data will be appended to existing table"
+msgid "&Existing table"
+msgstr "既存のテーブル (&E)"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Select existing table:"
+msgstr "既存のテーブルを選択:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label Preview of selected table"
+msgid "Table preview:"
+msgstr "テーブルプレビュー:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Name:"
+msgstr "名前:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Caption:"
+msgstr "キャプション:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Row count:"
+msgstr "行数:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Column count:"
+msgstr "列数:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Fields:"
+msgstr "フィールド:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label"
+msgid "Choose Name of Destination Table"
+msgstr "宛先テーブル名の選択"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@label Importing CSV data to table:"
+msgid "To table:"
+msgstr "テーブル:"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "Text type for column"
+msgid "Text"
+msgstr "テキスト"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "Numeric type for column"
+msgid "Number"
+msgstr "数値"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "Currency type for column"
+msgid "Currency"
+msgstr "通貨"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'create-opendb' command line option"
+msgid "Like --createdb, but also open newly created database."
+msgstr "--createdb と同様ですが、新しく作成されたデータベースも同時に開きます。"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'user-mode' command line option"
+msgid "Start project in User Mode, regardless of the project settings."
+msgstr "プロジェクトの設定に関わらず、ユーザーモードでプロジェクトを開始します。"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'design-mode' command line option"
+msgid "Start project in Design Mode, regardless of the project settings."
+msgstr "プロジェクトの設定に関わらず、デザインモードでプロジェクトを開始します。"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'show-navigator' command line option"
+msgid "Show the Project Navigator side pane even if Akexi runs in User Mode."
+msgstr "ユーザーモードでも構成一覧表のサイドペインを表示します。"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'design' command line option"
+msgid "Like --open, but the object will be opened in Design Mode, if one is available."
+msgstr "--open と同様ですが、利用可能な場合はオブジェクトをデザインモードで開きます。"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'edittext' command line option"
+msgid "Like --open, but the object will be opened in Text Mode, if one is available."
+msgstr "--open と同様ですが、オブジェクトがテキストモードで開かれます（利用可能な場合）。"
+
+#: src/core/KexiCommandLineOptions.cpp
+msgctxt "'new' command line option"
+msgid "Start design of a new object of type 'object_type'."
+msgstr "'object_type' タイプの新しいオブジェクトの設計を開始します。"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgctxt "Note: use multiple rows if needed"
+msgid "Export to File\nAs Data Table"
+msgstr "データテーブルとして\nファイルに書き出し"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgctxt "Note: use multiple rows if needed"
+msgid "Copy to Clipboard\nAs Data Table"
+msgstr "データテーブルとして\nクリップボードにコピー"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "&Create Object..."
+msgstr "オブジェクトを作成 (&C)..."
+
+msgctxt "Document/application separator in titlebar"
+msgid " – "
+msgstr " – "
+
+msgctxt "@info"
+msgid "%1<para>Source database is the same as destination.</para>"
+msgstr "%1<para>移行元と移行先のデータベースが同じです。</para>"
+
+msgctxt "Next button arrow: next button in assistant (wizard)"
+msgid "%L ›"
+msgstr "%L ›"
+
+msgctxt "Assign action"
+msgid "&Assign"
+msgstr "割り当て (&A)"
+
+msgid "&Existing table"
+msgstr "既存のテーブル (&E)"
+
+msgctxt "@action:button Import Database"
+msgid "&Import..."
+msgstr "取り込み (&I)..."
+
+msgid "&New table"
+msgstr "新規テーブル (&N)"
+
+msgctxt "@action:button"
+msgid "&Replace"
+msgstr "置換 (&R)"
+
+msgctxt "@action:button Replace Database"
+msgid "&Replace"
+msgstr "置換 (&R)"
+
+msgctxt "@info"
+msgid "<para>Do you want to save the design now?</para>%1"
+msgstr "<para>デザインを保存しますか?</para>%1"
+
+msgctxt "@info"
+msgid "<para>No new database name was entered.</para>"
+msgstr "<para>新しいデータベース名が入力されていません。</para>"
+
+msgctxt "@info database name"
+msgid "<resource>%1</resource>"
+msgstr "<resource>%1</resource>"
+
+msgctxt "@info database connection"
+msgid "<resource>%1</resource> (connection <resource>%2</resource>)"
+msgstr "<resource>%1</resource>（接続 <resource>%2</resource>）"
+
+msgid "A mobile optimized version of Akexi from Calligra Suite"
+msgstr "Calligra Suite の Akexi のモバイル最適化版"
+
+msgctxt "@info"
+msgid "An error occurred during insert record."
+msgstr "レコードの挿入中にエラーが発生しました。"
+
+msgctxt "Date format: Auto"
+msgid "Auto"
+msgstr "自動"
+
+msgid "Auto"
+msgstr "自動"
+
+msgctxt "Auto (HINT: for Align)"
+msgid "Auto"
+msgstr "自動"
+
+msgctxt "@title:window"
+msgid "CSV Import Options"
+msgstr "CSV取り込みオプション"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Cannot add column."
+msgstr "列を追加できません。"
+
+msgid "Centered"
+msgstr "中央揃え"
+
+msgid "Character Encoding of Source Database Is Not of Unicode Standard"
+msgstr "移行元データベースの文字エンコーディングが Unicode 標準に準拠していません"
+
+msgid "Choose Name of Destination Table"
+msgstr "宛先テーブル名の選択"
+
+msgid "Click to show actions for this image box"
+msgstr "クリックしてこのイメージボックスのアクションを表示"
+
+msgctxt "@action:button Close all windows and save"
+msgid "Close Windows and Save"
+msgstr "ウィンドウを閉じて保存"
+
+msgctxt "Query column"
+msgid "Column"
+msgstr "列"
+
+msgid "Column count:"
+msgstr "列数:"
+
+msgctxt "@title:row (with two spaces at the end)"
+msgid "Column name  "
+msgstr "列名  "
+
+msgid "Comment symbol:"
+msgstr "コメント記号:"
+
+msgid "Connection correctness"
+msgstr "接続状態の検証"
+
+msgid "Contents"
+msgstr "内容"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgctxt "@title:window"
+msgid "Copy Data From Query to Clipboard"
+msgstr "クエリデータをクリップボードにコピー"
+
+msgctxt "@title:window"
+msgid "Copy Data From Table to Clipboard"
+msgstr "テーブルデータをクリップボードにコピー"
+
+msgctxt "Note: use multiple rows if needed"
+msgid """Copy to Clipboard\n""As Data Table\n"
+msgstr """データテーブルとして\n""クリップボードにコピー\n"
+
+msgid "Copyright (c) 2014 Adam Pigg"
+msgstr "Copyright (c) 2014 Adam Pigg"
+
+msgctxt "@action:button Correct Changes"
+msgid "Correct"
+msgstr "修正 (&C)"
+
+msgid "Could not find any form widget plugins."
+msgstr "フォーム部品プラグインが見つかりませんでした。"
+
+msgctxt "@info"
+msgid "Could not open Akexi plugin <filename>%1</filename>."
+msgstr "Akexiプラグイン <filename>%1</filename> を開けませんでした。"
+
+msgid "Could not open data for exporting."
+msgstr "書き出し用データを開けませんでした。"
+
+msgctxt "tooltip"
+msgid "Create new form"
+msgstr "新しいフォームを作成"
+
+
+msgctxt "Current form's actions"
+msgid "Current"
+msgstr "現在"
+
+msgid "Database"
+msgstr "データベース"
+
+msgid "Database Connection"
+msgstr "データベース接続"
+
+msgid "Project Files (*.kexi *.akexi)"
+msgstr "プロジェクトファイル (*.kexi *.akexi)"
+
+msgid "Date format:"
+msgstr "日付形式:"
+
+msgid "Delete Page"
+msgstr "ページの削除"
+
+msgid "Discard Changes and Switch"
+msgstr "変更を破棄して切り替え"
+
+msgid "Displays an interactive map."
+msgstr "インタラクティブな地図を表示します。"
+
+msgid "Don't Switch"
+msgstr "切り替えない"
+
+msgid "Duplicate widget"
+msgstr "部品の複製"
+
+msgctxt "@title:menu"
+msgid "E&xport As"
+msgstr "書き出し (&X)..."
+
+msgctxt "Empty table row"
+msgid "Empty Row"
+msgstr "空行"
+
+msgctxt "@info"
+msgid "Enter a filename."
+msgstr "ファイル名を入力してください。"
+
+msgid "Export"
+msgstr "書き出し"
+
+msgctxt "@title:window"
+msgid "Export Data From Query to CSV File"
+msgstr "クエリデータをCSVファイルに書き出し"
+
+msgctxt "@title:window"
+msgid "Export Data From Table to CSV File"
+msgstr "テーブルデータをCSVファイルに書き出し"
+
+msgid "Export Failed"
+msgstr "書き出し失敗"
+
+msgid "Export:"
+msgstr "書き出し:"
+
+msgctxt "@title:window"
+msgid "Field Type"
+msgstr "フィールド型"
+
+msgid "Fields:"
+msgstr "フィールド:"
+
+msgid "First row contains column names"
+msgstr "最初の行は列名"
+
+msgid "Frame"
+msgstr "フレーム"
+
+msgid "From CSV file:"
+msgstr "CSVファイルから:"
+
+msgid "From Clipboard"
+msgstr "クリップボードから"
+
+msgid "Full Width"
+msgstr "全幅"
+
+msgid "Goes to first page"
+msgstr "最初のページに移動"
+
+msgid "Goes to last page"
+msgstr "最後のページに移動"
+
+msgid "Goes to next page"
+msgstr "次のページに移動"
+
+msgid "Goes to previous page"
+msgstr "前のページに移動"
+
+msgid "Here you can choose the actual database to import data from."
+msgstr "取り込み元のデータベースをここで指定します。"
+
+msgid "Here you can choose the location to import data from."
+msgstr "取り込み元の場所をここで指定します。"
+
+msgid "Here you can choose the location to save the data in and the new database name."
+msgstr "ここでデータの保存先と新しいデータベース名を選択できます。"
+
+msgid "Here you can choose the location to save the data."
+msgstr "ここでデータの保存先を選択できます。"
+
+msgctxt "Translators: please keep this string short (less than 20 chars)"
+msgid "Hor. Alignment"
+msgstr "水平"
+
+msgid "Horizontal Alignment"
+msgstr "水平揃え"
+
+msgctxt "Identifier%1"
+msgid "Id%1"
+msgstr "Id%1"
+
+msgid "Ignore duplicated delimiters"
+msgstr "重複デリミタを無視"
+
+msgid "Import missing text values as empty texts"
+msgstr "欠損文字列値を空文字列として取り込み"
+
+msgctxt "Insert Horizontal Widget"
+msgid "Insert Horizontal"
+msgstr "水平挿入"
+
+msgctxt "Insert Vertical Widget"
+msgid "Insert Vertical"
+msgstr "垂直挿入"
+
+msgid "Justified"
+msgstr "両端揃え"
+
+msgid "Akexi Mobile"
+msgstr "Akexi Mobile"
+
+msgid "Latitude"
+msgstr "緯度"
+
+msgid "Left Align"
+msgstr "左揃え"
+
+msgctxt "create-opendb' command line option"
+msgid "Like --createdb, but also open newly created database."
+msgstr "--createdb と同様ですが、新しく作成したデータベースも開きます。"
+
+msgctxt "design' command line option"
+msgid "Like --open, but the object will be opened in Design Mode, if one is available."
+msgstr "--open と同様ですが、オブジェクトがデザインモードで開かれます（利用可能な場合）。"
+
+msgctxt "edittext' command line option"
+msgid "Like --open, but the object will be opened in Text Mode, if one is available."
+msgstr "--open と同様ですが、オブジェクトがテキストモードで開かれます（利用可能な場合）。"
+
+msgid "Loads database list from the server, so you can select one using the <interface>Name</interface> combo box."
+msgstr "サーバからデータベース一覧を読み込み、<interface>名前</interface>コンボボックスから選択できます。"
+
+msgid "Longitude"
+msgstr "経度"
+
+msgid "Map Browser"
+msgstr "マップブラウザ"
+
+msgid "Move Down"
+msgstr "下に移動"
+
+msgid "Move Item &Down"
+msgstr "下に移動 (&D)"
+
+msgid "Move Item &Up"
+msgstr "上に移動 (&U)"
+
+msgid "Move Up"
+msgstr "上に移動"
+
+msgid "Move widget down"
+msgstr "部品を下に移動"
+
+msgid "Move widget up"
+msgstr "部品を上に移動"
+
+msgid "New &Subitem"
+msgstr "新しいサブ項目 (&S)"
+
+msgid "New Column"
+msgstr "新しい列"
+
+msgid "New Item"
+msgstr "新しい項目"
+
+msgctxt "Button text: Next page in assistant (wizard)"
+msgid "Next"
+msgstr "次へ"
+
+msgid "No database connection available."
+msgstr "データベース接続が利用できません。"
+
+msgid "No help is available for this page."
+msgstr "このページのヘルプは利用できません。"
+
+msgctxt "@info"
+msgid "No plugin for ID <resource>%1</resource>"
+msgstr "ID <resource>%1</resource> のプラグインがありません。"
+
+msgid "Not all rows are visible on this preview"
+msgstr "このプレビューには一部の行のみ表示されています。"
+
+
+msgid "OK?"
+msgstr "よろしいですか?"
+
+msgid "Open Database"
+msgstr "データベースを開く"
+
+msgctxt "Page selector label"
+msgid "Page:"
+msgstr "ページ:"
+
+msgid "Please enter your query and execute \"Check query\" function to verify it."
+msgstr "クエリを入力し、「クエリ確認」機能を実行して検証してください。"
+
+msgctxt "@info"
+msgid "Please wait while the table is imported."
+msgstr "テーブルが取り込まれるまでお待ちください。"
+
+msgid "Preview of data from clipboard"
+msgstr "クリップボードからのデータプレビュー"
+
+msgid "Preview of data from file:"
+msgstr "ファイルからのデータプレビュー:"
+
+msgid "Primary key"
+msgstr "主キー"
+
+msgid "Print Failed"
+msgstr "印刷失敗"
+
+msgid "Print..."
+msgstr "印刷..."
+
+msgid "Prints the current report."
+msgstr "現在のレポートを印刷します。"
+
+msgctxt "@title:window"
+msgid "Properties"
+msgstr "プロパティ"
+
+msgid "Qt Designer UI Files"
+msgstr "Qt Designer UIファイル"
+
+msgid "Ready to Import"
+msgstr "取り込み準備完了"
+
+msgid "Receiver"
+msgstr "受信先"
+
+msgid "Reload"
+msgstr "再読み込み"
+
+msgid "Right Align"
+msgstr "右揃え"
+
+msgid "Row count:"
+msgstr "行数:"
+
+msgctxt "@action:button Run script file"
+msgid "Run"
+msgstr "実行 (&R)"
+
+msgid "SQL Query Text"
+msgstr "SQLクエリテキスト"
+
+msgctxt "@window:title"
+msgid "Select New Project's Location"
+msgstr "新しいプロジェクトの場所を選択"
+
+msgid "Select existing table:"
+msgstr "既存のテーブルを選択:"
+
+msgid "Select source database you wish to import:"
+msgstr "取り込み元のデータベースを選択:"
+
+msgid "Sender"
+msgstr "送信元"
+
+msgctxt "show-navigator' command line option"
+msgid "Show the Project Navigator side pane even if Akexi runs in User Mode."
+msgstr "ユーザーモードでもプロジェクトナビゲータのサイドペインを表示します。"
+
+msgid "Shows Welcome page with list of recently opened projects and other information. "
+msgstr "最近開いたプロジェクトの一覧などを表示するウェルカムページを表示します。"
+
+msgid "Signal"
+msgstr "シグナル"
+
+msgid "Slot"
+msgstr "スロット"
+
+msgid "Source Database Non-Unicode Character Encoding"
+msgstr "元のデータベースの非Unicode文字エンコーディング"
+
+msgctxt "open dialog to export as spreadsheet"
+msgid "Spreadsheet..."
+msgstr "スプレッドシート..."
+
+msgid "Start at line:"
+msgstr "開始行:"
+
+msgctxt "new' command line option"
+msgid "Start design of a new object of type 'object_type'."
+msgstr "'object_type' タイプの新しいオブジェクトの設計を開始します。"
+
+msgctxt "design-mode' command line option"
+msgid "Start project in Design Mode, regardless of the project settings."
+msgstr "プロジェクト設定に関わらず、デザインモードでプロジェクトを開始します。"
+
+msgctxt "user-mode' command line option"
+msgid "Start project in User Mode, regardless of the project settings."
+msgstr "プロジェクト設定に関わらず、ユーザーモードでプロジェクトを開始します。"
+
+msgid "Strip leading and trailing blanks off of text values"
+msgstr "テキスト値の前後の空白を削除"
+
+msgid "Sub Item"
+msgstr "サブ項目"
+
+msgctxt "Tab widget's page"
+msgid "Tab Page"
+msgstr "タブページ"
+
+
+msgctxt "open dialog to export as text document"
+msgid "Text Document..."
+msgstr "テキスト文書..."
+
+msgid "Text Scale"
+msgstr "テキスト倍率"
+
+msgid "Text encoding"
+msgstr "テキストエンコーディング"
+
+msgid "The column's constraint is declared as NOT EMPTY (text should be filled)."
+msgstr "列の制約はNOT EMPTY（テキスト必須）として宣言されています。"
+
+msgid "The column's constraint is declared as NOT EMPTY and NOT NULL."
+msgstr "列の制約はNOT EMPTYかつNOT NULLとして宣言されています。"
+
+msgid "The column's constraint is declared as NOT NULL (required)."
+msgstr "列の制約はNOT NULL（必須）として宣言されています。"
+
+msgid "The connection is OK."
+msgstr "接続は正常です。"
+
+msgid "The connection is invalid."
+msgstr "接続が無効です。"
+
+msgid "The signal/slot arguments are not compatible."
+msgstr "シグナル/スロットの引数が互換性がありません。"
+
+msgid "The type of script"
+msgstr "スクリプトの種類"
+
+msgid "Theme"
+msgstr "テーマ"
+
+msgid "This shows useful tips on the use of this application."
+msgstr "このアプリケーションの便利なヒントを表示します。"
+
+msgctxt "Export->To File As Data &Table... "
+msgid "To &File As Data Table..."
+msgstr "データテーブルとしてファイルへ出力 (&F)..."
+
+msgid "To table:"
+msgstr "テーブル:"
+
+msgctxt "@info Tried to find files in <dir list>"
+msgid "Tried to find in %1."
+msgstr "%1 を検索しました。"
+
+msgctxt "Widget's type"
+msgid "Type"
+msgstr "種別"
+
+msgid "Unknown error"
+msgstr "不明なエラー"
+
+msgid "Url"
+msgstr "URL"
+
+msgctxt "@action:button"
+msgid "Use CSS"
+msgstr "CSSを使用"
+
+msgctxt "@action:button"
+msgid "Use Table"
+msgstr "テーブルを使用"
+
+msgctxt "Translators: please keep this string short (less than 20 chars)"
+msgid "Ver. Alignment"
+msgstr "垂直"
+
+msgid "Vertical Alignment"
+msgstr "垂直揃え"
+
+msgid "Web Browser"
+msgstr "Web Browser"
+
+msgid "Web widget with browsing features."
+msgstr "ブラウジング機能付きウェブ部品。"
+
+msgid "Widget name"
+msgstr "部品名"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "自分のメールアドレス"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "自分の名前"
+
+msgid "Zoom"
+msgstr "ズーム"
+
+msgid "Zoom Factor"
+msgstr "ズーム倍率"
+
+msgid "day"
+msgstr "日"
+
+msgctxt "short for 'expression' word (only latin letters, please)"
+msgid "expr"
+msgstr "expr"
+
+msgid "false"
+msgstr "偽"
+
+msgid "modified"
+msgstr "変更あり"
+
+msgid "month"
+msgstr "月"
+
+msgid "no"
+msgstr "いいえ"
+
+msgid "year"
+msgstr "年"
+
+msgctxt "Back button arrow: back button in assistant (wizard)"
+msgid "‹ %L"
+msgstr "‹ %L"
+
+msgid ""
+msgstr ""
+"Project-Id-Version: akexi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-06-04 00:00+0900\n"
+"PO-Revision-Date: 2026-06-04 00:00+0900\n"
+"Last-Translator: akexi\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# ============================================================
+# Form Design tab — Pointer (Japanese)
+# ============================================================
+#: src/plugins/forms/kexiformmanager.cpp
+msgctxt "@action:inmenu"
+msgid "&Pointer"
+msgstr "ポインタ (&P)"
+
+# ============================================================
+# Form Design tab — Assign Action (Japanese)
+# ============================================================
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "&Assign Action..."
+msgstr "動作を追加 (&A)"
+
+# ============================================================
+# Form Design tab — Widget names (all English)
+# ============================================================
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Form widget"
+msgid "Form"
+msgstr "Form"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Text Box widget"
+msgid "Text Box"
+msgstr "Text Box"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Text Editor widget"
+msgid "Text Editor"
+msgstr "Text Editor"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Text Label widget"
+msgid "Label"
+msgstr "Label"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Image Box widget"
+msgid "Image Box"
+msgstr "Image Box"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Combo Box widget"
+msgid "Combo Box"
+msgstr "Combo Box"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Check Box widget"
+msgid "Check Box"
+msgstr "Check Box"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Button widget"
+msgid "Button"
+msgstr "Button"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Link Button widget"
+msgid "Link Button"
+msgstr "Link Button"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Slider widget"
+msgid "Slider"
+msgstr "Slider"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Progress Bar widget"
+msgid "Progress Bar"
+msgstr "Progress Bar"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Line"
+msgstr "Line"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Date Picker widget"
+msgid "Date Picker"
+msgstr "Date Picker"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Tab Widget"
+msgstr "Tab Widget"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Frame widget"
+msgid "Frame"
+msgstr "Frame"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Group Box"
+msgstr "Group Box"
+
+# ============================================================
+# Form Design tab — Context menu / toolbar (all English)
+# ============================================================
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Clear Widget &Contents"
+msgstr "Clear Widget &Contents"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Edit &Tab Order..."
+msgstr "Edit &Tab Order..."
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Bring Widget to &Front"
+msgstr "Bring Widget to &Front"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Send Widget to &Back"
+msgstr "Send Widget to &Back"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Align Widgets &Position"
+msgstr "Align Widgets &Position"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Left"
+msgstr "To &Left"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Right"
+msgstr "To &Right"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Top"
+msgstr "To &Top"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Bottom"
+msgstr "To &Bottom"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Grid"
+msgstr "To &Grid"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Adjust Widgets &Size"
+msgstr "Adjust Widgets &Size"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Fit"
+msgstr "To &Fit"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To Gri&d"
+msgstr "To Gri&d"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Shortest"
+msgstr "To &Shortest"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Tallest"
+msgstr "To &Tallest"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Narrowest"
+msgstr "To &Narrowest"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "To &Widest"
+msgstr "To &Widest"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Add page to tab widget"
+msgid "Add &Page"
+msgstr "Add &Page"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Delete tab widget's page"
+msgid "Delete &Page"
+msgstr "Delete &Page"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Rename tab widget's page"
+msgid "&Rename Page..."
+msgstr "&Rename Page..."
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Add page to a stacked widget"
+msgid "Add &Page..."
+msgstr "Add &Page..."
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Delete page from a stacked widget"
+msgid "Delete &Page"
+msgstr "Delete &Page"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Go to Previous Page of a Stacked Widget"
+msgid "Go to &Previous Page"
+msgstr "Go to &Previous Page"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "Go to Next Page of a Stacked Widget"
+msgid "Go to &Next Page"
+msgstr "Go to &Next Page"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgctxt "@window:title"
+msgid "New Page Title"
+msgstr "New Page Title"
+
+#: src/plugins/forms/widgets/main/KexiStandardContainerFormWidgets.cpp
+msgid "Enter a new title for the current page:"
+msgstr "Enter a new title for the current page:"
+
+#: src/plugins/forms/kexiformmanager.cpp
+msgid "Snap to &Grid"
+msgstr "Snap to &Grid"
+
+#: src/formeditor/form.cpp
+msgid "&No Buddy"
+msgstr "&No Buddy"
+
+#: src/plugins/forms/widgets/main/KexiStandardFormWidgets.cpp
+msgctxt "Edit rich text for a widget"
+msgid "Edit &Rich Text..."
+msgstr "Edit &Rich Text..."
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "&Image"
+msgstr "&Image"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Insert &Horizontal Line"
+msgstr "Insert &Horizontal Line"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Insert &Vertical Line"
+msgstr "Insert &Vertical Line"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "default indent value"
+msgid "default"
+msgstr "default"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Widgets"
+msgstr "Widgets"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Data Source"
+msgstr "Data Source"
+
+# ============================================================
+# ============================================================
+# Property panel — Programming keyword labels (keep English)
+# ============================================================
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Echo mode for Line Edit widget eg. Normal, NoEcho, Password"
+msgid "Echo Mode"
+msgstr "Echo Mode"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Widget Property"
+msgid "HTML"
+msgstr "HTML"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Line Wrap At"
+msgstr "Line Wrap At"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Line Wrap Mode"
+msgstr "Line Wrap Mode"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Editor Type"
+msgstr "Editor Type"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Tab Stop Width"
+msgstr "Tab Stop Width"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Word Wrap Policy"
+msgstr "Word Wrap Policy"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Word Wrapping"
+msgstr "Word Wrapping"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Word Wrap Position"
+msgstr "Word Wrap Position"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Elide Mode"
+msgstr "Elide Mode"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Document Mode"
+msgstr "Document Mode"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Closable Tabs"
+msgstr "Closable Tabs"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Movable Tabs"
+msgstr "Movable Tabs"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Button is checkable"
+msgid "On/Off"
+msgstr "On/Off"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Button"
+msgid "Auto Repeat"
+msgstr "Auto Repeat"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Flat"
+msgstr "Flat"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Scaled Contents"
+msgstr "Scaled Contents"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Checked checkbox"
+msgid "Checked"
+msgstr "Checked"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Tristate checkbox"
+msgid "Tristate"
+msgstr "Tristate"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Editable combobox"
+msgid "Editable"
+msgstr "Editable"
+
+# ============================================================
+# Property panel — Value descriptions (Japanese for human values)
+# ============================================================
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Value of \"Tristate\" property in checkbox: yes"
+msgid "Yes"
+msgstr "入"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Value of \"Tristate\" property in checkbox: no"
+msgid "No"
+msgstr "切"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Value of \"Tristate\" property in checkbox: default"
+msgid "Default"
+msgstr "デフォルト"
+
+# ============================================================
+# Everything else — Japanese (with style: verb-object, avoid katakana overuse)
+# ============================================================
+
+# Exchange Data tooltip/whatsThis
+#: src/main/KexiMainWindow.cpp
+msgid "Import data into Akexi"
+msgstr "Akexiにデータを取り込みます"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Imports data into Akexi."
+msgstr "Akexiにデータを取り込みます。"
+
+# Part tooltips (what's this — more descriptive on Shift)
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "what's this"
+msgid "Create a new table with fields and data types to store your data."
+msgstr "フィールドとデータ型を定義して、データを保存する新しいテーブルを作成します。"
+
+#: src/plugins/queries/kexiquerypart.cpp
+msgctxt "what's this"
+msgid "Create a new query to search, filter, and combine data from tables."
+msgstr "テーブルからデータを検索、フィルタ、結合する新しいクエリを作成します。"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgctxt "what's this"
+msgid "Create a new form to view, enter, and edit data in a custom layout."
+msgstr "カスタムレイアウトでデータを表示、入力、編集する新しいフォームを作成します。"
+
+#: src/plugins/reports/kexireportpart.cpp
+msgctxt "what's this"
+msgid "Create a new report to format, summarize, and print your data."
+msgstr "データを整形、集計、印刷する新しいレポートを作成します。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgctxt "what's this"
+msgid "Create a new script to automate tasks using macros and events."
+msgstr "マクロとイベントを使用してタスクを自動化する新しいスクリプトを作成します。"
+
+# File menu — action access keys
+#: src/main/KexiMainWindow.cpp
+msgid "Import &Tables..."
+msgstr "テーブルを取り込み... (&T)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Import..."
+msgstr "取り込み... (&I)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Paste &Special..."
+msgstr "形式を選択して貼り付け... (&S)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Copy &Special..."
+msgstr "形式を選択してコピー... (&S)"
+
+# Edit menu — action access keys
+#: src/main/KexiMainWindow.cpp
+msgid "Delete &Record"
+msgstr "レコードを削除 (&R)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Clear Table &Contents..."
+msgstr "テーブル内容を消去... (&C)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Edit Item"
+msgstr "項目を編集 (&E)"
+
+# View menu — action access keys
+#: src/main/KexiMainWindow.cpp
+msgid "Show Project &Navigator"
+msgstr "構成一覧表を表示 (&N)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activate Project &Navigator"
+msgstr "構成一覧表に切り替え (&N)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activate &Main Area"
+msgstr "メイン領域に切り替え (&M)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show Property &Editor"
+msgstr "プロパティエディタを表示 (&E)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activate Property &Editor"
+msgstr "プロパティエディタに切り替え (&E)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switch to &Global Search"
+msgstr "グローバル検索へ切り替え (&G)"
+
+# Table designer
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "&Primary Key"
+msgstr "主キー (&P)"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "@action:button"
+msgid "&Save Design and Delete Table Data"
+msgstr "デザインを保存してテーブルデータを削除 (&S)"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "@action:button"
+msgid "&Discard Design"
+msgstr "デザインを破棄 (&D)"
+
+# Query designer
+#: src/plugins/queries/kexiquerypart.cpp
+msgctxt "@action:button Close all windows and save"
+msgid "&Close Windows and Save"
+msgstr "ウィンドウを閉じて保存 (&C)"
+
+#: src/plugins/queries/kexiquerypart.cpp
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "@info:tooltip Close all windows and save design"
+msgid "Close all windows and save design"
+msgstr "ウィンドウをすべて閉じてデザインを保存します。"
+
+#: src/plugins/queries/kexiquerydesignersql.cpp
+msgid "&Check Query"
+msgstr "クエリをチェック (&C)"
+
+# Project Navigator
+#: src/widget/navigator/KexiProjectNavigator.cpp
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "E&xecute"
+msgstr "実行 (&X)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "E&xport"
+msgstr "書き出し (&X)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Page Set&up..."
+msgstr "ページ設定... (&u)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgctxt "@action:button Rename object"
+msgid "&Rename"
+msgstr "名前を変更 (&R)"
+
+# Data source page (form designer side panel)
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgctxt "Insert selected field into form"
+msgid "&Insert"
+msgstr "挿入 (&I)"
+
+# Main window — other
+#: src/main/KexiMainWindow.cpp
+msgid "Change Akexi Database &Reference..."
+msgstr "[Akexi] DB本体の場所を変更... (&R)"
+
+# Report designer (Report Design tab — separate from Form Design)
+#: src/plugins/reports/kexireportdesignview.cpp
+msgid "Edit &Sections..."
+msgstr "セクションを編集... (&S)"
+
+#: src/plugins/reports/kexireportdesignview.cpp
+msgid "&Raise"
+msgstr "前面へ (&R)"
+
+#: src/plugins/reports/kexireportdesignview.cpp
+msgid "&Lower"
+msgstr "背面へ (&L)"
+
+# Report view
+#: src/plugins/reports/kexireportview.cpp
+msgid "&Print..."
+msgstr "印刷... (&P)"
+
+#: src/plugins/reports/kexireportview.cpp
+msgctxt "Portable Document Format..."
+msgid "&PDF..."
+msgstr "PDFとして保存... (&P)"
+
+#: src/plugins/reports/kexireportview.cpp
+msgctxt "open dialog to export as web page"
+msgid "&Web Page..."
+msgstr "Webページとして保存... (&W)"
+
+# Script part
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgid "&Configure Editor..."
+msgstr "エディタ設定... (&C)"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "&Edit"
+msgstr "編集 (&E)"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "C&onfigure Editor..."
+msgstr "エディタ設定... (&o)"
+
+# Startup file handler
+#: src/widget/KexiStartupFileHandler.cpp
+msgid "&Overwrite"
+msgstr "上書き (&O)"
+
+# ============================================================
+# Main window — additional menu items and tooltips (Japanese)
+# ============================================================
+
+# Tab actions
+#: src/main/KexiMainWindow.cpp
+msgid "&Close Tab"
+msgstr "タブを閉じる (&C)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Close the current tab"
+msgstr "現在のタブを閉じます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Closes the current tab."
+msgstr "現在のタブを閉じます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Cl&ose All Tabs"
+msgstr "全て閉じる (&o)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Close all tabs"
+msgstr "全てのタブを閉じます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Closes all tabs."
+msgstr "全てのタブを閉じます。"
+
+# Welcome
+#: src/main/KexiMainWindow.cpp
+msgid "Welcome"
+msgstr "ようこそ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show Welcome page"
+msgstr "ようこそページを表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows Welcome page with list of recently opened projects and other information."
+msgstr "最近開いたプロジェクトの一覧などを表示するようこそページを開きます。"
+
+# Save As
+#: src/main/KexiMainWindow.cpp
+msgid "Save &As..."
+msgstr "名前を付けて保存... (&A)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Save object as"
+msgstr "オブジェクトに名前を付けて保存"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Saves object from currently selected window under a new name (within the same project)."
+msgstr "現在のウィンドウのオブジェクトに新しい名前を付けて保存します（同じプロジェクト内）。"
+
+# Close project
+#: src/main/KexiMainWindow.cpp
+msgctxt "Close Project"
+msgid "&Close"
+msgstr "閉じる (&C)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Close the current project"
+msgstr "現在のプロジェクトを閉じます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Closes the current project."
+msgstr "現在のプロジェクトを閉じます。"
+
+# Import Database
+#: src/main/KexiMainWindow.cpp
+msgid "&Import Database..."
+msgstr "データベースを取り込み... (&I)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Import entire database as a Kexi project"
+msgstr "データベース全体を Kexi プロジェクトとして取り込み"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Imports entire database as a Kexi project."
+msgstr "データベース全体を Kexi プロジェクトとして取り込みます。"
+
+# Import Tables tooltips
+#: src/main/KexiMainWindow.cpp
+msgid "Import data from an external source into this project"
+msgstr "外部ソースからこのプロジェクトにデータを取り込み"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Imports data from an external source into this project."
+msgstr "外部ソースからこのプロジェクトにデータを取り込みます。"
+
+# Compact Database
+#: src/main/KexiMainWindow.cpp
+msgid "&Compact Database..."
+msgstr "データベースを圧縮... (&C)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Compact the current database project"
+msgstr "現在のデータベースプロジェクトを圧縮"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Compacts the current database project, so it will take less space and work faster."
+msgstr "現在のデータベースプロジェクトを圧縮し、容量を削減して動作を高速化します。"
+
+# Convert to/from Akexi
+#: src/main/KexiMainWindow.cpp
+msgid "Convert to/from &Akexi..."
+msgstr "KEXI↔Akexi形式を変換... (&A)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Convert the current project to or from Akexi format"
+msgstr "現在のプロジェクトをAkexi形式とKEXI形式の間で相互変換"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Converts the current project to or from Akexi format, leaving the original file unchanged."
+msgstr "現在のプロジェクトをAkexi形式とKEXI形式の間で相互変換します。元のファイルは変更されません。"
+
+# Import Data From File
+#: src/main/KexiMainWindow.cpp
+msgctxt "Import->Table Data From File..."
+msgid "Import Data From &File..."
+msgstr "ファイルからデータを取り込み... (&F)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Import table data from a file"
+msgstr "ファイルからテーブルデータを取り込み"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Imports table data from a file."
+msgstr "ファイルからテーブルデータを取り込みます。"
+
+# Export Data To File
+#: src/main/KexiMainWindow.cpp
+msgctxt "Export->Table or Query Data to File..."
+msgid "Export Data to &File..."
+msgstr "ファイルにデータを書き出し... (&F)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Export data from the active table or query to a file"
+msgstr "アクティブなテーブルまたはクエリのデータをファイルに書き出し"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Exports data from the active table or query to a file."
+msgstr "アクティブなテーブルまたはクエリのデータをファイルに書き出します。"
+
+# Delete
+#: src/main/KexiMainWindow.cpp
+msgid "&Delete"
+msgstr "削除 (&D)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Delete selected object"
+msgstr "選択したオブジェクトを削除"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Deletes currently selected object."
+msgstr "現在選択しているオブジェクトを削除します。"
+
+# Insert Empty Row
+#: src/main/KexiMainWindow.cpp
+msgid "&Insert Empty Row"
+msgstr "空行を挿入 (&I)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Insert one empty row above"
+msgstr "上に空行を1行挿入"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Inserts one empty row above currently selected table row."
+msgstr "現在選択しているテーブル行の上に空行を1行挿入します。"
+
+# Save Record / Cancel Record Changes
+#: src/main/KexiMainWindow.cpp
+msgid "&Save Record"
+msgstr "レコードを保存 (&S)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Save changes made to the current record"
+msgstr "現在のレコードへの変更を保存"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Saves changes made to the current record."
+msgstr "現在のレコードへの変更を保存します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Cancel Record Changes"
+msgstr "変更を取り消し (&C)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Cancel changes made to the current record"
+msgstr "現在のレコードへの変更を取り消し"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Cancels changes made to the current record."
+msgstr "現在のレコードへの変更を取り消します。"
+
+# Execute / Data View / Design View / Text View
+#: src/main/KexiMainWindow.cpp
+msgid "&Execute"
+msgstr "実行 (&E)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Data View"
+msgstr "データビュー (&D)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switch to data view"
+msgstr "データビューに切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to data view."
+msgstr "データビューに切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "D&esign View"
+msgstr "設計ビュー (&e)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switch to design view"
+msgstr "設計ビューに切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to design view."
+msgstr "設計ビューに切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Text View"
+msgstr "設計ビュー (&T)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switch to text view"
+msgstr "設計ビューに切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to text view."
+msgstr "設計ビューに切り替えます。"
+
+# Font
+#: src/main/KexiMainWindow.cpp
+msgid "&Font..."
+msgstr "フォント... (&F)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Change font for selected object"
+msgstr "選択したオブジェクトのフォントを変更"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Changes font for selected object."
+msgstr "選択したオブジェクトのフォントを変更します。"
+
+# Window navigation
+#: src/main/KexiMainWindow.cpp
+msgid "&Next Window"
+msgstr "次のウィンドウ (&N)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Next window"
+msgstr "次のウィンドウ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to the next window."
+msgstr "次のウィンドウに切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Previous Window"
+msgstr "前のウィンドウ (&P)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Previous window"
+msgstr "前のウィンドウ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to the previous window."
+msgstr "前のウィンドウに切り替えます。"
+
+# Help menu
+#: src/main/KexiMainWindow.cpp
+msgctxt "Help Menu"
+msgid "Help"
+msgstr "ヘルプ (&H)"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show Help menu"
+msgstr "ヘルプメニューを表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows Help menu."
+msgstr "ヘルプメニューを表示します。"
+
+# ============================================================
+# Toolbar tab labels (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow_p.cpp
+msgid "Create"
+msgstr "作成"
+
+#: src/main/KexiMainWindow_p.cpp
+msgid "Data"
+msgstr "データ"
+
+#: src/main/KexiMainWindow_p.cpp
+msgid "External Data"
+msgstr "外部データ"
+
+#: src/main/KexiMainWindow_p.cpp
+msgid "Tools"
+msgstr "ツール"
+
+# ============================================================
+# Dock/tab labels (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgid "Property Editor"
+msgstr "プロパティエディタ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Properties"
+msgstr "プロパティ"
+
+# ============================================================
+# Record navigator (Japanese)
+# ============================================================
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Record:"
+msgstr "レコード:"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Current record number"
+msgstr "現在のレコード番号"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgctxt "\"of\" in record number information: N of M"
+msgid "of"
+msgstr "/"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Number of records"
+msgstr "レコード数"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Editing indicator"
+msgstr "編集インジケータ"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "First record"
+msgstr "先頭レコード"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Previous record"
+msgstr "前のレコード"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Next record"
+msgstr "次のレコード"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Last record"
+msgstr "最後のレコード"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "New record"
+msgstr "新しいレコード"
+
+# ============================================================
+# Query designer (Japanese)
+# ============================================================
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Query Columns"
+msgstr "クエリの列"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Column"
+msgstr "列"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Describes field name or expression for the designed query."
+msgstr "デザインするクエリのフィールド名または式を指定します。"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Table"
+msgstr "テーブル"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Describes table for a given field. Can be empty."
+msgstr "フィールドの所属テーブルを指定します。空にすることもできます。"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Visible"
+msgstr "表示"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Describes visibility for a given field or expression."
+msgstr "フィールドまたは式の表示／非表示を指定します。"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Sorting"
+msgstr "並べ替え"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Describes a way of sorting for a given field."
+msgstr "フィールドの並べ替え方法を指定します。"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Ascending"
+msgstr "昇順"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Descending"
+msgstr "降順"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Criteria"
+msgstr "条件"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Describes the criteria for a given field or expression."
+msgstr "フィールドまたは式の検索条件を指定します。"
+
+# ============================================================
+# Lookup column page (Japanese)
+# ============================================================
+#: src/plugins/tables/kexilookupcolumnpage.cpp
+msgid "Record source:"
+msgstr "レコードソース:"
+
+#: src/plugins/tables/kexilookupcolumnpage.cpp
+msgid "Go to selected record source"
+msgstr "選択したレコードソースに移動"
+
+#: src/plugins/tables/kexilookupcolumnpage.cpp
+msgid "Bound column:"
+msgstr "バインド列:"
+
+#: src/plugins/tables/kexilookupcolumnpage.cpp
+msgid "Visible column:"
+msgstr "表示列:"
+
+#: src/plugins/tables/kexilookupcolumnpage.cpp
+msgid "No field selected"
+msgstr "フィールドが選択されていません"
+
+# ============================================================
+# Search / Find (Japanese)
+# ============================================================
+#: src/main/KexiSearchLineEdit.cpp
+msgid "Search"
+msgstr "検索"
+
+#: src/main/kexifinddialog.cpp
+msgid "The search item was not found"
+msgstr "検索文字列が見つかりませんでした"
+
+#: src/main/kexifinddialog.cpp
+msgid "(All fields)"
+msgstr "(すべてのフィールド)"
+
+#: src/main/kexifinddialog.cpp
+msgid "(Current field)"
+msgstr "(現在のフィールド)"
+
+# ============================================================
+# Common dialog strings (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgid "Save changes"
+msgstr "変更を保存"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Do you want to save changes?"
+msgstr "変更を保存しますか?"
+
+#: src/main/KexiMainWindow.cpp
+msgctxt "@info"
+msgid "Saves all recent changes made in <resource>%1</resource> object."
+msgstr "最近の変更をすべて<resource>%1</resource>オブジェクトに保存します。"
+
+#: src/main/KexiMainWindow.cpp
+msgctxt "@action:button Save object"
+msgid "Save"
+msgstr "保存"
+
+#: src/main/KexiMainWindow.cpp
+msgctxt "@title:window"
+msgid "Save Object As"
+msgstr "オブジェクトに名前を付けて保存"
+
+# ============================================================
+# Image box context menu (Japanese — outside Form Design tab)
+# ============================================================
+#: src/widget/utils/kexicontextmenuutils.cpp
+msgid "Insert From &File..."
+msgstr "ファイルから挿入... (&F)"
+
+#: src/widget/utils/kexicontextmenuutils.cpp
+msgid "&Clear"
+msgstr "消去 (&C)"
+
+# ============================================================
+# Record data tools (Japanese)
+# ============================================================
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgctxt "@action:button"
+msgid "&Delete Record"
+msgstr "レコードを削除 (&D)"
+
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgid "Do you want to delete selected record?"
+msgstr "選択したレコードを削除しますか?"
+
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgid "Do you want to clear the contents of table %1?"
+msgstr "テーブル%1の内容を消去しますか?"
+
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgctxt "@action:button"
+msgid "&Clear Contents"
+msgstr "内容を消去 (&C)"
+
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgctxt "@action:button Accept edit"
+msgid "Correct"
+msgstr "確定"
+
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgid "Correct changes"
+msgstr "編集を確定"
+
+#: src/widget/dataviewcommon/kexidataawareobjectiface.cpp
+msgctxt "@action:button"
+msgid "Discard Changes"
+msgstr "変更を破棄"
+
+# ============================================================
+# Relations view (Japanese)
+# ============================================================
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "Table:"
+msgstr "テーブル:"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgctxt "Insert table/query into relations view"
+msgid "&Insert"
+msgstr "挿入 (&I)"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "&Hide Table"
+msgstr "テーブルを隠す (&H)"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "&Append Field"
+msgstr "フィールドを追加 (&A)"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "&Append Fields"
+msgstr "フィールドを追加 (&A)"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "&Open Table"
+msgstr "テーブルを開く (&O)"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "&Design Table"
+msgstr "テーブルをデザイン (&D)"
+
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "Relationship"
+msgstr "リレーションシップ"
+
+#: src/widget/relations/KexiRelationsScrollArea.cpp
+msgid "&Hide Selected Table/Query"
+msgstr "選択したテーブル／クエリを隠す (&H)"
+
+#: src/widget/relations/KexiRelationsScrollArea.cpp
+msgid "&Delete Selected Relationship"
+msgstr "選択したリレーションシップを削除 (&D)"
+
+#: src/widget/relations/KexiRelationsScrollArea.cpp
+msgid "&Open Selected Table/Query"
+msgstr "選択したテーブル／クエリを開く (&O)"
+
+# ============================================================
+# Blob table edit (Japanese)
+# ============================================================
+#: src/widget/tableview/kexiblobtableedit.cpp
+msgid "Click to show available actions for this cell"
+msgstr "クリックしてこのセルの操作メニューを表示"
+
+# ============================================================
+# Data source combo box (Japanese)
+# ============================================================
+#: src/widget/KexiDataSourceComboBox.cpp
+msgid "Define Query..."
+msgstr "クエリを定義... (&D)"
+
+# ============================================================
+# Query view (Japanese)
+# ============================================================
+#: src/plugins/queries/kexiqueryview.cpp
+msgid "Query executing failed."
+msgstr "クエリの実行に失敗しました。"
+
+# ============================================================
+# Report data source selector (Japanese)
+# ============================================================
+#: src/plugins/reports/kexisourceselector.cpp
+msgid "Report's data source:"
+msgstr "レポートのデータソース:"
+
+# ============================================================
+# Help menu (Japanese)
+# ============================================================
+#: src/main/AkexiMainWindow_p.cpp
+msgctxt "Report a bug or wish for Akexi application"
+msgid "Report a &Bug or Wish..."
+msgstr "バグ・要望を報告... (&B)"
+
+#: src/main/AkexiMainWindow_p.cpp
+msgid "Files a bug or wish for Akexi application."
+msgstr "Akexiアプリケーションのバグや要望を報告します。"
+
+#: src/main/KexiMainWindow_p.cpp
+msgid "Activates a \"What's This?\" tool."
+msgstr "「これは何?」機能を開始します。"
+
+#: src/main/AkexiMainWindow_p.cpp
+msgid "Online Help"
+msgstr "オンラインヘルプ (&O)"
+
+#: src/main/AkexiMainWindow_p.cpp
+msgid "Shows Akexi online documentation."
+msgstr "Akexiのオンラインドキュメントを表示します。"
+
+#: src/main/AkexiMainWindow_p.cpp
+msgid "Shows information about Akexi application."
+msgstr "Akexiアプリケーションの情報を表示します。"
+
+#: src/main/AkexiMainWindow_p.cpp
+msgid "Shows information about KDE."
+msgstr "KDEの情報を表示します。"
+
+# ============================================================
+# Startup / Welcome (Japanese)
+# ============================================================
+#: src/main/startup/KexiWelcomeAssistant.cpp
+msgctxt "@title:window"
+msgid "Welcome to Akexi"
+msgstr "Akexiへようこそ"
+
+#: src/main/startup/KexiWelcomeAssistant.cpp
+msgctxt "@info"
+msgid "Select one of the recently used projects to open."
+msgstr "最近使用したプロジェクトの一覧です。"
+
+#: src/main/startup/KexiPasswordPage.cpp
+msgctxt "@title:window"
+msgid "Database Password"
+msgstr "データベースのパスワード"
+
+#: src/main/startup/KexiAssistantMessageHandler.cpp
+msgid "Try Again"
+msgstr "再試行"
+
+# ============================================================
+# Open Project assistant (Japanese)
+# ============================================================
+#: src/main/startup/KexiOpenProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "Open Project"
+msgstr "プロジェクトを開く"
+
+#: src/main/startup/KexiOpenProjectAssistant.cpp
+msgctxt "@title:tab"
+msgid "Projects Stored in File"
+msgstr "単一ファイルに保存したプロジェクト"
+
+#: src/main/startup/KexiOpenProjectAssistant.cpp
+msgctxt "@title:tab"
+msgid "Projects Stored on Database Server"
+msgstr "データベースサーバに保存したプロジェクト"
+
+#: src/main/startup/KexiOpenProjectAssistant.cpp
+msgid "Open"
+msgstr "開く"
+
+# ============================================================
+# New Project assistant (Japanese)
+# ============================================================
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "New Project"
+msgstr "新しいプロジェクト"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Blank database"
+msgstr "空のデータベース"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Database project without any objects"
+msgstr "オブジェクトのないデータベースプロジェクト"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Contacts"
+msgstr "連絡先"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Movie catalog"
+msgstr "映画カタログ"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "Storage Method"
+msgstr "保存方法"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "Project Caption & Filename"
+msgstr "プロジェクトのタイトルとファイル名"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Enter project caption."
+msgstr "プロジェクトのタイトルを入力してください。"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Enter a valid project filename. The file should be located on this computer."
+msgstr "有効なプロジェクトファイル名を入力してください。ファイルはこのコンピューター上に配置されます。"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Database File"
+msgstr "データベースファイル"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Same filename with .sqlite3 extension (auto)"
+msgstr ".sqlite3 拡張子に変えた .akexi プロジェクトと同名ファイル"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Relative path"
+msgstr ".akexi プロジェクトからの相対パス"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Absolute path (not recommended - non-portable)"
+msgstr "絶対パス（携帯性に優れないので非推奨）"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Path to .sqlite3 database file..."
+msgstr ".sqlite3データベースファイルのパス..."
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Browse..."
+msgstr "参照..."
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Select SQLite3 Database File"
+msgstr "SQLite3データベースファイルを選択"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "SQLite3 Database (*.sqlite3 *.sqlite *.db)"
+msgstr "SQLite3データベース (*.sqlite3 *.sqlite *.db)"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "Creating Project"
+msgstr "プロジェクトを作成中"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@info"
+msgid "Please wait while the project is created."
+msgstr "プロジェクトの作成をお待ちください。"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "Database Connection"
+msgstr "データベース接続"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgctxt "@title:window"
+msgid "Project Caption & Database Name"
+msgstr "プロジェクトのタイトルとデータベース名"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Enter database name."
+msgstr "データベース名を入力してください。"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Database with this name already exists. Do you want to delete it and create a new one?"
+msgstr "この名前のデータベースは既に存在します。削除して新しく作成しますか?"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Delete and Create New"
+msgstr "削除して新規作成"
+
+# ============================================================
+# Bug Report dialog (Japanese)
+# ============================================================
+#: src/main/KexiBugReportDialog.cpp
+msgctxt "@title:window"
+msgid "Report a Bug or Wish"
+msgstr "バグ・要望を報告"
+
+#: src/main/KexiBugReportDialog.cpp
+msgid "Operating system & platform:"
+msgstr "OSとプラットフォーム:"
+
+#: src/main/KexiBugReportDialog.cpp
+msgctxt "Other operating system"
+msgid "Other"
+msgstr "その他"
+
+#: src/main/KexiBugReportDialog.cpp
+msgctxt "Other platform"
+msgid "Other"
+msgstr "その他"
+
+# ============================================================
+# Database Password dialog (Japanese)
+# ============================================================
+#: src/widget/KexiDBPasswordDialog.cpp
+msgctxt "@title:window"
+msgid "Opening Database"
+msgstr "データベースを開く"
+
+#: src/widget/KexiDBPasswordDialog.cpp
+msgctxt "@info"
+msgid "Supply a password below."
+msgstr "パスワードを入力してください。"
+
+#: src/widget/KexiDBPasswordDialog.cpp
+msgid "&Details >>"
+msgstr "詳細 (&D) >>"
+
+#: src/widget/KexiDBPasswordDialog.cpp
+msgid "Database server:"
+msgstr "データベースサーバ:"
+
+#: src/widget/KexiDBPasswordDialog.cpp
+msgctxt "unspecified user"
+msgid "(unspecified)"
+msgstr "（未指定）"
+
+#: src/widget/KexiDBPasswordDialog.cpp
+msgid "&Open"
+msgstr "開く (&O)"
+
+# ============================================================
+# Database Connection Selector (Japanese)
+# ============================================================
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgid "Add a new database connection"
+msgstr "新しいデータベース接続を追加"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgid "Edit selected database connection"
+msgstr "選択したデータベース接続を編集"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgid "Delete selected database connections"
+msgstr "選択したデータベース接続を削除"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgid "File"
+msgstr "ファイル"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgctxt "@action:button Add Database Connection"
+msgid "&Add"
+msgstr "追加 (&A)"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgid "Add database connection"
+msgstr "データベース接続を追加"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgctxt "@title:window"
+msgid "Add a New Database Connection"
+msgstr "新しいデータベース接続"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgctxt "@action:button Save Database Connection"
+msgid "&Save"
+msgstr "保存 (&S)"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgid "Save changes made to this database connection"
+msgstr "データベース接続への変更を保存"
+
+#: src/widget/KexiConnectionSelectorWidget.cpp
+msgctxt "@title:window"
+msgid "Edit Database Connection"
+msgstr "データベース接続を編集"
+
+# ============================================================
+# Database Connection widget (Japanese)
+# ============================================================
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Load database list from the server"
+msgstr "サーバからデータベース一覧を読み込む"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Loads database list from the server..."
+msgstr "サーバからデータベース一覧を読み込みます..."
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgctxt "@action:button"
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgctxt "@action:button"
+msgid "&Test Connection"
+msgstr "接続をテスト (&T)"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Test database connection"
+msgstr "データベース接続をテスト"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Parameters"
+msgstr "パラメータ"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Details"
+msgstr "詳細"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgctxt "@title:window"
+msgid "Open Database"
+msgstr "データベースを開く"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgctxt "@title:window"
+msgid "Connect to a Database Server"
+msgstr "データベースサーバに接続"
+
+# ============================================================
+# Name dialog (Japanese)
+# ============================================================
+#: src/widget/KexiNameWidget.cpp
+msgid "Caption:"
+msgstr "タイトル:"
+
+#: src/widget/KexiNameWidget.cpp
+msgid "Name:"
+msgstr "名前:"
+
+#: src/widget/KexiNameWidget.cpp
+msgid "Please enter the name."
+msgstr "名前を入力してください。"
+
+#: src/widget/KexiNameWidget.cpp
+msgid "Please enter the caption."
+msgstr "タイトルを入力してください。"
+
+#: src/widget/KexiNameDialog.cpp
+msgid "Please choose other name."
+msgstr "別の名前を選んでください。"
+
+#: src/widget/KexiNameDialog.cpp
+msgid "Do you want to replace it?"
+msgstr "置き換えますか?"
+
+#: src/widget/KexiNameDialog.cpp
+msgid "&Replace"
+msgstr "置き換え (&R)"
+
+#: src/widget/KexiNameDialog.cpp
+msgid "Replace object"
+msgstr "オブジェクトを置き換え"
+
+#: src/widget/KexiNameDialog.cpp
+msgctxt "@action:button"
+msgid "&Choose Other Name..."
+msgstr "別の名前を選択... (&C)"
+
+# ============================================================
+# Field list (Japanese)
+# ============================================================
+#: src/widget/fields/KexiFieldListModel.cpp
+msgid "Field Name"
+msgstr "フィールド名"
+
+#: src/widget/fields/KexiFieldListModel.cpp
+#: src/plugins/tables/kexitabledesignerview.cpp
+#: src/plugins/tables/kexitabledesignertableview.cpp
+msgid "Data Type"
+msgstr "データ型"
+
+# ============================================================
+# Recent projects (Japanese)
+# ============================================================
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Opened less than minute ago"
+msgstr "最終閲覧: 1分以内"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Opened 1 minute ago"
+msgstr "最終閲覧: 1分前"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Opened 1 hour ago"
+msgstr "最終閲覧: 1時間前"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Opened yesterday"
+msgstr "最終閲覧: 昨日"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Opened over a month ago"
+msgstr "最終閲覧: 1ヶ月以上前"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Opened one year ago"
+msgstr "最終閲覧: 1年前"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "on local server"
+msgstr "ローカルサーバ上"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "database"
+msgstr "データベース"
+
+#: src/main/startup/KexiRecentProjectsModel.cpp
+msgid "Last opened on %1"
+msgstr "最終開封: %1"
+
+# ============================================================
+# Startup error messages (Japanese)
+# ============================================================
+#: src/main/startup/KexiStartup.cpp
+msgid "Invalid port number <icode>%1</icode> specified."
+msgstr "無効なポート番号 <icode>%1</icode> が指定されました。"
+
+#: src/main/startup/KexiStartup.cpp
+msgid "Could not open database. No database driver specified."
+msgstr "データベースを開けませんでした。データベースドライバが指定されていません。"
+
+#: src/main/startup/KexiStartup.cpp
+msgid "No project name specified."
+msgstr "プロジェクト名が指定されていません。"
+
+#: src/main/startup/KexiStartup.cpp
+msgctxt "@title:window"
+msgid "Could Not Open File"
+msgstr "ファイルを開けませんでした"
+
+#: src/main/startup/KexiStartup.cpp
+msgid "Open External File"
+msgstr "外部ファイルを開く"
+
+#: src/main/startup/KexiStartup.cpp
+msgctxt "@action:button Import File"
+msgid "Import..."
+msgstr "取り込み..."
+
+# ============================================================
+# Welcome status bar donation (Japanese)
+# ============================================================
+#: src/main/startup/KexiWelcomeStatusBar.cpp
+msgid "Donate to the Project"
+msgstr "プロジェクトに寄付"
+
+#: src/main/startup/KexiWelcomeStatusBar.cpp
+msgctxt "@action:button Go to Donation"
+msgid "Proceed to the Donation Web Page"
+msgstr "寄付Webページへ"
+
+#: src/main/startup/KexiWelcomeStatusBar.cpp
+msgctxt "Do not donate now"
+msgid "Not Now"
+msgstr "後で"
+
+# ============================================================
+# Query parameters (Japanese)
+# ============================================================
+#: src/widget/kexiqueryparameters.cpp
+msgctxt "@title:window Enter Query Parameter Value"
+msgid "Enter Parameter Value"
+msgstr "パラメータ値を入力"
+
+#: src/widget/kexiqueryparameters.cpp
+msgctxt "Boolean True - Yes"
+msgid "Yes"
+msgstr "はい"
+
+#: src/widget/kexiqueryparameters.cpp
+msgctxt "Boolean False - No"
+msgid "No"
+msgstr "いいえ"
+
+# ============================================================
+# Import table wizard (Japanese)
+# ============================================================
+#: src/migration/importtablewizard.cpp
+msgid "Welcome to the Table Importing Assistant"
+msgstr "テーブルの取り込みウィザードへようこそ"
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "Select Location for Source Database"
+msgstr "取り込むデータベースの場所の選択"
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "Select Source Database"
+msgstr "取り込むデータベースの選択"
+
+#: src/migration/importtablewizard.cpp
+msgid "Select the Table to Import"
+msgstr "取り込むテーブルの選択"
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "Advanced Options..."
+msgstr "詳細オプション..."
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "Importing"
+msgstr "取り込み中"
+
+#: src/migration/importtablewizard.cpp
+msgid "Alter the Detected Table Design"
+msgstr "取り込むテーブルの設計を変更"
+
+#: src/migration/importtablewizard.cpp
+msgid "Processing Import"
+msgstr "取り込み処理を実行中"
+
+#: src/migration/importtablewizard.cpp
+msgid "Open imported table"
+msgstr "取り込んだテーブルを開く"
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "Success"
+msgstr "成功"
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "Failure"
+msgstr "失敗"
+
+#: src/migration/importtablewizard.cpp
+msgid "An error occurred."
+msgstr "エラーが発生しました。"
+
+#: src/migration/importtablewizard.cpp src/migration/importwizard.cpp
+msgid "No appropriate migration driver found."
+msgstr "適切なマイグレーションドライバが見つかりませんでした。"
+
+#: src/migration/importtablewizard.cpp
+msgid "No project available."
+msgstr "利用可能なプロジェクトがありません。"
+
+#: src/migration/importtablewizard.cpp
+msgid "No table was selected to import."
+msgstr "取り込むテーブルが選択されていません。"
+
+#: src/migration/importtablewizard.cpp
+msgctxt "@info"
+msgid "Table name <resource>%1</resource> is already in use. Set a new name."
+msgstr "テーブル名 <resource>%1</resource> は既に使用されています。新しい名前を設定してください。"
+
+#: src/migration/importtablewizard.cpp
+msgid "Name Already Used"
+msgstr "名前は既に使用中"
+
+#: src/migration/importtablewizard.cpp
+msgctxt "@info"
+msgid "Could not open the source database"
+msgstr "ソースデータベースを開けませんでした"
+
+# ============================================================
+# Import database wizard (Japanese)
+# ============================================================
+#: src/migration/importwizard.cpp
+msgctxt "@title:window"
+msgid "Import Database"
+msgstr "データベースを取り込み"
+
+#: src/migration/importwizard.cpp
+msgid "Welcome to the Database Importing Assistant"
+msgstr "データベースの取り込みウィザードへようこそ"
+
+#: src/migration/importwizard.cpp
+msgid "Destination database type:"
+msgstr "保存先データベースの種類:"
+
+#: src/migration/importwizard.cpp
+msgid "Database project stored in a file"
+msgstr "ファイルに保存するデータベースプロジェクト"
+
+#: src/migration/importwizard.cpp
+msgid "Database project stored on a server"
+msgstr "サーバに保存するデータベースプロジェクト"
+
+#: src/migration/importwizard.cpp
+msgid "Select Destination Database Type"
+msgstr "保存先データベースの種類を選択"
+
+#: src/migration/importwizard.cpp
+msgid "Destination project's caption:"
+msgstr "保存先プロジェクトのタイトル:"
+
+#: src/migration/importwizard.cpp
+msgid "Destination project's name:"
+msgstr "保存先プロジェクトの名前:"
+
+#: src/migration/importwizard.cpp
+msgid "Enter Destination Database Project's Caption"
+msgstr "保存先データベースプロジェクトのタイトルを入力"
+
+#: src/migration/importwizard.cpp
+msgid "Select Location for Destination Database Project"
+msgstr "保存先データベースプロジェクトの場所を選択"
+
+#: src/migration/importwizard.cpp
+msgctxt "Scope of import"
+msgid "Structure and data"
+msgstr "構造とデータ"
+
+#: src/migration/importwizard.cpp
+msgctxt "Scope of import"
+msgid "Structure only"
+msgstr "構造のみ"
+
+#: src/migration/importwizard.cpp
+msgid "Select Scope of Import"
+msgstr "取り込み範囲を選択"
+
+#: src/migration/importwizard.cpp
+msgid "Open imported project"
+msgstr "取り込んだプロジェクトを開く"
+
+#: src/migration/importwizard.cpp
+msgid "Importing in progress..."
+msgstr "取り込み処理を実行中..."
+
+#: src/migration/importwizard.cpp
+msgid "Select source database filename."
+msgstr "ソースデータベースのファイル名を選択してください。"
+
+#: src/migration/importwizard.cpp
+msgid "Select source database."
+msgstr "ソースデータベースを選択してください。"
+
+#: src/migration/importwizard.cpp
+msgid "Could not import database. This type is not supported."
+msgstr "データベースを取り込めませんでした。この種類はサポートされていません。"
+
+# ============================================================
+# Import options dialog (Japanese)
+# ============================================================
+#: src/migration/importoptionsdlg.cpp
+msgctxt "@title:window"
+msgid "Advanced Import Options"
+msgstr "取り込み詳細オプション"
+
+#: src/migration/importoptionsdlg.cpp
+msgid "Text encoding:"
+msgstr "テキストエンコーディング:"
+
+#: src/migration/importoptionsdlg.cpp
+msgid "Always use this encoding in similar situations"
+msgstr "同様の状況で常にこのエンコーディングを使用"
+
+# ============================================================
+# Migrate manager (Japanese)
+# ============================================================
+#: src/migration/migratemanager.cpp
+msgid "Could not find any migration database drivers."
+msgstr "マイグレーションデータベースドライバが見つかりませんでした。"
+
+# ============================================================
+# File requester / file widget (Japanese)
+# ============================================================
+#: src/widget/KexiFileRequester.cpp
+msgid "Computer"
+msgstr "コンピューター"
+
+#: src/widget/KexiFileRequester.cpp
+msgid "Could not enter directory <filename>%1</filename>."
+msgstr "ディレクトリ <filename>%1</filename> に入れませんでした。"
+
+#: src/widget/KexiFileRequester.cpp
+msgid "Go to parent directory"
+msgstr "親ディレクトリへ移動"
+
+#: src/widget/KexiFileWidgetInterface.cpp
+msgid "Enter a filename."
+msgstr "ファイル名を入力してください。"
+
+#: src/widget/KexiFileWidgetInterface.cpp
+msgctxt "@info"
+msgid "The file <filename>%1</filename> does not exist."
+msgstr "ファイル <filename>%1</filename> は存在しません。"
+
+#: src/widget/KexiFileWidgetInterface.cpp
+msgctxt "@info"
+msgid "The file <filename>%1</filename> is not readable."
+msgstr "ファイル <filename>%1</filename> は読み取れません。"
+
+# ============================================================
+# Project selector (Japanese)
+# ============================================================
+#: src/widget/KexiProjectSelectorWidget.cpp
+msgid "File (%1)"
+msgstr "ファイル (%1)"
+
+#: src/widget/KexiProjectSelectorWidget.cpp
+msgctxt "@action:button"
+msgid "&Open"
+msgstr "開く (&O)"
+
+#: src/widget/KexiProjectSelectorWidget.cpp
+msgid "Open Database Connection"
+msgstr "データベース接続を開く"
+
+# ============================================================
+# Data provider (Japanese)
+# ============================================================
+#: src/widget/dataviewcommon/kexidataprovider.cpp
+msgid "NAME"
+msgstr "名前"
+
+# ============================================================
+# Table scroll area (Japanese)
+# ============================================================
+#: src/widget/tableview/KexiTableScrollArea.cpp
+msgctxt "@info:whatsthis"
+msgid "Record navigator."
+msgstr "レコードナビゲーター。"
+
+# ============================================================
+# Social links (Japanese)
+# ============================================================
+#: src/main/KexiMenuWidget.cpp
+msgid "Visit KEXI Facebook page at %1"
+msgstr "KEXI Facebookページ (%1) へ"
+
+#: src/main/KexiMenuWidget.cpp
+msgid "Visit KEXI Twitter page at %1"
+msgstr "KEXI Twitterページ (%1) へ"
+
+#: src/main/KexiMenuWidget.cpp
+msgid "Visit Calligra home page at %1"
+msgstr "Calligraホームページ (%1) へ"
+
+# ============================================================
+# Import misc (Japanese)
+# ============================================================
+#: src/migration/importtablewizard.cpp
+msgctxt "@info"
+msgid "No data has been found in table <resource>%1</resource>."
+msgstr "テーブル <resource>%1</resource> にデータが見つかりませんでした。"
+
+#: src/migration/keximigrate.cpp
+msgid "No tables have been found in database %1."
+msgstr "データベース %1 にテーブルが見つかりませんでした。"
+
+#: src/migration/keximigrate.cpp
+msgid "Could not get a list of table names for database %1."
+msgstr "データベース %1 のテーブル名一覧を取得できませんでした。"
+
+#: src/migration/keximigrate.cpp
+msgid "Could not connect to database %1."
+msgstr "データベース %1 に接続できませんでした。"
+
+# ============================================================
+# Table designer — column headers (Japanese)
+# ============================================================
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Additional information about the field"
+msgstr "フィールドの付加情報"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Field Caption"
+msgstr "フィールドの表示名"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Describes caption for the field"
+msgstr "フィールドの表示名を指定します"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Describes data type for the field"
+msgstr "フィールドのデータ型を指定します"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Comments"
+msgstr "コメント"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Describes additional comments for the field"
+msgstr "フィールドの補足コメントを指定します"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Sets or deletes primary key"
+msgstr "主キーを設定／解除"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Sets or deletes primary key for currently selected field."
+msgstr "現在選択しているフィールドの主キーを設定／解除します。"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "tooltip"
+msgid "Create new table"
+msgstr "新しいテーブルを作成"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Cannot switch to data view, because table design is empty.\n"
+msgstr "テーブル設計が空のため、データビューに切り替えられません。\n"
+
+# ============================================================
+# Table designer — property panel labels (Japanese)
+# ============================================================
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "Table field"
+msgid "Field"
+msgstr "フィールド"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+#: src/plugins/tables/kexitabledesignertableview.cpp
+msgid "Name"
+msgstr "Name"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Type"
+msgstr "Type"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Subtype"
+msgstr "Subtype"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "Image object type"
+msgid "Image"
+msgstr "Image"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Caption"
+msgstr "Caption"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Unsigned Number"
+msgstr "Unsigned Number"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Max Length"
+msgstr "Max Length"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Precision"
+msgstr "Precision"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Visible Decimal Places"
+msgstr "Visible Decimal Places"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "Auto Decimal Places"
+msgid "Auto"
+msgstr "Auto"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Default Width"
+msgstr "Default Width"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Default Value"
+msgstr "Default Value"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "None"
+msgstr "None"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Primary Key"
+msgstr "Primary Key"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Unique"
+msgstr "Unique"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Required"
+msgstr "Required"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Allow Zero\nSize"
+msgstr "Allow Zero\nSize"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Autonumber"
+msgstr "Autonumber"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Indexed"
+msgstr "Indexed"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Record Source"
+msgstr "Record Source"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "Record source type (in two records)"
+msgid "Record Source\nType"
+msgstr "Record Source\nType"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Bound Column"
+msgstr "Bound Column"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Visible Column"
+msgstr "Visible Column"
+
+# ============================================================
+# Change Akexi DB Reference dialog (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgid "Change Akexi Database Reference"
+msgstr "DB本体の場所を変更"
+
+#: src/main/KexiMainWindow.cpp
+msgid "SQLite3 data file not found. Please select a new database file:"
+msgstr "SQLite3データファイルが見つかりません。新しいデータベースファイルを選択してください:"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Absolute path (not recommended)"
+msgstr "絶対パス（非推奨）"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Select how the SQLite3 data file path is stored in this Akexi project:"
+msgstr "SQLite3データファイルのパスをAkexiプロジェクトにどのように保存するか選択してください:"
+
+# ============================================================
+# View switching dialog (Japanese)
+# ============================================================
+#: src/core/KexiWindow.cpp
+msgid "Confirm Saving Changes"
+msgstr "変更を保存してビューを切り替え"
+
+#: src/core/KexiWindow.cpp
+msgid "Do Not Switch"
+msgstr "切り替えない"
+
+# ============================================================
+# CSV Import wizard (Japanese)
+# ============================================================
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Select Import Filename"
+msgstr "取り込むCSVファイルを選択"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Choose Destination for Imported Data"
+msgstr "取り込み先を選択"
+
+# ============================================================
+# CSV Export wizard (Japanese)
+# ============================================================
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Enter Name of File You Want to Save Data To"
+msgstr "データの保存先ファイル名を入力"
+
+# ============================================================
+# Report view (Japanese)
+# ============================================================
+#: src/plugins/reports/kexireportview.cpp
+msgid "Export Report as PDF"
+msgstr "レポートをPDFとして書き出し"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Export Report as Spreadsheet"
+msgstr "レポートを表計算として書き出し"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Export Report as Text Document"
+msgstr "レポートをテキスト文書として書き出し"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Export Report as Web Page"
+msgstr "レポートをWebページとして書き出し"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Current page number"
+msgstr "現在のページ番号"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Number of pages"
+msgstr "総ページ数"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Print report"
+msgstr "レポートを印刷"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Export as PDF"
+msgstr "PDFとして書き出し"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Exports the current report as PDF."
+msgstr "現在のレポートをPDFとして書き出します。"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Opening failed"
+msgstr "開けませんでした"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Report schema appears to be invalid or corrupt"
+msgstr "レポートのスキーマが無効または破損しています"
+
+# ============================================================
+# Form/Report toolbar labels (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow_p.cpp
+msgid "Form Design"
+msgstr "フォーム設計"
+
+#: src/main/KexiMainWindow_p.cpp
+msgid "Report Design"
+msgstr "レポート設計"
+
+# ============================================================
+# Error messages (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgid "Could not obtain the database driver."
+msgstr "データベースドライバを取得できませんでした。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Could not resolve the SQLite3 data file path from the Akexi metadata."
+msgstr "AkexiメタデータからSQLite3データファイルのパスを解決できませんでした。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Could not close the current project."
+msgstr "現在のプロジェクトを閉じられませんでした。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "File <filename>%1</filename> already exists. Overwrite?"
+msgstr "ファイル <filename>%1</filename> は既に存在します。上書きしますか?"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Cannot convert to KEXI format because the SQLite3 data file contains the following tables with special prefixes:<nl/><list>%1</list><nl/>These tables cannot be represented in the KEXI format. Remove or rename them before converting."
+msgstr "SQLite3データファイルに特殊な接頭辞を持つ以下のテーブルが含まれているため、KEXI形式に変換できません:<nl/><list>%1</list><nl/>これらのテーブルはKEXI形式では表現できません。変換前に削除またはリネームしてください。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Compacting database file <filename>%1</filename> is not supported."
+msgstr "データベースファイル <filename>%1</filename> の圧縮はサポートされていません。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "The current project has to be closed before compacting the database. It will be open again after compacting.\n\nDo you want to continue?"
+msgstr "データベースを圧縮するには、現在のプロジェクトを閉じる必要があります。圧縮後に再度開きます。\n\n続行しますか?"
+
+# ============================================================
+# KexiMainWindow — remaining tooltips (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgid "Create a new project"
+msgstr "新しいプロジェクトを作成"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Creates a new project. Currently opened project is not affected."
+msgstr "新しいプロジェクトを作成します。現在開いているプロジェクトには影響しません。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Open an existing project"
+msgstr "既存のプロジェクトを開く"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Opens an existing project. Currently opened project is not affected."
+msgstr "既存のプロジェクトを開きます。現在開いているプロジェクトには影響しません。"
+
+# from KexiOpenProjectAssistant.cpp (Open Project assistant page)
+#: src/main/startup/KexiOpenProjectAssistant.cpp
+msgctxt "@info"
+msgid "Select the location of the project to open. "
+"You can choose a project stored in a single file or on a database server."
+msgstr "開くプロジェクトの場所を選択してください。"
+"単一ファイルまたはデータベースサーバーに保存されたプロジェクトを選べます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Save object changes"
+msgstr "オブジェクトの変更を保存"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Saves object changes from currently selected window."
+msgstr "現在選択しているウィンドウのオブジェクトへの変更を保存します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Quits Akexi application."
+msgstr "Akexiアプリケーションを終了します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Change the database file referenced by this Akexi project"
+msgstr "このAkexiプロジェクトが参照するデータベースファイルを変更"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Allows changing which SQLite3 database file this Akexi project points to, enabling you to swap the database or move the project to another location."
+msgstr "このAkexiプロジェクトが指すSQLite3データベースファイルを変更できます。データベースの交換やプロジェクトの別の場所への移動に使用します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Paste clipboard data as a table"
+msgstr "クリップボードのデータをテーブルとして貼り付け"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Pastes clipboard data as a table."
+msgstr "クリップボードのデータをテーブルとして貼り付けます。"
+
+# ============================================================
+# KexiWindow — messages (Japanese)
+# ============================================================
+#: src/core/KexiWindow.cpp
+msgid "Could not create new object."
+msgstr "新しいオブジェクトを作成できませんでした。"
+
+#: src/core/KexiWindow.cpp
+msgid "Switching to other view failed (%1)."
+msgstr "ビューの切り替えに失敗しました(%1)。"
+
+#: src/core/KexiWindow.cpp
+msgid "Saving object's definition failed."
+msgstr "オブジェクト定義の保存に失敗しました。"
+
+#: src/core/KexiWindow.cpp
+msgid "Saving object's data failed."
+msgstr "オブジェクトデータの保存に失敗しました。"
+
+# ============================================================
+# Table part — messages (Japanese)
+# ============================================================
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "@info"
+msgid "Design of table <resource>%1</resource> has been modified."
+msgstr "テーブル <resource>%1</resource> の設計が変更されました。"
+
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "@info"
+msgid "Table <resource>%1</resource> already exists."
+msgstr "テーブル <resource>%1</resource> は既に存在します。"
+
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "@info"
+msgid "<warning>Any data in this table will be deleted upon design's saving!</warning>"
+msgstr "<warning>設計を保存すると、このテーブルのデータはすべて削除されます！</warning>"
+
+#: src/plugins/tables/kexitablepart.cpp
+msgid "Lookup column"
+msgstr "列参照"
+
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "@info"
+msgid "Table <resource>%1</resource>"
+msgstr "テーブル <resource>%1</resource>"
+
+#: src/plugins/tables/kexitablepart.cpp
+msgctxt "@info"
+msgid "<para>Do you want to close these windows and save the "
+msgstr "<para>これらのウィンドウを閉じて、"
+
+#: src/plugins/tables/kexitablepart.cpp
+msgid "You should enter field caption."
+msgstr "フィールドの表示名を入力してください。"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "You have added no fields.\nEvery table should have at least one field."
+msgstr "フィールドが追加されていません。\nテーブルには最低1つのフィールドが必要です。"
+
+# ============================================================
+# Table designer — undo/redo (Japanese)
+# ============================================================
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Change <resource>%1</resource> property for table field from "
+msgstr "テーブルフィールドの<resource>%1</resource>プロパティを変更: "
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Delete table field <resource>%1</resource>"
+msgstr "テーブルフィールド <resource>%1</resource> を削除"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Delete empty row at position %1"
+msgstr "%1行目の空行を削除"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Insert table field \"%1\""
+msgstr "テーブルフィールド「%1」を挿入"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Change data type for field <resource>%1</resource> to <resource>%2</resource>"
+msgstr "フィールド <resource>%1</resource> のデータ型を <resource>%2</resource> に変更"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Set <resource>%1</resource> property for field <resource>%2</resource>"
+msgstr "フィールド <resource>%2</resource> に <resource>%1</resource> プロパティを設定"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Set primary key for field <resource>%1</resource>"
+msgstr "フィールド <resource>%1</resource> に主キーを設定"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Unset primary key for field <resource>%1</resource>"
+msgstr "フィールド <resource>%1</resource> の主キーを解除"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Set autonumber for field <resource>%1</resource>"
+msgstr "フィールド <resource>%1</resource> に自動番号を設定"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Delete autonumber from field <resource>%1</resource>"
+msgstr "フィールド <resource>%1</resource> の自動番号を削除"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Setting Autonumber Field"
+msgstr "自動番号フィールドの設定"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "@action:button"
+msgid "Create &Primary Key"
+msgstr "主キーを作成 (&P)"
+
+# ============================================================
+# Form widgets — descriptions (Japanese)
+# ============================================================
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A form widget"
+msgstr "フォームを構成する部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A widget for entering and displaying line of text text"
+msgstr "1行のテキストを入力・表示する部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A multiline text editor"
+msgstr "複数行のテキストエディタ"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A widget for displaying text"
+msgstr "テキストを表示する部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A widget for displaying images"
+msgstr "画像を表示する部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A combo box widget"
+msgstr "コンボボックス部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A check box with text label"
+msgstr "テキストラベル付きチェックボックス"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A button for executing actions"
+msgstr "アクションを実行するボタン"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A Link button for executing actions"
+msgstr "アクションを実行するリンクボタン"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A Slider widget"
+msgstr "スライダー部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A Progress Bar widget"
+msgstr "プログレスバー部品"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A line to be used as a separator"
+msgstr "区切り線として使用するライン"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "A Date Picker widget"
+msgstr "日付選択部品"
+
+# ============================================================
+# Property panel — descriptions (Japanese)
+# ============================================================
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Indent"
+msgstr "Indent"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Inverted"
+msgstr "Inverted"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Minimum"
+msgstr "Minimum"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Maximum"
+msgstr "Maximum"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Format"
+msgstr "Format"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Orientation"
+msgstr "Orientation"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Text Direction"
+msgstr "Text Direction"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Text Visible"
+msgstr "Text Visible"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Value"
+msgstr "Value"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Date"
+msgstr "Date"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Arrow Visible"
+msgstr "Arrow Visible"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Description"
+msgstr "Description"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property of slider widgets"
+msgid "Page Step"
+msgstr "Page Step"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property of slider widgets"
+msgid "Single Step"
+msgstr "Single Step"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property of slider widgets"
+msgid "Tick Interval"
+msgstr "Tick Interval"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property of slider widgets"
+msgid "Tick Position"
+msgstr "Tick Position"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Show Editor"
+msgstr "Show Editor"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Form Name"
+msgstr "Form Name"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "On Click"
+msgstr "On Click"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "On Click Option"
+msgstr "On Click Option"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Auto Tab Order"
+msgstr "Auto Tab Order"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Spell Checking"
+msgstr "Spell Checking"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Spell Checking Language"
+msgstr "Spell Checking Language"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "AutoField editor's type"
+msgid "Multiline Text"
+msgstr "複数行テキスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "AutoField editor's type"
+msgid "Drop-Down List"
+msgstr "ドロップダウンリスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "AutoField editor's type"
+msgid "Image"
+msgstr "画像"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Possible value of slider widget's \"Tick position\" property"
+msgid "No Ticks"
+msgstr "なし"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Possible value of slider widget's \"Tick position\" property"
+msgid "Above"
+msgstr "上"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Possible value of slider widget's \"Tick position\" property"
+msgid "Left"
+msgstr "左"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Possible value of slider widget's \"Tick position\" property"
+msgid "Below"
+msgstr "下"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Possible value of slider widget's \"Tick position\" property"
+msgid "Right"
+msgstr "右"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Possible value of slider widget's \"Tick position\" property"
+msgid "Both Sides"
+msgstr "両側"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Size"
+msgstr "Size"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Image"
+msgstr "Image"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Smoothing when contents are scaled"
+msgid "Smoothing"
+msgstr "Smoothing"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Keep Aspect Ratio (keep short)"
+msgid "Keep Ratio"
+msgstr "Keep Ratio"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink address"
+msgid "Hyperlink"
+msgstr "Hyperlink"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Type of hyperlink"
+msgid "Hyperlink Type"
+msgstr "Hyperlink Type"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Tool used for opening a hyperlink"
+msgid "Hyperlink Tool"
+msgstr "Hyperlink Tool"
+
+# ============================================================
+# Form part — messages (Japanese)
+# ============================================================
+#: src/plugins/forms/kexiformpart.cpp
+msgctxt "@info"
+msgid "Design of form <resource>%1</resource> has been modified."
+msgstr "フォーム <resource>%1</resource> の設計が変更されました。"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgctxt "@info"
+msgid "Form <resource>%1</resource> already exists."
+msgstr "フォーム <resource>%1</resource> は既に存在します。"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgctxt "@info"
+msgid "Form <resource>%1</resource>"
+msgstr "フォーム <resource>%1</resource>"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgctxt "@info"
+msgid "Set form's data source to <resource>%1</resource>"
+msgstr "フォームのデータソースを <resource>%1</resource> に設定"
+
+#: src/plugins/forms/kexiformpart.cpp
+#: src/plugins/forms/kexiformmanager.cpp
+msgctxt "@title:window"
+msgid "Form's UI Code"
+msgstr "フォームのUIコード"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Current"
+msgstr "現在"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Original"
+msgstr "元のコード"
+
+#: src/plugins/forms/kexiformmanager.cpp
+msgid "Style"
+msgstr "スタイル"
+
+#: src/plugins/forms/kexiformmanager.cpp
+msgid "Set the current view style."
+msgstr "現在のビューのスタイルを設定します。"
+
+#: src/plugins/forms/kexiformmanager.cpp
+msgid "Show Form UI Code"
+msgstr "フォームのUIコードを表示"
+
+# ============================================================
+# Query part — messages (Japanese)
+# ============================================================
+#: src/plugins/queries/kexiquerypart.cpp
+msgctxt "tooltip"
+msgid "Create new query"
+msgstr "新しいクエリを作成"
+
+#: src/plugins/queries/kexiquerypart.cpp
+msgid "SQL"
+msgstr "SQL"
+
+#: src/plugins/queries/kexiquerypart.cpp
+msgctxt "@info"
+msgid "Design of query <resource>%1</resource> has been modified."
+msgstr "クエリ <resource>%1</resource> の設計が変更されました。"
+
+#: src/plugins/queries/kexiquerypart.cpp
+msgctxt "@info"
+msgid "Query <resource>%1</resource> already exists."
+msgstr "クエリ <resource>%1</resource> は既に存在します。"
+
+#: src/plugins/queries/kexiquerypart.cpp
+msgctxt "@info"
+msgid "Query <resource>%1</resource>"
+msgstr "クエリ <resource>%1</resource>"
+
+# ============================================================
+# Report part — messages (Japanese)
+# ============================================================
+#: src/plugins/reports/kexireportpart.cpp
+msgctxt "tooltip"
+msgid "Create new report"
+msgstr "新しいレポートを作成"
+
+#: src/plugins/reports/kexireportpart.cpp
+msgctxt "@info"
+msgid "Design of report <resource>%1</resource> has been modified."
+msgstr "レポート <resource>%1</resource> の設計が変更されました。"
+
+#: src/plugins/reports/kexireportpart.cpp
+msgctxt "@info"
+msgid "Report <resource>%1</resource> already exists."
+msgstr "レポート <resource>%1</resource> は既に存在します。"
+
+#: src/plugins/reports/kexireportpart.cpp
+msgctxt "@info"
+msgid "Report <resource>%1</resource>"
+msgstr "レポート <resource>%1</resource>"
+
+# ============================================================
+# Script part — messages (Japanese)
+# ============================================================
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgctxt "tooltip"
+msgid "Create new script"
+msgstr "新しいスクリプトを作成"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgid "Akexi Script"
+msgstr "Akexiスクリプト"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgid "Error executing script at line %1:\n%2"
+msgstr "スクリプト %1行目でエラー:\n%2"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgctxt "@info"
+msgid "Design of script <resource>%1</resource> has been modified."
+msgstr "スクリプト <resource>%1</resource> の設計が変更されました。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptpart.cpp
+msgctxt "@info"
+msgid "Script <resource>%1</resource> already exists."
+msgstr "スクリプト <resource>%1</resource> は既に存在します。"
+
+# ============================================================
+# Script design view — actions (Japanese)
+# ============================================================
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Execute the scripting code"
+msgstr "スクリプトコードを実行"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Executes the scripting code."
+msgstr "スクリプトコードを実行します。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Edit actions"
+msgstr "編集アクション"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Provides Edit menu."
+msgstr "編集メニューを提供します。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Configure the scripting editor"
+msgstr "スクリプトエディタを設定"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Configures the scripting editor."
+msgstr "スクリプトエディタを設定します。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Import script"
+msgstr "スクリプトを取り込み"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Imports script from a file."
+msgstr "ファイルからスクリプトを取り込みます。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Export script"
+msgstr "スクリプトを書き出し"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Exports script to a file."
+msgstr "スクリプトをファイルに書き出します。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgctxt "@title:window"
+msgid "Import Script"
+msgstr "スクリプトを取り込み"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgctxt "@title:window"
+msgid "Export Script"
+msgstr "スクリプトを書き出し"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgctxt "@info"
+msgid "Could not read <filename>%1</filename>."
+msgstr "<filename>%1</filename> を読み取れませんでした。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgctxt "@info"
+msgid "Could not write <filename>%1</filename>."
+msgstr "<filename>%1</filename> に書き出せませんでした。"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Import..."
+msgstr "取り込み... (&I)"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Export..."
+msgstr "書き出し... (&E)"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp
+msgid "Script Type"
+msgstr "スクリプト種別"
+
+# ============================================================
+# Data source page (Japanese)
+# ============================================================
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgctxt "Table Field or Query Field"
+msgid "Widget's data source:"
+msgstr "部品のデータソース:"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Form's data source:"
+msgstr "フォームのデータソース:"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Go to selected form's data source"
+msgstr "選択したデータソースに移動"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Goes to selected form's data source"
+msgstr "選択したデータソースに移動します"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "No data source could be assigned for this widget."
+msgstr "この部品に割り当てられるデータソースがありません。"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "No data source could be assigned for multiple widgets."
+msgstr "複数部品に割り当てられるデータソースがありません。"
+
+# ============================================================
+# Project Navigator (Japanese)
+# ============================================================
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgctxt "@title:window"
+msgid "Project Navigator"
+msgstr "構成一覧表"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Open object"
+msgstr "オブジェクトを開く"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Opens object selected in the list."
+msgstr "一覧で選択したオブジェクトを開きます。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Delete object"
+msgstr "オブジェクトを削除"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Deletes the object selected in the list."
+msgstr "一覧で選択したオブジェクトを削除します。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Rename object"
+msgstr "オブジェクト名を変更"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Renames the object selected in the list."
+msgstr "一覧で選択したオブジェクトの名前を変更します。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Design object"
+msgstr "オブジェクトを設計"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Starts designing of the object selected in the list."
+msgstr "一覧で選択したオブジェクトの設計を開始します。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Design in &Text View"
+msgstr "設計ビューで設計 (&T)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Design object in text view"
+msgstr "設計ビューでオブジェクトを設計"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Starts designing of the object in the list in text view."
+msgstr "一覧のオブジェクトを設計ビューで設計します。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgctxt "Export->To Clipboard as Data... "
+msgid "To &Clipboard..."
+msgstr "クリップボードにコピー (&C)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Export data to clipboard"
+msgstr "データをクリップボードに書き出し"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Exports data from the currently selected table or query to clipboard."
+msgstr "現在選択しているテーブルまたはクエリのデータをクリップボードに書き出します。"
+
+# ============================================================
+# Main window toolbar (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow_p.cpp
+msgid "Task-oriented toolbar. Groups commands using tabs."
+msgstr "タスク指向ツールバー。タブでコマンドをグループ化します。"
+
+#: src/main/KexiMainWindow_p.cpp
+msgctxt "@info"
+msgid "Could not start <application>%1</application> application."
+msgstr "<application>%1</application> アプリケーションを起動できませんでした。"
+
+# ============================================================
+# Main window — tooltips for view actions (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgid "Show the Project Navigator pane"
+msgstr "構成一覧表パネルを表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows the Project Navigator pane."
+msgstr "構成一覧表パネルを表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activate the Project Navigator pane"
+msgstr "構成一覧表パネルに切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activates the Project Navigator pane. If it is hidden, shows it first."
+msgstr "構成一覧表パネルに切り替えます。隠れている場合は最初に表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activate the main area"
+msgstr "メイン領域に切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activates the main area."
+msgstr "メイン領域に切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show the Property Editor pane"
+msgstr "プロパティエディタパネルを表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows the Property Editor pane."
+msgstr "プロパティエディタパネルを表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activate the Property Editor pane"
+msgstr "プロパティエディタパネルに切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Activates the Property Editor pane. If it is hidden, shows it first."
+msgstr "プロパティエディタパネルに切り替えます。隠れている場合は最初に表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switch to Global Search box"
+msgstr "グローバル検索ボックスに切り替え"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to Global Search box."
+msgstr "グローバル検索ボックスに切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Clear table contents"
+msgstr "テーブル内容を消去"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Clears table contents."
+msgstr "テーブル内容を消去します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Copies selected table or query data to clipboard."
+msgstr "選択したテーブルまたはクエリのデータをクリップボードにコピーします。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Copy selected table or query data to clipboard"
+msgstr "選択したテーブルまたはクエリのデータをクリップボードにコピー"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Could not connect to the metadata database."
+msgstr "メタデータベースに接続できませんでした。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Could not copy the database file."
+msgstr "データベースファイルをコピーできませんでした。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "%1 (read only)"
+msgstr "%1（読み取り専用）"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Close Window and Rename"
+msgstr "ウィンドウを閉じて名前を変更"
+
+# ============================================================
+# Record navigator tooltips (Japanese)
+# ============================================================
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Go to first record"
+msgstr "先頭レコードに移動"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Go to previous record"
+msgstr "前のレコードに移動"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Go to next record"
+msgstr "次のレコードに移動"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Go to last record"
+msgstr "最後のレコードに移動"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Go to new record"
+msgstr "新しいレコードに移動"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Moves cursor to first record."
+msgstr "カーソルを先頭レコードに移動します。"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Moves cursor to previous record."
+msgstr "カーソルを前のレコードに移動します。"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Moves cursor to next record."
+msgstr "カーソルを次のレコードに移動します。"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Moves cursor to last record."
+msgstr "カーソルを最後のレコードに移動します。"
+
+#: src/widget/utils/kexirecordnavigator.cpp
+msgid "Moves cursor to new record and allows inserting."
+msgstr "カーソルを新しいレコードに移動し、挿入できるようにします。"
+
+# ============================================================
+# Find/Replace dialog titles (Japanese)
+# ============================================================
+#: src/main/kexifinddialog.cpp
+msgctxt "@title:window"
+msgid "Find"
+msgstr "検索"
+
+#: src/main/kexifinddialog.cpp
+msgctxt "@title:window"
+msgid "Find in <resource>%1</resource>"
+msgstr "<resource>%1</resource> を検索"
+
+#: src/main/kexifinddialog.cpp
+msgctxt "@title:window"
+msgid "Replace"
+msgstr "置換"
+
+#: src/main/kexifinddialog.cpp
+msgctxt "@title:window"
+msgid "Replace in <resource>%1</resource>"
+msgstr "<resource>%1</resource> を置換"
+
+# ============================================================
+# Undo/Redo (Japanese)
+# ============================================================
+#: src/widget/undo/kundo2group.cpp
+#: src/widget/undo/kundo2stack.cpp
+msgctxt "Default text for undo action"
+msgid "Undo"
+msgstr "元に戻す"
+
+#: src/widget/undo/kundo2group.cpp
+#: src/widget/undo/kundo2stack.cpp
+msgctxt "Default text for redo action"
+msgid "Redo"
+msgstr "やり直す"
+
+#: src/widget/undo/kundo2group.cpp
+#: src/widget/undo/kundo2stack.cpp
+msgid "Undo %1"
+msgstr "%1 を元に戻す"
+
+#: src/widget/undo/kundo2group.cpp
+#: src/widget/undo/kundo2stack.cpp
+msgid "Redo %1"
+msgstr "%1 をやり直す"
+
+#: src/widget/undo/kundo2stack.cpp
+msgid "Undo"
+msgstr "元に戻す"
+
+#: src/widget/undo/kundo2stack.cpp
+msgid "Redo"
+msgstr "やり直す"
+
+#: src/widget/undo/kundo2model.cpp
+msgid "<empty>"
+msgstr "（なし）"
+
+# ============================================================
+# Form editor — dialog titles (Japanese)
+# ============================================================
+#: src/formeditor/connectiondialog.cpp
+msgctxt "@title:window"
+msgid "Edit Form Connections"
+msgstr "フォームの接続を編集"
+
+#: src/formeditor/connectiondialog.cpp
+msgid "&New Connection"
+msgstr "新規接続 (&N)"
+
+#: src/formeditor/connectiondialog.cpp
+msgid "&Delete Connection"
+msgstr "接続を削除 (&D)"
+
+#: src/formeditor/connectiondialog.cpp
+msgid "Do you want to delete this connection?"
+msgstr "この接続を削除しますか?"
+
+#: src/formeditor/connectiondialog.cpp
+msgctxt "@action:button"
+msgid "&Delete Connection"
+msgstr "接続を削除 (&D)"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgctxt "@title:window"
+msgid "Edit Listview Contents"
+msgstr "リストビューの内容を編集"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "&Add Item"
+msgstr "項目を追加 (&A)"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "&Delete Item"
+msgstr "項目を削除 (&D)"
+
+#: src/formeditor/richtextdialog.cpp
+msgctxt "@title:window"
+msgid "Edit Rich Text"
+msgstr "リッチテキストを編集"
+
+#: src/formeditor/richtextdialog.cpp
+msgid "Bold"
+msgstr "太字"
+
+#: src/formeditor/richtextdialog.cpp
+msgid "Italic"
+msgstr "斜体"
+
+#: src/formeditor/richtextdialog.cpp
+msgid "Underline"
+msgstr "下線"
+
+#: src/formeditor/richtextdialog.cpp
+msgid "Superscript"
+msgstr "上付き"
+
+#: src/formeditor/richtextdialog.cpp
+msgid "Subscript"
+msgstr "下付き"
+
+#: src/formeditor/tabstopdialog.cpp
+msgctxt "@title:window"
+msgid "Edit Tab Order"
+msgstr "タブ順を編集"
+
+#: src/formeditor/tabstopdialog.cpp
+msgid "Handle tab order automatically"
+msgstr "タブ順を自動で管理"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgctxt "@title:window"
+msgid "Assigning Action to Button"
+msgstr "ボタンにアクションを割り当て"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "&Select action to be executed..."
+msgstr "実行するアクションを選択... (&S)"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: src/formeditor/form.cpp
+msgid "Multiple Widgets (%1)"
+msgstr "複数部品 (%1)"
+
+#: src/formeditor/form.cpp
+msgid "Select action to be executed..."
+msgstr "実行するアクションを選択..."
+
+# ============================================================
+# CSV import/export (Japanese)
+# ============================================================
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@title:window"
+msgid "Import CSV Data From File"
+msgstr "CSVファイルからデータを取り込み"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@title:window"
+msgid "Paste CSV Data From Clipboard"
+msgstr "クリップボードからCSVデータを貼り付け"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@title:window"
+msgid "Loading CSV Data"
+msgstr "CSVデータを読み込み中"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Import Options"
+msgstr "取り込みオプション"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Inserting From Clipboard"
+msgstr "クリップボードから挿入中"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "There is no data in the clipboard."
+msgstr "クリップボードにデータがありません。"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "There is no usable data in the clipboard."
+msgstr "クリップボードに利用可能なデータがありません。"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Importing data..."
+msgstr "データを取り込み中..."
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Import has been canceled."
+msgstr "取り込みがキャンセルされました。"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgid "Error occurred during import."
+msgstr "取り込み中にエラーが発生しました。"
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Copying"
+msgstr "コピー中"
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Exporting"
+msgstr "書き出し中"
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Comma \",\""
+msgstr "コンマ \",\""
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Semicolon \";\""
+msgstr "セミコロン \";\""
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Tabulator"
+msgstr "タブ"
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Space \" \""
+msgstr "スペース \" \""
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Other"
+msgstr "その他"
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Hash \"#\""
+msgstr "ハッシュ \"#\""
+
+# ============================================================
+# Project navigator — remaining actions (Japanese)
+# ============================================================
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "&Delete..."
+msgstr "削除... (&D)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "&Rename..."
+msgstr "名前を変更... (&R)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "&Design"
+msgstr "設計 (&D)"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Export data to a file"
+msgstr "データをファイルに書き出し"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Exports data from the currently selected table or query to a file."
+msgstr "現在選択しているテーブルまたはクエリのデータをファイルに書き出します。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgctxt "@info Rename object %1:"
+msgid "Rename <resource>%1</resource>:"
+msgstr "<resource>%1</resource> の名前を変更:"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgctxt "@title:window Rename Object %1."
+msgid "Rename <resource>%1</resource>"
+msgstr "<resource>%1</resource> の名前を変更"
+
+# ============================================================
+# Query designer (Japanese)
+# ============================================================
+#: src/plugins/queries/kexiquerydesignersql.cpp
+msgid "Check Query"
+msgstr "クエリをチェック"
+
+#: src/plugins/queries/kexiquerydesignersql.cpp
+msgid "Checks query for validity."
+msgstr "クエリの構文をチェックします。"
+
+#: src/plugins/queries/kexiquerydesignersql.cpp
+msgid "The query is correct"
+msgstr "クエリに問題はありません"
+
+#: src/plugins/queries/kexiquerydesignersql.cpp
+msgid "The query is incorrect"
+msgstr "クエリにエラーがあります"
+
+#: src/plugins/queries/kexiquerydesignersql.cpp
+msgid "Please enter your query..."
+msgstr "クエリを入力してください..."
+
+# ============================================================
+# KexiView — actions (Japanese)
+# ============================================================
+#: src/core/KexiView.cpp
+msgid "Delete the currently selected rows"
+msgstr "現在選択している行を削除"
+
+#: src/core/KexiView.cpp
+msgid "Delete selected rows"
+msgstr "選択した行を削除"
+
+#: src/core/KexiView.cpp
+msgid "There is no item to delete."
+msgstr "削除する項目がありません。"
+
+# ============================================================
+# Server driver not found (Japanese)
+# ============================================================
+#: src/widget/KexiServerDriverNotFoundMessage.cpp
+msgctxt "@info"
+msgid ""
+"<title>No database server drivers found</title>"
+"<para>Connection to a database server requires an appropriate driver which "
+"you do not have installed.</para>"
+"<subtitle>Details</subtitle>"
+"<para>To obtain database drivers please use your Package Manager to search "
+"and install packages with so-called <emphasis>KDb drivers</emphasis> named <filename>kdb-****-driver</filename>. "
+"Please note that your package names could vary slightly depending on the "
+"operating system you use.</para>"
+msgstr ""
+"<title>データベースサーバのドライバが見つかりません</title>"
+"<para>データベースサーバへの接続には、適切なドライバがインストールされている必要があります。</para>"
+"<subtitle>詳細:</subtitle>"
+"<para>データベースドライバを入手するには、パッケージマネージャーを使用して、<filename>kdb-****-driver</filename> の形式の、<emphasis>KDb ドライバ</emphasis>パッケージを検索してインストールしてください。但し、お使いのオペレーティングシステムによってパッケージ名が若干異なる場合があります。</para>"
+
+# ============================================================
+# Misc remaining — visible (Japanese)
+# ============================================================
+#: src/widget/utils/kexicontextmenuutils.cpp
+msgctxt "@title"
+msgid "Insert Image From File"
+msgstr "ファイルから画像を挿入"
+
+#: src/widget/utils/kexicontextmenuutils.cpp
+msgctxt "@title"
+msgid "Save Image to File"
+msgstr "画像をファイルに保存"
+
+#: src/widget/utils/kexicontextmenuutils.cpp
+msgid "&Don't Replace"
+msgstr "置き換えない (&D)"
+
+#: src/widget/tableview/KexiTableScrollArea.cpp
+msgctxt "@info:whatsthis"
+msgid "Contains a pointer to the currently selected record."
+msgstr "現在選択しているレコードへのポインタを示します。"
+
+#: src/widget/tableview/KexiTableScrollArea.cpp
+msgctxt "@info:whatsthis"
+msgid "Column <resource>%1</resource>."
+msgstr "列 <resource>%1</resource>。"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "&New Subitem"
+msgstr "新しいサブ項目 (&N)"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "Move &Up"
+msgstr "上に移動 (&U)"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "Move &Down"
+msgstr "下に移動 (&D)"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "Columns"
+msgstr "列"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "Width"
+msgstr "幅"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "Clickable"
+msgstr "クリック可能"
+
+#: src/formeditor/editlistviewdialog.cpp
+msgid "Resizable"
+msgstr "サイズ変更可能"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "No action"
+msgstr "アクションなし"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Open in Data View"
+msgstr "データビューで開く"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Open in Design View"
+msgstr "設計ビューで開く"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Open in Text View"
+msgstr "設計ビューで開く"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Execute"
+msgstr "実行"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Application actions"
+msgstr "アプリケーションアクション"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Action category"
+msgstr "アクションカテゴリ"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Action to execute"
+msgstr "実行するアクション"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Assign action"
+msgstr "アクションを割り当て"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Save all changes made to this connection information"
+msgstr "この接続情報への変更をすべて保存"
+
+#: src/formeditor/form.cpp
+msgctxt "@info"
+msgid "Could not rename widget"
+msgstr "部品の名前を変更できませんでした"
+
+#: src/core/kexipart.cpp
+msgid "Close View"
+msgstr "ビューを閉じる"
+
+#: src/core/kexipart.cpp
+msgid "Create New Object (%1)"
+msgstr "新規オブジェクトを作成 (%1)"
+
+#: src/core/kexipart.cpp
+msgid "Could not create object:"
+msgstr "オブジェクトを作成できませんでした:"
+
+#: src/core/kexipart.cpp
+msgctxt "@info"
+msgid "Renaming object <resource>%1</resource> to <resource>%2</resource> failed."
+msgstr "オブジェクト <resource>%1</resource> を <resource>%2</resource> に名前変更できませんでした。"
+
+#: src/core/kexipart.cpp
+msgctxt "@info"
+msgid "Opening object <resource>%1</resource> failed.\n%2 %3"
+msgstr "オブジェクト <resource>%1</resource> を開けませんでした。\n%2 %3"
+
+#: src/core/kexipartbase.h
+msgid "unnamed"
+msgstr "無名"
+
+# ============================================================
+# Report view — page navigation (Japanese)
+# ============================================================
+#: src/plugins/reports/kexireportview.cpp
+msgid "First page"
+msgstr "最初のページ"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Previous page"
+msgstr "前のページ"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Next page"
+msgstr "次のページ"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Last page"
+msgstr "最後のページ"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Go to first page"
+msgstr "最初のページに移動"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Go to previous page"
+msgstr "前のページに移動"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Go to next page"
+msgstr "次のページに移動"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Go to last page"
+msgstr "最後のページに移動"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Exporting the current report as PDF failed."
+msgstr "現在のレポートのPDF書き出し処理に失敗しました。"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Exporting the current report as text document failed."
+msgstr "現在のレポートのテキスト文書書き出し処理に失敗しました。"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Exporting the current report as spreadsheet failed."
+msgstr "現在のレポートの表計算書き出し処理に失敗しました。"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Exporting the current report as web page failed."
+msgstr "現在のレポートのWebページ書き出し処理に失敗しました。"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Printing of the current report failed."
+msgstr "現在のレポートの印刷に失敗しました。"
+
+#: src/plugins/reports/kexireportview.cpp
+msgctxt "Tooltip, page N of M"
+msgid "Page %1 of %2"
+msgstr "%1 / %2ページ"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Page %1"
+msgstr "%1ページ"
+
+#: src/plugins/reports/kexireportview.cpp
+msgid "Page"
+msgstr "ページ"
+
+# ============================================================
+# KexiPart — object type names (Japanese)
+# ============================================================
+#: src/core/kexipartinfo.cpp
+msgid "All Objects"
+msgstr "すべてのオブジェクト"
+
+#: src/core/kexipartinfo.cpp
+msgid "Project's Object Type"
+msgstr "プロジェクトのオブジェクト種別"
+
+#: src/core/kexipartmanager.cpp
+msgid "Could not delete object's user data."
+msgstr "オブジェクトのユーザーデータを削除できませんでした。"
+
+#: src/core/kexipartmanager.cpp
+msgid "Could not delete this project."
+msgstr "このプロジェクトを削除できませんでした。"
+
+#: src/core/kexipartmanager.cpp
+msgid "Open As Read Only"
+msgstr "読み取り専用で開く"
+
+# ============================================================
+# Project operations (Japanese)
+# ============================================================
+#: src/core/kexiproject.cpp
+msgid "Could not create new project."
+msgstr "新しいプロジェクトを作成できませんでした。"
+
+#: src/core/kexiproject.cpp
+msgid "Could not open project file."
+msgstr "プロジェクトファイルを開けませんでした。"
+
+#: src/core/kexiproject.cpp
+msgid "Could not save project."
+msgstr "プロジェクトを保存できませんでした。"
+
+#: src/core/kexiproject.cpp
+msgid "Could not remove the project."
+msgstr "プロジェクトを削除できませんでした。"
+
+#: src/core/kexiproject.cpp
+msgid "Could not close the project."
+msgstr "プロジェクトを閉じられませんでした。"
+
+# ============================================================
+# CSV import wizard — remaining (Japanese)
+# ============================================================
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+msgctxt "@action:button Import CSV"
+msgid "&Import..."
+msgstr "取り込み... (&I)"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "@action:button Add Database Primary Key to a Table"
+msgid "&Add Primary Key"
+msgstr "主キーを追加 (&A)"
+
+#: src/plugins/importexport/csv/kexicsvimportdialog.cpp
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "@action:button Do Not Add Database Primary Key to a Table"
+msgid "Do &Not Add"
+msgstr "追加しない (&N)"
+
+# ============================================================
+# Table designer — remaining high priority (Japanese)
+# ============================================================
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgctxt "@info"
+msgid "<para>Saving changes for existing table design is now required.</para>%1"
+msgstr "<para>既存のテーブル設計の変更を保存する必要があります。</para>%1"
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Change <resource>%1</resource> field name to <resource>%2</resource> "
+msgstr "フィールド名を <resource>%1</resource> から <resource>%2</resource> に変更 "
+
+#: src/plugins/tables/kexitabledesignerview.cpp
+msgid "Change type for field <resource>%1</resource> to <resource>%2</resource>"
+msgstr "フィールド <resource>%1</resource> の型を <resource>%2</resource> に変更"
+
+# ============================================================
+# Database connection (Japanese)
+# ============================================================
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Save all changes made to this connection information. "
+msgstr "この接続情報への変更をすべて保存します。"
+
+#: src/widget/kexidbconnectionwidget.cpp
+msgid "Loads database list from server..."
+msgstr "サーバからデータベース一覧を読み込みます..."
+
+# ============================================================
+# Project selector (Japanese)
+# ============================================================
+#: src/widget/KexiProjectSelectorWidget.cpp
+msgid "Select a project on <resource>%1</resource> database server to open:"
+msgstr "開くプロジェクトを <resource>%1</resource> データベースサーバから選択:"
+
+# ============================================================
+# Object info label (Japanese)
+# ============================================================
+#: src/widget/KexiObjectInfoLabel.cpp
+msgctxt "Object class \"objectName\"..."
+msgid "%1 <resource>%2</resource>"
+msgstr "%1 <resource>%2</resource>"
+
+# ============================================================
+# Form editor — undo/redo commands (Japanese)
+# ============================================================
+#: src/formeditor/commands.cpp
+msgid "Align Widgets to Grid"
+msgstr "部品をグリッドに整列"
+
+#: src/formeditor/commands.cpp
+msgid "Align Widgets to Left"
+msgstr "部品を左揃え"
+
+#: src/formeditor/commands.cpp
+msgid "Align Widgets to Right"
+msgstr "部品を右揃え"
+
+#: src/formeditor/commands.cpp
+msgid "Align Widgets to Top"
+msgstr "部品を上揃え"
+
+#: src/formeditor/commands.cpp
+msgid "Align Widgets to Bottom"
+msgstr "部品を下揃え"
+
+#: src/formeditor/commands.cpp
+msgid "Resize Widgets to Fit Contents"
+msgstr "部品を内容に合わせてサイズ変更"
+
+#: src/formeditor/commands.cpp
+msgid "Resize Widgets to Grid"
+msgstr "部品をグリッドに合わせてサイズ変更"
+
+#: src/formeditor/commands.cpp
+msgid "Resize Widgets to Shortest"
+msgstr "部品を最小の高さに揃える"
+
+#: src/formeditor/commands.cpp
+msgid "Resize Widgets to Tallest"
+msgstr "部品を最大の高さに揃える"
+
+#: src/formeditor/commands.cpp
+msgid "Resize Widgets to Narrowest"
+msgstr "部品を最小の幅に揃える"
+
+#: src/formeditor/commands.cpp
+msgid "Resize Widgets to Widest"
+msgstr "部品を最大の幅に揃える"
+
+#: src/formeditor/commands.cpp
+msgid "Move multiple widgets"
+msgstr "複数部品を移動"
+
+#: src/formeditor/commands.cpp
+msgid "Move widget"
+msgstr "部品を移動"
+
+#: src/formeditor/commands.cpp
+msgid "Paste"
+msgstr "貼り付け"
+
+#: src/formeditor/commands.cpp
+msgid "Cut"
+msgstr "切り取り"
+
+#: src/formeditor/commands.cpp
+msgid "Duplicate"
+msgstr "複製"
+
+#: src/formeditor/commands.cpp
+msgid "Delete widget"
+msgstr "部品を削除"
+
+#: src/formeditor/commands.cpp
+msgid "Insert widget"
+msgstr "部品を挿入"
+
+#: src/formeditor/commands.cpp
+msgid "Add page"
+msgstr "ページを追加"
+
+#: src/formeditor/commands.cpp
+msgid "Delete page"
+msgstr "ページを削除"
+
+# ============================================================
+# Password dialog (Japanese)
+# ============================================================
+#: src/widget/KexiDBPasswordDialog.cpp
+msgid "Please enter the password."
+msgstr "パスワードを入力してください。"
+
+#: src/widget/KexiDBPasswordDialog.cpp
+msgid "Please enter the password for user."
+msgstr "ユーザーのパスワードを入力してください。"
+
+# ============================================================
+# File dialog (Japanese)
+# ============================================================
+#: src/widget/KexiFileDialog.cpp
+msgid "All supported formats"
+msgstr "対応する全形式"
+
+#: src/widget/KexiFileRequester.cpp
+msgid "Select directory"
+msgstr "ディレクトリを選択"
+
+#: src/widget/KexiFileRequester.cpp
+msgid "Filter:"
+msgstr "ファイルの種類:"
+
+#: src/widget/KexiStartupFileHandler.cpp
+msgid "This file already exists. Do you want to overwrite it?"
+msgstr "このファイルは既に存在します。上書きしますか?"
+
+#: src/widget/KexiStartupFileHandler.cpp
+msgid "Akexi Database Frontend File"
+msgstr "Akexi データベースフロントエンドファイル"
+
+#: src/widget/KexiStartupFileHandler.cpp
+msgid "All Supported Files"
+msgstr "対応する全ファイル"
+
+# ============================================================
+# Misc — remaining (Japanese)
+# ============================================================
+#: src/widget/utils/kexidisplayutils.cpp
+msgctxt "Autonumber, make it as short as possible"
+msgid "(auto)"
+msgstr "(自動)"
+
+#: src/widget/fields/KexiFieldListModelItem.cpp
+msgid "* (All Columns)"
+msgstr "* (すべての列)"
+
+#: src/plugins/forms/kexiformmanager.cpp
+msgctxt "@title:window"
+msgid "Set Form's Data Source"
+msgstr "フォームのデータソースを設定"
+
+#: src/widget/utils/kexicontextmenuutils.cpp
+msgctxt "Object name : Object type"
+msgid "%1 : %2"
+msgstr "%1 : %2"
+
+#: src/core/KexiRecentProjects.cpp
+msgid "Recent Projects"
+msgstr "最近のプロジェクト"
+
+# ============================================================
+# Compact database (Japanese)
+# ============================================================
+#: src/main/KexiMainWindow.cpp
+msgctxt "@action:button Compact database"
+msgid "Compact"
+msgstr "圧縮"
+
+# ============================================================
+# Relations view (Japanese)
+# ============================================================
+#: src/widget/relations/KexiRelationsView.cpp
+msgid "Relations"
+msgstr "リレーション"
+
+# ============================================================
+# KexiGroupButton (Japanese)
+# ============================================================
+#: src/core/KexiGroupButton.cpp
+msgid "Menu"
+msgstr "メニュー"
+
+# ============================================================
+# KexiWindow — switching (Japanese)
+# ============================================================
+#: src/core/KexiWindow.cpp
+msgid "Switching view mode for '%1' is currently disabled for this object type."
+msgstr "このオブジェクト種別ではビューモードの切り替えは無効です。"
+
+#: src/core/KexiWindow.cpp
+msgid "The <resource>%1</resource> object could not be opened in \"%2\" view mode."
+msgstr "オブジェクト <resource>%1</resource> を \"%2\" ビューモードで開けませんでした。"
+
+#: src/core/KexiWindow.cpp
+msgctxt "@info"
+msgid "Selected view is not supported for <resource>%1</resource> object."
+msgstr "選択したビューはオブジェクト <resource>%1</resource> ではサポートされていません。"
+
+# ============================================================
+# Core messages (Japanese)
+# ============================================================
+#: src/core/kexi.cpp
+msgid "Could not open <resource>%1</resource> object in specified view mode."
+msgstr "指定されたビューモードでオブジェクト <resource>%1</resource> を開けませんでした。"
+
+#: src/core/kexi.cpp
+msgid "Could not load project because the file \"%1\" does not exist."
+msgstr "ファイル「%1」が存在しないため、プロジェクトを読み込めませんでした。"
+
+#: src/core/kexiguimsghandler.cpp
+msgid "Detailed information"
+msgstr "詳細情報"
+
+# ============================================================
+# KexiStartup (Japanese)
+# ============================================================
+#: src/main/startup/KexiStartup.cpp
+msgid "Could not open the file \"%1\"."
+msgstr "ファイル「%1」を開けませんでした。"
+
+#: src/plugins/forms/kexidbfactorybase.cpp
+msgid "Frame Color"
+msgstr "枠の色"
+
+#: src/plugins/forms/kexidbfactorybase.cpp
+msgid "Read Only"
+msgstr "読み取り専用"
+
+# ============================================================
+# futureI18n → xi18n migration (previously untranslated)
+# ============================================================
+
+#: src/main/KexiMainWindow.cpp
+msgid "Project &Properties..."
+msgstr "プロジェクトのプロパティ..."
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Relationships..."
+msgstr "リレーションシップ..."
+
+#: src/main/KexiMainWindow.cpp
+msgid "Project relationships"
+msgstr "プロジェクトのリレーションシップ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows project relationships."
+msgstr "プロジェクトのリレーションシップを表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Filter..."
+msgstr "フィルタ..."
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Next Tab"
+msgstr "次のタブ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Next tab"
+msgstr "次のタブ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to the next tab."
+msgstr "次のタブに切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Previous Tab"
+msgstr "前のタブ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Previous tab"
+msgstr "前のタブ"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Switches to the previous tab."
+msgstr "前のタブに切り替えます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "&Settings..."
+msgstr "設定..."
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show Akexi settings"
+msgstr "Akexi の設定を表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows Akexi settings."
+msgstr "Akexi の設定を表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "making print preview for"
+msgstr "印刷プレビューを作成中"
+
+#: src/main/KexiMainWindow.cpp
+msgid "printing"
+msgstr "印刷中"
+
+#: src/main/KexiMainWindow.cpp
+msgid "cannot print object"
+msgstr "オブジェクトを印刷できません"
+
+#: src/main/KexiMainWindow.cpp
+msgid "cannot make print preview of object"
+msgstr "オブジェクトの印刷プレビューを作成できません"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Print data from the active table or query"
+msgstr "アクティブなテーブルまたはクエリのデータを印刷"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Prints data from the active table or query."
+msgstr "アクティブなテーブルまたはクエリのデータを印刷します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show print preview for the active table or query"
+msgstr "アクティブなテーブルまたはクエリの印刷プレビューを表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows print preview for the active table or query."
+msgstr "アクティブなテーブルまたはクエリの印刷プレビューを表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Print Set&up..."
+msgstr "印刷設定..."
+
+#: src/main/KexiMainWindow.cpp
+msgid "Show print setup for the active table or query"
+msgstr "アクティブなテーブルまたはクエリの印刷設定を表示"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Shows print setup for the active table or query."
+msgstr "アクティブなテーブルまたはクエリの印刷設定を表示します。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Pressing this button will save all recent changes made in \"%1\" object."
+msgstr "このボタンを押すと、「%1」オブジェクトへの変更がすべて保存されます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Pressing this button will ignore all unsaved changes made in \"%1\" object."
+msgstr "このボタンを押すと、「%1」オブジェクトへの未保存の変更がすべて破棄されます。"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Do you want to save changes before printing?"
+msgstr "印刷する前に変更を保存しますか?"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Do you want to save changes before making print preview?"
+msgstr "印刷プレビューを作成する前に変更を保存しますか?"
+
+#: src/main/KexiMainWindow.cpp
+msgid "Do you want to save changes before showing page setup?"
+msgstr "ページ設定を表示する前に変更を保存しますか?"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Print data"
+msgstr "データを印刷"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Prints data from the currently selected table or query."
+msgstr "現在選択されているテーブルまたはクエリのデータを印刷します。"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Page setup for data"
+msgstr "データのページ設定"
+
+#: src/widget/navigator/KexiProjectNavigator.cpp
+msgid "Shows page setup for printing the active table or query."
+msgstr "アクティブなテーブルまたはクエリの印刷ページ設定を表示します。"
+
+#: src/mobile/KexiMobileMainWindow.cpp
+#: src/mobile/KexiMobileToolbar.cpp
+msgid "Project"
+msgstr "プロジェクト"
+
+#: src/mobile/KexiMobileToolbar.cpp
+msgid "Previous"
+msgstr "前へ"
+
+#: src/mobile/KexiMobileToolbar.cpp
+msgid "Next"
+msgstr "次へ"
+
+#: src/mobile/KexiMobileToolbar.cpp
+msgid "0 of 0"
+msgstr "0 / 0"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Clear widget's data source"
+msgstr "部品のデータソースをクリア"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Clear form's data source"
+msgstr "フォームのデータソースをクリア"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Select fields from the list below and drag them onto a form or click the <interface>Insert</interface> button"
+msgstr "以下のリストからフィールドを選択し、フォームにドラッグするか、<interface>挿入</interface>ボタンをクリックしてください。"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Available fields"
+msgstr "使用可能なフィールド"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Insert selected fields into form"
+msgstr "選択したフィールドをフォームに挿入"
+
+#: src/plugins/forms/kexidatasourcepage.cpp
+msgid "Inserts selected fields into form"
+msgstr "選択したフィールドをフォームに挿入します。"
+
+#: src/plugins/forms/kexiformmanager.cpp
+msgid "Connect Signals/Slots"
+msgstr "シグナル/スロットを接続"
+
+#: src/plugins/forms/kexiformpart.cpp
+msgid "Other Widgets"
+msgstr "その他の部品"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Totals"
+msgstr "集計"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Describes a way of computing totals for a given field or expression."
+msgstr "指定されたフィールドまたは式の集計方法を示します。"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Group by"
+msgstr "グループ化"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Sum"
+msgstr "合計"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Average"
+msgstr "平均"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Min"
+msgstr "最小"
+
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid "Max"
+msgstr "最大"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "AutoField editor's type"
+msgid "Auto"
+msgstr "自動"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Edit Contents of List Widget..."
+msgstr "リスト部品の内容を編集..."
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Office Templates"
+msgstr "テンプレート（オフィス）"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Database for collecting and managing contacts"
+msgstr "連絡先を管理するためのデータベース"
+
+#: src/main/startup/KexiNewProjectAssistant.cpp
+msgid "Database for collecting movies"
+msgstr "映画を収集するためのデータベース"
+
+#: src/main/KexiBugReportDialog.cpp
+msgctxt "Full version of Kexi app"
+msgid "Full version: %1"
+msgstr "フルバージョン: %1"
+
+#: src/main/KexiBugReportDialog.cpp
+msgid "(filed directly from Akexi app)"
+msgstr "(Akexi アプリから直接報告)"
+
+#: src/formeditor/kexiactionselectiondialog.cpp
+msgid "Show Page Setup..."
+msgstr "ページ設定を表示..."
+
+#: src/formeditor/form.cpp
+msgid "Events"
+msgstr "イベント"
+
+#: src/plugins/forms/kexiformview.cpp
+msgid "Insert AutoField widget"
+msgstr "オートフィールド部品を挿入"
+
+#: src/plugins/forms/kexiformview.cpp
+msgid "Insert %1 AutoField widgets"
+msgstr "%1 個のオートフィールド部品を挿入"
+
+#: src/plugins/importexport/csv/kexicsvexportwizard.cpp
+msgid "Options"
+msgstr "オプション"
+
+#: src/plugins/forms/widgets/kexidbautofield.cpp
+msgctxt "Unbound Auto Field"
+msgid "%1 (unbound)"
+msgstr "%1（未バインド）"
+
+#: src/main/KexiMainWindow.cpp
+msgid "From File... (Import)"
+msgstr "ファイルから取り込み..."
+
+#: src/main/KexiMainWindow.cpp
+msgid "From Server... (Import)"
+msgstr "サーバから取り込み..."
+
+# ============================================================
+# Merged from upstream KDE Japanese translation
+# ============================================================
+
+#: src/formeditor/form_p.cpp
+msgid "Window title"
+msgstr "Window title"
+
+#: src/formeditor/form_p.cpp
+msgid "Text"
+msgstr "Text"
+
+#: src/formeditor/form_p.cpp
+msgid "Background Pixmap"
+msgstr "Background Pixmap"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Property: enabled widget"
+msgid "Enabled"
+msgstr "Enabled"
+
+#: src/formeditor/form_p.cpp
+msgid "Geometry"
+msgstr "Geometry"
+
+#: src/formeditor/form_p.cpp
+msgid "Size Policy"
+msgstr "Size Policy"
+
+#: src/formeditor/form_p.cpp
+msgid "Minimum Size"
+msgstr "Minimum Size"
+
+#: src/formeditor/form_p.cpp
+msgid "Maximum Size"
+msgstr "Maximum Size"
+
+#: src/formeditor/form_p.cpp
+msgid "Font"
+msgstr "Font"
+
+#: src/formeditor/form_p.cpp
+msgid "Cursor"
+msgstr "Cursor"
+
+#: src/formeditor/form_p.cpp
+msgid "Foreground Color"
+msgstr "Foreground Color"
+
+#: src/formeditor/form_p.cpp
+msgid "Background Color"
+msgstr "Background Color"
+
+#: src/formeditor/form_p.cpp
+msgid "Fill Background"
+msgstr "Fill Background"
+
+#: src/formeditor/form_p.cpp
+msgid "Focus Policy"
+msgstr "Focus Policy"
+
+#: src/formeditor/form_p.cpp
+msgid "Margin"
+msgstr "Margin"
+
+#: src/formeditor/form_p.cpp
+msgid "Style Sheet"
+msgstr "Style Sheet"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Widget's Tooltip"
+msgid "Tooltip"
+msgstr "Tooltip"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Widget's Whats This"
+msgid "What's This"
+msgstr "What's This"
+
+#: src/formeditor/form_p.cpp
+msgid "Icon Size"
+msgstr "Icon Size"
+
+#: src/formeditor/form_p.cpp
+msgid "Frame Width"
+msgstr "Frame Width"
+
+#: src/formeditor/form_p.cpp
+msgid "Mid Frame Width"
+msgstr "Mid Frame Width"
+
+#: src/formeditor/form_p.cpp
+msgid "Frame Shape"
+msgstr "Frame Shape"
+
+#: src/formeditor/form_p.cpp
+msgid "Frame Shadow"
+msgstr "Frame Shadow"
+
+#: src/formeditor/form_p.cpp
+msgid "Vertical Scrollbar"
+msgstr "Vertical Scrollbar"
+
+#: src/formeditor/form_p.cpp
+msgid "Horizontal Scrollbar"
+msgstr "Horizontal Scrollbar"
+
+#: src/formeditor/form_p.cpp
+msgid "No Background"
+msgstr "No Background"
+
+#: src/formeditor/form_p.cpp
+msgid "Palette Foreground"
+msgstr "Palette Foreground"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Auto (HINT: for AutoText)"
+msgid "Auto"
+msgstr "自動"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Baseline (HINT: for Align)"
+msgid "Baseline"
+msgstr "Baseline"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Left (HINT: for Align)"
+msgid "Left"
+msgstr "左"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Right (HINT: for Align)"
+msgid "Right"
+msgstr "右"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Center (HINT: for Align)"
+msgid "Center"
+msgstr "中央"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Justify (HINT: for Align)"
+msgid "Justify"
+msgstr "両端揃え"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Top (HINT: for Align)"
+msgid "Top"
+msgstr "上"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Bottom (HINT: for Align)"
+msgid "Bottom"
+msgstr "下"
+
+#: src/formeditor/form_p.cpp
+msgctxt "No Frame (HINT: for Frame Shape)"
+msgid "No Frame"
+msgstr "フレームなし"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Box (HINT: for Frame Shape)"
+msgid "Box"
+msgstr "ボックス"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Panel (HINT: for Frame Shape)"
+msgid "Panel"
+msgstr "Panel"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Windows Panel (HINT: for Frame Shape)"
+msgid "Windows Panel"
+msgstr "Windows Panel"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Horiz. Line (HINT: for Frame Shape)"
+msgid "Horiz. Line"
+msgstr "Horiz. Line"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Vertical Line (HINT: for Frame Shape)"
+msgid "Vertical Line"
+msgstr "Vertical Line"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Styled (HINT: for Frame Shape)"
+msgid "Styled"
+msgstr "Styled"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Popup (HINT: for Frame Shape)"
+msgid "Popup"
+msgstr "Popup"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Menu Bar (HINT: for Frame Shape)"
+msgid "Menu Bar"
+msgstr "Menu Bar"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Toolbar (HINT: for Frame Shape)"
+msgid "Toolbar"
+msgstr "Toolbar"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Text Box (HINT: for Frame Shape)"
+msgid "Text Box"
+msgstr "Text Box"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Tab Widget (HINT: for Frame Shape)"
+msgid "Tab Widget"
+msgstr "Tab Widget"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Group Box (HINT: for Frame Shape)"
+msgid "Group Box"
+msgstr "Group Box"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Plain (HINT: for Frame Shadow)"
+msgid "Plain"
+msgstr "Plain"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Raised (HINT: for Frame Shadow)"
+msgid "Raised"
+msgstr "Raised"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Sunken (HINT: for Frame Shadow)"
+msgid "Sunken"
+msgstr "Sunken"
+
+#: src/formeditor/form_p.cpp
+msgctxt "for Frame Shadow"
+msgid "Internal"
+msgstr "Internal"
+
+#: src/formeditor/form_p.cpp
+msgctxt "No Focus (HINT: for Focus)"
+msgid "No Focus"
+msgstr "No Focus"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Tab (HINT: for Focus)"
+msgid "Tab"
+msgstr "Tab"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Click (HINT: for Focus)"
+msgid "Click"
+msgstr "Click"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Tab/Click (HINT: for Focus)"
+msgid "Tab/Click"
+msgstr "Tab/Click"
+
+#: src/formeditor/form_p.cpp
+msgctxt "Tab/Click/MouseWheel (HINT: for Focus)"
+msgid "Tab/Click/Mouse Wheel"
+msgstr "Tab/Click/Mouse Wheel"
+
+#: src/formeditor/form_p.cpp
+msgid "Always Off"
+msgstr "常にオフ"
+
+#: src/formeditor/form_p.cpp
+msgid "Always On"
+msgstr "常にオン"
+
+#: src/formeditor/form_p.cpp
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: src/formeditor/form_p.cpp
+msgid "Vertical"
+msgstr "垂直"
+
+#: src/formeditor/form_p.cpp
+msgid "Left to Right"
+msgstr "左から右"
+
+#: src/formeditor/form_p.cpp
+msgid "Right to Left"
+msgstr "右から左"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Drop-Down Button for Image Box Visible (a property name, keep the text narrow!)"
+msgid "Drop-Down\nButton Visible"
+msgstr "Drop-Down\nButton Visible"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Auto Repeat Button's Delay"
+msgid "Auto Rep. Delay"
+msgstr "Auto Rep. Delay"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Auto Repeat Button's Interval"
+msgid "Auto Rep. Interval"
+msgstr "Auto Rep. Interval"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Button is flat"
+msgid "Flat"
+msgstr "Flat"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Allow to open remote hyperlinks"
+msgid "Remote Hyperlink"
+msgstr "Remote Hyperlink"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Allow to open executables"
+msgid "Executable Hyperlink"
+msgstr "Executable Hyperlink"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink type, NoHyperlink"
+msgid "No Hyperlink"
+msgstr "No Hyperlink"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink type, StaticHyperlink"
+msgid "Static"
+msgstr "Static"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink type, DynamicHyperlink"
+msgid "Dynamic"
+msgstr "Dynamic"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink tool, DefaultTool"
+msgid "Default"
+msgstr "デフォルト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink tool, BrowserTool"
+msgid "Browser"
+msgstr "ブラウザ"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Hyperlink tool, MailerTool"
+msgid "Mailer"
+msgstr "メーラー"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "For Text Format"
+msgid "Plain"
+msgstr "プレーンテキスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "For Text Format"
+msgid "Hypertext"
+msgstr "ハイパーテキスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "For Text Format"
+msgid "Auto"
+msgstr "自動"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "For Text Format"
+msgid "Log"
+msgstr "ログ"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "property: Can open external links in label"
+msgid "Open Ext. Links"
+msgstr "外部リンクを開く"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: line edit's placeholder text"
+msgid "Placeholder Text"
+msgstr "プレースホルダーテキスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Clear Button Enabled"
+msgid "Clear Button"
+msgstr "クリアボタン"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Password Mode for line edit"
+msgid "Password Mode"
+msgstr "パスワードモード"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Squeezed Text Mode for line edit"
+msgid "Squeezed Text"
+msgstr "圧縮テキスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Policy"
+msgid "At Word Boundary"
+msgstr "単語の境界"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Policy"
+msgid "Anywhere"
+msgstr "任意の位置"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Policy"
+msgid "At Word Boundary If Possible"
+msgstr "可能なら単語の境界"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Position"
+msgid "None"
+msgstr "なし"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Position"
+msgid "Widget's Width"
+msgstr "部品幅"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Position"
+msgid "In Pixels"
+msgstr "ピクセル単位"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: For Word Wrap Position"
+msgid "In Columns"
+msgstr "列単位"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Show Scroll Bar As Needed"
+msgid "As Needed"
+msgstr "必要に応じて"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Scroll Bar Always Off"
+msgid "Always Off"
+msgstr "常にオフ"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Scroll Bar Always On"
+msgid "Always On"
+msgstr "常にオン"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: Text Edit accepts rich text"
+msgid "Rich Text"
+msgstr "リッチテキスト"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property: HTML value of text edit"
+msgid "HTML"
+msgstr "HTML"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "'Title' property for group box"
+msgid "Title"
+msgstr "タイトル"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "'Flat' property for group box"
+msgid "Flat"
+msgstr "フラット"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "'Current page' property for tab widget"
+msgid "Current Page"
+msgstr "現在のページ"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Tab Widget's Elide Mode property"
+msgid "Elide Mode"
+msgstr "省略モード"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Tab Widget's property: true if can use scroll buttons"
+msgid "Scroll Buttons"
+msgstr "スクロールボタン"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property value for Tab Shape"
+msgid "Rounded"
+msgstr "角丸"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgctxt "Property value for Tab Shape"
+msgid "Triangular"
+msgstr "三角"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp
+msgid "Column 1"
+msgstr "列1"
+
+msgid "Reverts the most recent editing action."
+msgstr "最新の編集操作を取り消します。"
+
+msgid "Reverts the most recent undo action."
+msgstr "最新の元に戻す操作をやり直します。"
+
+msgid "Find text"
+msgstr "テキストを検索"
+
+msgid "Looks up the first occurrence of a piece of text."
+msgstr "テキストの最初の出現箇所を検索します。"
+
+msgid "Delete the current record"
+msgstr "現在のレコードを削除"
+
+msgid "Deletes the current record."
+msgstr "現在のレコードを削除します。"
+
+msgid "Edit currently selected item"
+msgstr "現在選択されている項目を編集"
+
+msgid "Edits currently selected item."
+msgstr "現在選択されている項目を編集します。"
+
+msgid "opening"
+msgstr "開いています"
+
+msgid "table not found"
+msgstr "テーブルが見つかりません"
+
+msgid "query not found"
+msgstr "クエリが見つかりません"
+
+msgid "macro not found"
+msgstr "マクロが見つかりません"
+
+msgid "script not found"
+msgstr "スクリプトが見つかりません"
+
+msgid "object not found"
+msgstr "オブジェクトが見つかりません"
+
+msgid "cannot execute object"
+msgstr "オブジェクトを実行できません"
+
+msgid "cannot open object"
+msgstr "オブジェクトを開けません"
+
+msgid "Could not delete object."
+msgstr "オブジェクトを削除できませんでした。"
+
+msgid "Could not set empty name for this object."
+msgstr "このオブジェクトに空の名前を設定できませんでした。"
+
+msgid "Could not open the SQLite3 data file for inspection."
+msgstr "検査用にSQLite3データファイルを開けませんでした。"
+
+msgid "Could not open the copied database file."
+msgstr "コピーしたデータベースファイルを開けませんでした。"
+
+msgid "Could not create the metadata connection."
+msgstr "メタデータ接続を作成できませんでした。"
+
+msgid "Could not create the metadata database."
+msgstr "メタデータデータベースを作成できませんでした。"
+
+msgid "Could not use the metadata database."
+msgstr "メタデータデータベースを使用できませんでした。"
+
+msgid "Could not create metadata table."
+msgstr "メタデータテーブルを作成できませんでした。"
+
+msgid "Could not write metadata."
+msgstr "メタデータを書き込めませんでした。"
+
+msgid "Could not create objects metadata table."
+msgstr "オブジェクトメタデータテーブルを作成できませんでした。"
+
+msgid "Could not create object data table."
+msgstr "オブジェクトデータテーブルを作成できませんでした。"
+
+msgid "Could not create column comments table."
+msgstr "カラムコメントテーブルを作成できませんでした。"
+
+msgid "Could not create blobs table."
+msgstr "BLOBテーブルを作成できませんでした。"
+
+msgctxt "Paste Special->As Data &Table..."
+msgid "Paste &Special..."
+msgstr "形式を選んで貼り付け..."
+
+msgctxt "Copy Special->Table or Query Data..."
+msgid "Copy &Special..."
+msgstr "形式を選んでコピー..."
+
+msgctxt "\"executing object\" action"
+msgid "executing"
+msgstr "実行中"
+
+msgctxt "Could not save object under the original name."
+msgid "Could not save under the original name."
+msgstr "元の名前で保存できませんでした。"
+
+msgctxt "@action:button Export query data"
+msgid "Use the Changed Query"
+msgstr "変更したクエリを使用"
+
+msgctxt "@action:button Export query data"
+msgid "Use the Original Query"
+msgstr "元のクエリを使用"
+
+msgid "Blank Projects"
+msgstr "空のプロジェクト"
+
+msgid "Templates"
+msgstr "テンプレート"
+
+msgid "New database"
+msgstr "新規データベース"
+
+msgid "Enter path to the SQLite3 database file."
+msgstr "SQLite3データベースファイルへのパスを入力してください。"
+
+msgctxt "@info"
+msgid "Akexi will create a new database project. Select blank database."
+msgstr "新しいデータベースプロジェクトを作成します。空のデータベースを選択してください。"
+
+msgctxt "@info"
+msgid "Select a storage method which will be used to store the new project."
+msgstr "新しいプロジェクトの保存方法を選択してください。"
+
+msgid "Could not start Akexi application this way."
+msgstr "この方法ではAkexiアプリケーションを起動できません。"
+
+msgctxt "Please don't translate the \"createdb\" and \"dropdb\" words, these are constants."
+msgid "Both <icode>createdb</icode> and <icode>dropdb</icode> used in startup options."
+msgstr "スタートアップオプションに <icode>createdb</icode> と <icode>dropdb</icode> の両方が使用されています。"
+
+msgctxt "Please don't translate the <icode>user-mode</icode> and <icode>design-mode</icode> words, these are constants."
+msgid "Both <icode>user-mode</icode> and <icode>design-mode</icode> used in startup options."
+msgstr "スタートアップオプションに <icode>user-mode</icode> と <icode>design-mode</icode> の両方が使用されています。"
+
+msgctxt "@info"
+msgid "Could not open file. Missing filename."
+msgstr "ファイルを開けませんでした。ファイル名が指定されていません。"
+
+msgid "No Akexi plugins found."
+msgstr "Akexiプラグインが見つかりません。"
+
+msgid "No KDb database driver plugins found."
+msgstr "KDbデータベースドライバプラグインが見つかりません。"
+
+msgctxt "Plugin name"
+msgid "Name:"
+msgstr "名前:"
+
+msgctxt "Plugin description"
+msgid "Description:"
+msgstr "説明:"
+
+msgctxt "Plugin version"
+msgid "Version:"
+msgstr "バージョン:"
+
+msgctxt "Plugin fileName"
+msgid "File:"
+msgstr "ファイル:"
+
+msgctxt "@title:window"
+msgid "Open Project on Database Server"
+msgstr "データベースサーバ上のプロジェクトを開く"
+
+msgid "Could not rename object: no connection available."
+msgstr "オブジェクトの名前を変更できません: 接続が利用できません。"
+
+msgid "Project major version"
+msgstr "プロジェクトメジャーバージョン"
+
+msgid "Project minor version"
+msgstr "プロジェクトマイナーバージョン"
+
+msgid "Project caption"
+msgstr "プロジェクトキャプション"
+
+msgid "Project description"
+msgstr "プロジェクトの説明"
+
+msgid "Could not determine SQLite3 data file path from akexi metadata."
+msgstr "akexiメタデータからSQLite3データファイルのパスを特定できませんでした。"
+
+msgid "Could not load list of tables."
+msgstr "テーブル一覧を読み込めませんでした。"
+
+msgid "This project is opened as read only."
+msgstr "このプロジェクトは読み取り専用で開かれています。"
+
+msgid "Could not delete this project. Database connection for this project has been opened as read only."
+msgstr "このプロジェクトを削除できません。データベース接続が読み取り専用で開かれています。"
+
+msgctxt "@action:button"
+msgid "Replace"
+msgstr "置き換え"
+
+msgctxt "@action:button"
+msgid "Delete Project"
+msgstr "プロジェクトを削除"
+
+msgid "Details:"
+msgstr "詳細:"
+
+msgid "Object could not be opened in Data View."
+msgstr "データビューでオブジェクトを開けませんでした。"
+
+msgid "Do you want to open it in Text View?"
+msgstr "設計ビューで開きますか?"
+
+msgid "Could not create object's window."
+msgstr "オブジェクトのウィンドウを作成できませんでした。"
+
+msgid "The plugin or object definition may be corrupted."
+msgstr "プラグインまたはオブジェクト定義が壊れている可能性があります。"
+
+msgid "Could not load object's definition."
+msgstr "オブジェクトの定義を読み込めませんでした。"
+
+msgid "Object design may be corrupted."
+msgstr "オブジェクト設計が壊れている可能性があります。"
+
+msgid "Could not load object's data."
+msgstr "オブジェクトのデータを読み込めませんでした。"
+
+msgid "Menu for the current window"
+msgstr "現在のウィンドウのメニュー"
+
+msgid "Shows menu for the current window."
+msgstr "現在のウィンドウのメニューを表示します。"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Save current design"
+msgstr "現在の設計を保存"
+
+msgid "Saves changes made to the current design."
+msgstr "現在の設計への変更を保存します。"
+
+msgid "Design"
+msgstr "設計"
+
+msgid "Save Changes"
+msgstr "変更を保存"
+
+msgid "A container to group some widgets"
+msgstr "いくつかの部品をグループ化するコンテナ"
+
+msgid "A frame widget"
+msgstr "フレーム部品"
+
+msgid "A widget to display multiple pages using tabs"
+msgstr "タブを使用して複数ページを表示する部品"
+
+msgid "Text Format"
+msgstr "テキスト書式"
+
+msgid "Tab Changes Focus"
+msgstr "タブでフォーカス移動"
+
+msgid "Links Underlined"
+msgstr "リンクに下線"
+
+msgid "Horizontal Scroll Bar"
+msgstr "水平スクロールバー"
+
+msgid "Vertical Scroll Bar"
+msgstr "垂直スクロールバー"
+
+msgid "Auto-hide Tabs"
+msgstr "タブ自動非表示"
+
+msgid "Tab Position"
+msgstr "タブ位置"
+
+msgid "Tab Shape"
+msgstr "タブ形状"
+
+msgid "Auto Default"
+msgstr "自動デフォルト"
+
+msgid "Action category:"
+msgstr "アクションカテゴリ:"
+
+msgid "Action to execute:"
+msgstr "実行するアクション:"
+
+msgid "Add Page"
+msgstr "ページを追加"
+
+msgid "Form"
+msgstr "フォーム"
+
+msgctxt "Widget Property"
+msgid "Caption"
+msgstr "キャプション"
+
+msgid "Set form's data source to <resource>%1</resource>"
+msgstr "フォームのデータソースを <resource>%1</resource> に設定"
+
+msgid ""
+"Cannot switch to data view, because query design is empty.\n"
+"You must add at least one column.\n"
+msgstr ""
+"クエリ設計が空のため、データビューに切り替えられません。\n"
+"少なくとも 1 列を追加する必要があります。\n"
+
+msgid "Query definition loading failed."
+msgstr "クエリ定義の読み込みに失敗しました。"
+
+msgid ""
+"Query design may be corrupted so it could not be opened even in text view.\n"
+"Please redesign the query.\n"
+msgstr ""
+
+msgid "Identifiers should start with a letter or '_' character"
+msgstr "識別子は文字または「_」で始める必要があります"
+
+msgid "Could not set sorting for multiple columns (%1)"
+msgstr "複数列の並べ替えを設定できませんでした (%1)"
+
+msgid "Could not set criteria for empty record"
+msgstr "空のレコードに条件を設定できませんでした"
+
+msgid "Alias"
+msgstr "エイリアス"
+
+msgid "Could not load Akexi Form Widgets plugin file <filename>%1</filename>."
+msgstr "Akexiフォーム部品プラグインファイル <filename>%1</filename> を読み込めませんでした。"
+
+msgid "%1 : Form"
+msgstr "%1 : フォーム"
+
+msgid "Widget's data source:"
+msgstr "部品のデータソース:"
+
+msgid "&No View"
+msgstr "ビューなし"
+
+msgid "&Pointer"
+msgstr "ポインタ"
+
+msgid "&Unknown"
+msgstr "不明"
+
+msgid "<para>You are about to rename table <resource>%1</resource> but it is used by "
+msgstr "<para>テーブル <resource>%1</resource> の名前を変更しようとしていますが、"
+
+msgid "<para>Do you want to save the design now?</para>%1"
+msgstr "<para>今すぐ設計を保存しますか?</para>%1"
+
+msgid "<para>Do you want to close these windows and save the "
+msgstr "<para>これらのウィンドウを閉じて保存しますか?"
+
+msgid "<para>Previous primary key will be deleted.</para>"
+msgstr "<para>以前の主キーは削除されます。</para>"
+
+msgid "<para>Setting autonumber requires primary key to be set for current field.</para>"
+msgstr "<para>オートナンバーを設定するには、現在のフィールドに主キーを設定する必要があります。</para>"
+
+msgid "&Export..."
+msgstr "書き出し..."
+
+msgid "Table preview:"
+msgstr "テーブルプレビュー:"
+
+msgid "Cannot open input file <filename>%1</filename>."
+msgstr "入力ファイル <filename>%1</filename> を開けません。"
+
+msgid "Data set contains no rows. Do you want to import empty table?"
+msgstr "データセットに行が含まれていません。空のテーブルを取り込みますか?"
+
+msgid "Always use this encoding when importing CSV data files"
+msgstr "CSVデータファイルの取り込み時に常にこのエンコーディングを使用"
+
+msgid "Add column names as the first row"
+msgstr "列名を最初の行として追加"
+
+msgid "All Files"
+msgstr "すべてのファイル"
+
+msgid "Always use above options for copying"
+msgstr "コピー時に上記のオプションを常に使用"
+
+msgid "Always use above options for exporting"
+msgstr "書き出し時に上記のオプションを常に使用"
+
+msgid "Delimiter:"
+msgstr "区切り文字:"
+
+msgid "Text quote:"
+msgstr "テキスト引用符:"
+
+msgid "Defaults"
+msgstr "デフォルト"
+
+msgid "Show Options &gt;&gt;"
+msgstr "オプションを表示 &gt;&gt;"
+
+msgid "Hide Options &lt;&lt;"
+msgstr "オプションを非表示 &lt;&lt;"
+
+msgid "Copying data from table:"
+msgstr "テーブルからデータをコピー中:"
+
+msgid "Exporting data from table:"
+msgstr "テーブルからデータを書き出し中:"
+
+msgid "Exporting data from query:"
+msgstr "クエリからデータを書き出し中:"
+
+msgid "(rows: %1, columns: %2)"
+msgstr "(行: %1, 列: %2)"
+
+msgid "(columns: %1)"
+msgstr "(列: %1)"
+
+msgid "To CSV file:"
+msgstr "CSVファイルへ:"
+
+msgid "To clipboard."
+msgstr "クリップボードへ。"
+
+msgid "Export the report as a text document (in OpenDocument Text format)"
+msgstr "レポートをテキスト文書として書き出し（OpenDocument Text形式）"
+
+msgid "Exports the report as a text document (in OpenDocument Text format)."
+msgstr "レポートをテキスト文書として書き出します（OpenDocument Text形式）。"
+
+msgid "Export the report as a spreadsheet (in OpenDocument Spreadsheet format)"
+msgstr "レポートを表計算ドキュメントとして書き出し（OpenDocument Spreadsheet形式）"
+
+msgid "Exports the report as a spreadsheet (in OpenDocument Spreadsheet format)."
+msgstr "レポートを表計算ドキュメントとして書き出します（OpenDocument Spreadsheet形式）。"
+
+msgid "Export the report as a web page (in HTML format)"
+msgstr "レポートをWebページとして書き出し（HTML形式）"
+
+msgid "Exports the report as a web page (in HTML format)."
+msgstr "レポートをWebページとして書き出します（HTML形式）。"
+
+msgid "Printing the report failed."
+msgstr "レポートの印刷に失敗しました。"
+
+msgid "Exporting the report as PDF to %1 failed."
+msgstr "レポートのPDF書き出し処理に失敗しました: %1"
+
+msgid "Exporting the report as text document to %1 failed."
+msgstr "レポートのテキスト文書書き出し処理に失敗しました: %1"
+
+msgid "Exporting the report as spreadsheet to %1 failed."
+msgstr "レポートの表計算ドキュメント書き出し処理に失敗しました: %1"
+
+msgid "Exporting the report as web page to %1 failed."
+msgstr "レポートのWebページ書き出し処理に失敗しました: %1"
+
+msgid "Failed to export the report as spreadsheet to %1."
+msgstr "レポートの表計算ドキュメント書き出し処理に失敗しました: %1"
+
+msgid "Do you want to open exported document?"
+msgstr "書き出した文書を開きますか?"
+
+msgid "Please wait while the table is imported."
+msgstr "テーブルを取り込んでいます。お待ちください。"
+
+msgid "Could not import project from data source %1."
+msgstr "データソース %1 からプロジェクトを取り込めませんでした。"
+
+msgid "Could not import table <resource>%1</resource>."
+msgstr "テーブル <resource>%1</resource> を取り込めませんでした。"
+
+msgid "Could not create database <resource>%1</resource>."
+msgstr "データベース <resource>%1</resource> を作成できませんでした。"
+
+msgid "Could not import project."
+msgstr "プロジェクトを取り込めませんでした。"
+
+msgid "Importing project data..."
+msgstr "プロジェクトデータを取り込み中..."
+
+msgid "Importing %1 project(s)..."
+msgstr "%1 個のプロジェクトを取り込み中..."
+
+msgid "Import completed successfully."
+msgstr "取り込み処理が正常に完了しました。"
+
+msgid "Import failed."
+msgstr "取り込み処理に失敗しました。"
+
+msgid "Could not open project."
+msgstr "プロジェクトを開けませんでした。"
+
+msgid "Could not find location to save connection data file."
+msgstr "接続データファイルを保存する場所が見つかりませんでした。"
+
+msgid "Could not create folder <filename>%1</filename> for connection data file."
+msgstr "接続データファイル用のフォルダ <filename>%1</filename> を作成できませんでした。"
+
+msgid "Could not remove connection file <filename>%1</filename>."
+msgstr "接続ファイル <filename>%1</filename> を削除できませんでした。"
+
+msgid "File <filename>%1</filename> contains no connection information."
+msgstr "ファイル <filename>%1</filename> には接続情報が含まれていません。"
+
+msgid "Could not create SQLite3 data file <filename>%1</filename>."
+msgstr "SQLite3データファイル <filename>%1</filename> を作成できませんでした。"
+
+msgid "<para>There are unsaved changes in object <resource>%1</resource>.</para>"
+msgstr "<para>オブジェクト <resource>%1</resource> に未保存の変更があります。</para>"
+
+msgid "Could not find any Akexi plugins, e.g. for tables or forms. Please check your installation."
+msgstr "テーブルやフォームなどのAkexiプラグインが見つかりません。インストールを確認してください。"
+
+msgid "Save all changes made to this connection information."
+msgstr "この接続情報への変更をすべて保存しますか?"
+
+msgid "Failed saving connection data to <filename>%1</filename> file."
+msgstr "接続データのファイル <filename>%1</filename> への保存に失敗しました。"
+
+msgid "<para>Could not open project.</para>"
+msgstr "<para>プロジェクトを開けませんでした。</para>"
+
+msgid "<para>Could not create database file <filename>%1</filename>.</para>"
+msgstr "<para>データベースファイル <filename>%1</filename> を作成できませんでした。</para>"
+
+msgid "Select project on database server <resource>%1 (%2)</resource> to open."
+msgstr "データベースサーバ <resource>%1 (%2)</resource> 上の開くプロジェクトを選択してください。"
+
+msgid "The current project has to be closed before compacting the database. Opening a new project will close the current project."
+msgstr "データベースの圧縮を行うには、現在のプロジェクトを閉じる必要があります。新しいプロジェクトを開くと現在のプロジェクトは閉じられます。"
+
+msgid "You have requested selected objects to be automatically opened but there were problems:"
+msgstr "選択されたオブジェクトを自動的に開くよう要求しましたが、問題が発生しました:"
+
+msgid "Design of query <resource>%1</resource> that you want to export data from has been modified."
+msgstr "データを書き出そうとしているクエリ <resource>%1</resource> の設計が変更されています。"
+
+msgid "Cannot convert to KEXI format because the SQLite3 data file could not be found."
+msgstr "SQLite3データファイルが見つからないため、KEXI形式に変換できません。"
+
+msgid "<para>Could not open project.</para><para>Reason: %1</para>"
+msgstr "<para>プロジェクトを開けませんでした。</para><para>理由: %1</para>"
+
+msgid "<para>You are about to delete table <resource>%1</resource> but it is used by "
+msgstr "<para>テーブル <resource>%1</resource> を削除しようとしていますが、"
+
+msgid "Maybe you want to modify table <resource>%1</resource> first?"
+msgstr "まずテーブル <resource>%1</resource> を修正しますか?"
+
+msgid "There are still <resource>%1</resource> objects that reference this table."
+msgstr "このテーブルを参照している <resource>%1</resource> 個のオブジェクトがまだあります。"
+
+msgid "<para>You are about to delete query <resource>%1</resource> but it is used by "
+msgstr "<para>クエリ <resource>%1</resource> を削除しようとしていますが、"
+
+msgid "Maybe you want to modify query <resource>%1</resource> first?"
+msgstr "まずクエリ <resource>%1</resource> を修正しますか?"
+
+msgid "There are still <resource>%1</resource> objects that reference this query."
+msgstr "このクエリを参照している <resource>%1</resource> 個のオブジェクトがまだあります。"
+
+# Storage type selection wizard
+#: src/main/startup/KexiProjectStorageTypeSelectionPage.ui:31
+msgctxt "New Project Stored in File"
+msgid "File"
+msgstr "ファイル (&F)"
+
+#: src/main/startup/KexiProjectStorageTypeSelectionPage.ui:37
+msgid "New Project Stored in File"
+msgstr "単一ファイルに保存する新規プロジェクト"
+
+#: src/main/startup/KexiProjectStorageTypeSelectionPage.ui:47
+msgctxt "New Project Stored on Database Server"
+msgid "Server"
+msgstr "サーバ (&S)"
+
+#: src/main/startup/KexiProjectStorageTypeSelectionPage.ui:53
+msgid "New Project Stored on Database Server"
+msgstr "データベースサーバに保存する新規プロジェクト"
+
+#: src/main/startup/KexiProjectStorageTypeSelectionPage.ui:63
+msgctxt "New Project Stored as Akexi (sqlite3 frontend)"
+msgid "SQLite3 Frontend (Akexi)"
+msgstr "SQLite3 フロントエンド (Akexi)"
+
+#: src/main/startup/KexiProjectStorageTypeSelectionPage.ui:69
+msgid "New Project Stored as Akexi - metadata in .akexi, data in .sqlite3"
+msgstr "データ本体となる純粋な .sqlite3 を参照して操作"
+
+# Database Server Name Page
+#: src/main/startup/KexiServerDBNamePage.ui:31
+msgid "Project caption:"
+msgstr "プロジェクトのタイトル:"
+
+#: src/main/startup/KexiServerDBNamePage.ui:60
+msgid "Project's database name:"
+msgstr "プロジェクトのデータベース名:"
+
+#: src/migration/migratemanager.cpp:156
+#: src/migration/migratemanager.cpp:204
+msgid "Could not find migration driver \"%1\"."
+msgstr "マイグレーションドライバ \"%1\" が見つかりません。"
+
+#: src/migration/migratemanager.cpp:213
+msgid "Could not load migration driver's plugin file \"%1\"."
+msgstr "マイグレーションドライバのプラグインファイル \"%1\" を読み込めません。"
+
+#: src/migration/migratemanager.cpp:224
+msgid "Could not open migration driver \"%1\" from plugin file \"%2\"."
+msgstr "プラグインファイル \"%2\" からマイグレーションドライバ \"%1\" を開けません。"
+
+#: src/migration/keximigrate.cpp:626
+msgid "Could not import data from data source %1."
+msgstr "データソース %1 からデータを取り込めません。"
+
+#: src/main/startup/KexiOpenExistingFile.ui:30
+msgid "<b>Select existing Kexi or Akexi project file to open:</b>\n"
+msgstr "<b>開く既存のKexiまたはAkexiプロジェクトファイルを選択:</b>\n"
+
+#: src/main/startup/KexiOpenExistingFile.ui:89
+msgid "&Advanced "
+msgstr "詳細設定 (&A)"
+
+#: src/main/startup/KexiOpenExistingFile.ui:104
+msgid "Click \"Advanced\" button if you want to find an existing project on a server rather than a file."
+msgstr "ファイルではなくサーバ上の既存プロジェクトを検索したい場合は「詳細設定」ボタンをクリックしてください。"
+
+#: src/widget/kexiprjtypeselector.ui:51
+msgid "Projects stored in a file"
+msgstr "単一ファイルに保存したプロジェクト"
+
+#: src/widget/kexiprjtypeselector.ui:86
+msgid "Projects stored on a database server"
+msgstr "データベースサーバに保存されたプロジェクト"
+
+#: src/core/KexiStandardAction.cpp:47
+msgid "&Ascending"
+msgstr "昇順 (&A)"
+
+#: src/core/KexiStandardAction.cpp:48
+msgid "Sort data in ascending order"
+msgstr "データを昇順に並べ替え"
+
+#: src/core/KexiStandardAction.cpp:49
+msgid "Sorts data in ascending order (from A to Z and from 0 to 9). Data from selected column is used for sorting."
+msgstr "データを昇順（AからZ、0から9）に並べ替えます。選択された列のデータが並べ替えに使用されます。"
+
+#: src/core/KexiStandardAction.cpp:51
+msgid "&Descending"
+msgstr "降順 (&D)"
+
+#: src/core/KexiStandardAction.cpp:52
+msgid "Sort data in descending order"
+msgstr "データを降順に並べ替え"
+
+#: src/core/KexiStandardAction.cpp:53
+msgid "Sorts data in descending (from Z to A and from 9 to 0). Data from selected column is used for sorting."
+msgstr "データを降順（ZからA、9から0）に並べ替えます。選択された列のデータが並べ替えに使用されます。"
+
+#: src/widget/KexiConnectionSelector.ui:48
+msgid "<title>Select Existing Database Server's Connection From the List Below</title>\n<para>You will see existing Akexi projects available for the selected connection. Here you may also add, edit or delete connections from the list.</para>\n"
+msgstr "<title>以下のリストから既存のデータベースサーバ接続を選択</title>\n<para>選択した接続で利用可能な既存のAkexiプロジェクトが表示されます。ここで接続の追加、編集、削除も行えます。</para>\n"
+
+#: src/widget/KexiConnectionSelector.ui:104
+msgid "Server Information"
+msgstr "サーバ情報"
+
+#: src/widget/KexiConnectionSelector.ui:155
+msgid "&Add..."
+msgstr "追加 (&A)..."
+
+#: src/widget/KexiConnectionSelector.ui:168
+msgid "&Edit..."
+msgstr "編集 (&E)..."
+
+#: src/core/kexiprojectdata.cpp:484
+msgid "Could not write project file."
+msgstr "プロジェクトファイルを書き込めませんでした。"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp:95
+msgid "Custom Widget"
+msgstr "カスタムウィジェット"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp:97
+msgid "A custom or non-supported widget"
+msgstr "カスタムまたは非対応のウィジェット"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp:583
+msgid "Basic container"
+msgstr "ベーシックコンテナ"
+
+#: src/plugins/forms/widgets/main/KexiMainFormWidgetsFactory.cpp:585
+msgid "An empty container with no frame"
+msgstr "フレームなしの空のコンテナ"
+
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp:225
+#: src/plugins/scripting/kexiscripting/kexiscriptdesignview.cpp:243
+msgid "Javascript (*.js)"
+msgstr "Javascript (*.js)"
+#: src/migration/importwizard.cpp:242
+msgctxt "@info"
+msgid "Database Importing Assistant is about to import <resource>%1</resource> database (connection <resource>%2</resource>) into a KEXI project."
+msgstr "データベース取り込みウィザードは、データベース <resource>%1</resource>（接続 <resource>%2</resource>）を KEXI プロジェクトに取り込もうとしています。"
+
+#: src/migration/importwizard.cpp:257
+msgctxt "@info"
+msgid "Database Importing Assistant is about to import <filename>%1</filename> file of type <resource>%2</resource> into a KEXI project."
+msgstr "データベース取り込みウィザードは、種類 <resource>%2</resource> のファイル <filename>%1</filename> を KEXI プロジェクトに取り込もうとしています。"
+
+#: src/migration/importwizard.cpp:263
+msgctxt "@info"
+msgid "Database Importing Assistant allows you to import an existing database into a KEXI project."
+msgstr "データベース取り込みウィザードでは、既存のデータベースを KEXI プロジェクトに取り込むことができます。"
+
+#: src/migration/importwizard.cpp:269
+msgctxt "@info"
+msgid "<para>Click <interface>Next</interface> button to continue or <interface>Cancel</interface> button to exit this assistant.</para>"
+msgstr "<para>続行するには <interface>次へ</interface> ボタンをクリックするか、このウィザードを終了するには <interface>キャンセル</interface> ボタンをクリックしてください。</para>"
+
+#: src/migration/importwizard.cpp:535
+msgctxt "@info"
+msgid "<para>Following issues were found with the data you entered:</para>%1<para>Please click <interface>Back</interface> button and correct these issues.</para>"
+msgstr "<para>入力したデータに以下の問題が見つかりました:</para>%1<para><interface>戻る</interface> ボタンをクリックしてこれらの問題を修正してください。</para>"
+
+#: src/migration/importwizard.cpp:631
+msgctxt "@info"
+msgid "<para>All required information has now been gathered. Click <interface>Next</interface> button to start importing.</para><para><note>Depending on size of the database this may take some time.</note></para>"
+msgstr "<para>必要な情報がすべて集まりました。<interface>次へ</interface> ボタンをクリックして取り込みを開始します。</para><para><note>データベースのサイズによっては時間がかかる場合があります。</note></para>"
+
+#: src/migration/importwizard.cpp:879
+msgctxt "@info (don't add tags around %1, it's done already)"
+msgid "<para>Database %1 already exists.</para><para>Do you want to replace it with a new one?</para>"
+msgstr "<para>データベース %1 は既に存在します。</para><para>新しいものに置き換えますか？</para>"
+
+#: src/migration/importwizard.cpp:926
+msgctxt "@info"
+msgid "<para>Import failed.</para><para>%1</para><para>%2</para><para>You can click <interface>Back</interface> button and try again.</para>"
+msgstr "<para>取り込みに失敗しました。</para><para>%1</para><para>%2</para><para><interface>戻る</interface> ボタンをクリックしてやり直すことができます。</para>"
+
+#: src/migration/importwizard.cpp:971
+msgctxt "@info"
+msgid "Could not import database <resource>%1</resource>. This type is not supported."
+msgstr "データベース <resource>%1</resource> を取り込めませんでした。この種類はサポートされていません。"
+
+#: src/migration/importwizard.cpp:1035
+msgctxt "@info"
+msgid "Database has been imported into Kexi project <resource>%1</resource>."
+msgstr "データベースは Kexi プロジェクト <resource>%1</resource> に取り込まれました。"
+
+#: src/migration/importtablewizard.cpp:126
+msgctxt "@info"
+msgid "<resource>%1</resource> name is already used by an existing table. Enter different table name to continue."
+msgstr "<resource>%1</resource> という名前は既存のテーブルで既に使用されています。続行するには別のテーブル名を入力してください。"
+
+#: src/migration/importtablewizard.cpp:169
+msgctxt "@info"
+msgid "<para>Table Importing Assistant allows you to import a table from an existing database into the current Kexi project.</para><para>Click <interface>Next</interface> button to continue or <interface>Cancel</interface> button to exit this assistant.</para>"
+msgstr "<para>テーブル取り込みウィザードでは、既存のデータベースからテーブルを現在の KEXI プロジェクトに取り込むことができます。</para><para>続行するには <interface>次へ</interface> ボタンをクリックするか、このウィザードを終了するには <interface>キャンセル</interface> ボタンをクリックしてください。</para>"
+
+#: src/migration/importtablewizard.cpp:466
+#: src/migration/importtablewizard.cpp:480
+msgctxt "@info"
+msgid "Could not import table <resource>%1</resource>. Select different table or cancel importing."
+msgstr "テーブル <resource>%1</resource> を取り込めませんでした。別のテーブルを選択するか、取り込みをキャンセルしてください。"
+
+#: src/migration/importtablewizard.cpp:498
+msgctxt "@info"
+msgid "No data has been found in table <resource>%1</resource>. Select different table or cancel importing."
+msgstr "テーブル <resource>%1</resource> にデータが見つかりませんでした。別のテーブルを選択するか、取り込みをキャンセルしてください。"
+
+#: src/migration/importtablewizard.cpp:522
+msgctxt "@info Table import wizard, final message"
+msgid "<para>All required information has now been gathered. Click <interface>Next</interface> button to start importing table <resource>%1</resource>.</para><para><note>Depending on size of the table this may take some time.</note></para>"
+msgstr "<para>必要な情報がすべて集まりました。<interface>次へ</interface> ボタンをクリックしてテーブル <resource>%1</resource> の取り込みを開始します。</para><para><note>テーブルのサイズによっては時間がかかる場合があります。</note></para>"
+
+#: src/migration/importtablewizard.cpp:576
+msgctxt "@info"
+msgid "Table <resource>%1</resource> has been imported."
+msgstr "テーブル <resource>%1</resource> は取り込まれました。"
+
+#: src/migration/importtablewizard.cpp:726
+msgctxt "@info"
+msgid "Unable to create table <resource>%1</resource>."
+msgstr "テーブル <resource>%1</resource> を作成できません。"
+
+# from KF5::WidgetsAddons (KAssistantDialog)
+msgctxt "KAssistantDialog|@action:button go back"
+msgid "&Back"
+msgstr "戻る (&B)"
+
+# from KF5::WidgetsAddons (KAssistantDialog)
+msgctxt "KAssistantDialog|@info:tooltip"
+msgid "Go back one step"
+msgstr "1 ステップ戻ります"
+
+# from KF5::WidgetsAddons (KAssistantDialog)
+msgctxt "KAssistantDialog|@action:button Opposite to Back"
+msgid "Next"
+msgstr "次へ (&N)"
+
+# from KF5::WidgetsAddons (KAssistantDialog)
+msgctxt "KAssistantDialog|@action:button"
+msgid "Finish"
+msgstr "完了 (&F)"
+
+# from KF5::WidgetsAddons (KStandardGuiItem)
+msgid "&Cancel"
+msgstr "キャンセル (&C)"
+
+# from KF5::WidgetsAddons (KStandardGuiItem)
+msgid "&Apply"
+msgstr "適用 (&A)"
+
+# from KF5::WidgetsAddons (KDatePickerPopup)
+msgid "Close"
+msgstr "閉じる"
+
+# from kexifinddialog.ui (search/replace dialog labels)
+#: src/main/kexifinddialog.ui
+msgctxt "Look in field:"
+msgid "&Look in:"
+msgstr "検索場所 (&L):"
+
+#: src/main/kexifinddialog.ui
+msgid "&Search:"
+msgstr "検索 (&S):"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Match: Whole words only"
+msgid "&Whole words only"
+msgstr "単語単位 (&W)"
+
+#: src/main/kexifinddialog.ui
+msgid "Fi&nd:"
+msgstr "検索文字列 (&N):"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Replace all occurrences with"
+msgid "Re&place with:"
+msgstr "置換文字列 (&P):"
+
+#: src/main/kexifinddialog.ui
+msgid "Prompt on replace"
+msgstr "置換前に確認"
+
+#: src/main/kexifinddialog.ui
+msgid "&Match:"
+msgstr "一致する条件 (&M):"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Match: Case sensitive"
+msgid "C&ase sensitive"
+msgstr "大文字と小文字を区別 (&A)"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Match: Any Part of Field"
+msgid "Any Part of Field"
+msgstr "フィールドの一部"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Match: Whole Field"
+msgid "Whole Field"
+msgstr "フィールド全体"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Match: Start of Field"
+msgid "Start of Field"
+msgstr "フィールドの先頭"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Search Up"
+msgid "Up"
+msgstr "上方向"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Search Down"
+msgid "Down"
+msgstr "下方向"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Look In All Rows"
+msgid "All Rows"
+msgstr "すべての行"
+
+#: src/main/kexifinddialog.ui
+msgctxt "Replace All Occurrences"
+msgid "Replace All"
+msgstr "すべて置換"
+
+# from kexiquerydesignerguieditor.cpp (query design empty message)
+#: src/plugins/queries/kexiquerydesignerguieditor.cpp
+msgid ""
+"Cannot switch to data view, because query design is empty.\n"
+"First, please create your design."
+msgstr ""
+"クエリ設計が空のため、データビューに切り替えられません。\n"
+"最初に設計を作成してください。"
+
+#: src/core/akexiaboutdata.cpp
+msgid "Kexi Authors"
+msgstr "Kexi 作者"
+
+#: src/main/AkexiMainWindow_p.cpp
+msgid "Kexi Contributors"
+msgstr "Kexi 貢献者"
+
+msgid "Visit"
+msgstr "外部リンク"
+
+msgid "Developer's Website"
+msgstr "開発者のサイト"
+
+msgid "GitHub Repository"
+msgstr "GitHub リポジトリ"
+
+
