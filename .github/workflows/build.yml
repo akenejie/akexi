@@ -475,6 +475,38 @@ jobs:
           if ($c2 -notmatch 'add_custom_command\(OUTPUT "\$\{_QRC_FILE\}"') { throw 'akexi rcc macro patch failed' }
           Set-Content $akexiRccMacro $c2 -NoNewline
 
+          # src/pics/CMakeLists.txt も同様の直書きパターンなので同じ対処
+          $picsPatch = "src\pics\CMakeLists.txt"
+          $c3 = (Get-Content $picsPatch -Raw).Replace("`r`n", "`n")
+          $old3 = @(
+            'add_custom_target(build_qrc',
+            '    COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"',
+            '    # avoid adding the .qrc file to rcc due to rcc misfeature',
+            '    COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"',
+            '    DEPENDS "${_FILES}"',
+            '    SOURCES "${_FILES}"',
+            '    WORKING_DIRECTORY "${_BASE_DIR}"',
+            '    COMMENT "Building Qt resource file ${_QRC_FILE}"',
+            '    VERBATIM',
+            ')'
+          ) -join "`n"
+          $new3 = @(
+            'add_custom_command(OUTPUT "${_QRC_FILE}"',
+            '    COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"',
+            '    # avoid adding the .qrc file to rcc due to rcc misfeature',
+            '    COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"',
+            '    DEPENDS "${_FILES}" colorize_icons',
+            '    WORKING_DIRECTORY "${_BASE_DIR}"',
+            '    COMMENT "Building Qt resource file ${_QRC_FILE}"',
+            '    VERBATIM',
+            ')'
+          ) -join "`n"
+          $c3 = $c3.Replace($old3, $new3)
+          $c3 = $c3.Replace('add_dependencies(build_qrc colorize_icons)', '# build_qrc is now an OUTPUT command depending on colorize_icons')
+          $c3 = $c3.Replace('add_dependencies(build_rcc build_qrc)', '# build_rcc depends on the OUTPUT file')
+          if ($c3 -notmatch 'add_custom_command\(OUTPUT "\$\{_QRC_FILE\}"') { throw 'akexi pics patch failed' }
+          Set-Content $picsPatch $c3 -NoNewline
+
           $prefix = "$deps;$env:QT_ROOT;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
           $cmakeArgs = @(
             '-S', '.', '-B', 'build',
