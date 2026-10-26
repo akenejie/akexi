@@ -1,0 +1,536 @@
+name: Build (Windows installer / Linux bundle)
+
+# 生成物:
+#  - Windows: Qt/KF5等のランタイム同梱インストーラ (Program Files に展開)
+#  - Linux:   Qt等はシステム(apt)前提の実行バンドル (tar.gz, 展開して ./start-akexi.sh)
+#
+# 補足:
+#  - Windows は MSVC (windows-latest 標準の Visual Studio) でビルドする。
+#    Qt 5.15.2 は aqtinstall で取得し、KF5 系フレームワークと KDb / KProperty /
+#    KReport はソースからビルドする (初回は時間がかかるが、2回目以降はキャッシュで短縮)。
+#    ICU / gettext(msgfmt, libintl) / flex / bison は Windows 向けプレビルドを使用。
+#  - MSYS2 は KF5(Qt5) パッケージを既に廃止しているため使用しない。
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  KF5_VERSION: 5.116.0        # 最後の KF5 リリース
+  KDE_LIBS_VERSION: 3.2.0     # KDb / KProperty / KReport
+
+jobs:
+  # ============================================================
+  #  Linux: Qt 等はシステム前提の実行バンドル
+  # ============================================================
+  build-linux:
+    name: Linux bundle (Qt via system)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential cmake ninja-build gettext \
+            extra-cmake-modules \
+            qtbase5-dev qttools5-dev qttools5-dev-tools \
+            libkf5archive-dev libkf5codecs-dev libkf5config-dev \
+            libkf5configwidgets-dev libkf5coreaddons-dev libkf5guiaddons-dev \
+            libkf5i18n-dev libkf5iconthemes-dev libkf5itemviews-dev \
+            libkf5widgetsaddons-dev libkf5textwidgets-dev libkf5xmlgui-dev \
+            libkf5completion-dev libkf5kio-dev libkf5texteditor-dev \
+            libkf5crash-dev \
+            libkdb3-dev libkproperty3-dev libkreport3-dev \
+            breeze-icon-theme patchelf
+
+      - name: Configure
+        run: |
+          cmake -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+            -DCMAKE_INSTALL_PREFIX="$PWD/install" \
+            -DBUILD_TESTING=OFF \
+            -DBUILD_EXAMPLES=OFF
+
+      - name: Build
+        run: cmake --build build -j"$(nproc)"
+
+      - name: Install
+        run: cmake --install build
+
+      - name: Detect version
+        id: ver
+        run: |
+          V=$(sed -n 's/^#define AKEXI_DISTRIBUTION_VERSION "\(.*\)"/\1/p' build/src/KexiVersion.h)
+          echo "version=${V:-0.0}" >> "$GITHUB_OUTPUT"
+
+      - name: Assemble bundle
+        run: |
+          set -e
+          V="${{ steps.ver.outputs.version }}"
+          mkdir -p bundle/bin/data bundle/lib
+          # 実行ファイルと内部ライブラリ (libkexi*) を同梱
+          cp -a install/bin/. bundle/bin/
+          cp -a install/lib/. bundle/lib/
+          # アプリプラグイン (kexi は exe と同階層の相対パスも検索する)
+          PLUGDIR=$(find install/lib -type d -path "*plugins/akexi/$V" | head -1)
+          if [ -n "$PLUGDIR" ]; then
+            mkdir -p bundle/bin/akexi/"$V"
+            cp -a "$PLUGDIR/." bundle/bin/akexi/"$V"/
+          fi
+          # RPATH: バンドル内の libkexi* を参照させる (システムにインストール不要にする)
+          find bundle/lib -name 'libkexi*.so*' -exec patchelf --set-rpath '$ORIGIN' {} +
+          patchelf --set-rpath '$ORIGIN/../lib/x86_64-linux-gnu:$ORIGIN/../lib' "bundle/bin/akexi-$V"
+          find bundle/bin/akexi -name '*.so' -exec patchelf --set-rpath \
+            '$ORIGIN:$ORIGIN/../../../lib/x86_64-linux-gnu:$ORIGIN/../../../../lib/x86_64-linux-gnu:$ORIGIN/../../../../../lib/x86_64-linux-gnu' {} +
+          # データ (rcc リソース / ui.rc 等)。exe 直下の data/ が最優先で検索される
+          cp -a build/bin/data/. bundle/bin/data/ 2>/dev/null || true
+          cp -a install/share/. bundle/bin/data/
+          # Breeze アイコンテーマ (rcc) を同梱 → ユーザ側の breeze-icon-theme 不要
+          mkdir -p bundle/bin/data/icons/breeze
+          cp /usr/share/icons/breeze/breeze-icons.rcc bundle/bin/data/icons/breeze/breeze-icons.rcc
+          # 起動スクリプト (XDG_DATA_DIRS に data/ を追加)
+          cat > bundle/start-akexi.sh <<'EOF'
+          #!/bin/sh
+          DIR="$(cd "$(dirname "$0")" && pwd)"
+          export XDG_DATA_DIRS="$DIR/bin/data:$XDG_DATA_DIRS"
+          exec "$DIR/bin/akexi-0.0" "$@"
+          EOF
+          sed -i "s/akexi-0\.0/akexi-${V}/" bundle/start-akexi.sh
+          chmod +x bundle/start-akexi.sh
+          tar -czf "akexi-${V}-linux64.tar.gz" -C bundle .
+
+      - name: Upload Linux bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: akexi-${{ steps.ver.outputs.version }}-linux64
+          path: akexi-*-linux64.tar.gz
+          if-no-files-found: error
+
+      # Windows ジョブで使う Breeze アイコンリソース
+      - name: Upload breeze icons rcc
+        uses: actions/upload-artifact@v4
+        with:
+          name: breeze-icons-rcc
+          path: /usr/share/icons/breeze/breeze-icons.rcc
+          if-no-files-found: error
+
+      - name: Summary
+        run: |
+          V="${{ steps.ver.outputs.version }}"
+          {
+            echo "## Linux バンドル (akexi-${V}-linux64.tar.gz)"
+            echo '- Qt / KF5 は **システムにインストールされたもの** を使用 (同梱しない)'
+            echo '- 任意のディレクトリに展開して `./start-akexi.sh` で実行'
+            echo '- ユーザ側で必要なパッケージ例 (Ubuntu/Mint):'
+            echo '```'
+            echo "sudo apt install libqt5widgets5 libqt5network5 libqt5printsupport5 \\"
+            echo "  libkf5xmlgui5 libkf5kiowidgets5 libkf5texteditor5 libkf5configwidgets5 \\"
+            echo "  libkf5iconthemes5 libkf5i18n5 libkf5completion5 libkf5itemviews5 \\"
+            echo "  libkf5textwidgets5 libkf5guiaddons5 libkf5crash5 \\"
+            echo "  libkdb3-4 libkdb3-driver-sqlite libkpropertycore3-4 \\"
+            echo "  libkpropertywidgets3-4 libkreport3-4"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # ============================================================
+  #  Windows: MSVC ビルド + 依存ランタイム同梱インストーラ (Program Files)
+  # ============================================================
+  build-windows:
+    name: Windows installer (MSVC, bundled Qt/KF5)
+    needs: build-linux
+    runs-on: windows-latest
+    timeout-minutes: 330
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      QT_VERSION: '5.15.2'
+      QT_SPEC: win64_msvc2019_64
+      ICU_URL: https://github.com/unicode-org/icu/releases/download/release-79.1/icu4c-79.1-Win64-MSVC2026.zip
+      GETTEXT_URL: https://github.com/mlocati/gettext-iconv-windows/releases/download/v1.0-v1.19/gettext1.0-iconv1.19-shared-64.zip
+      GETTEXT_DEV_URL: https://github.com/mlocati/gettext-iconv-windows/releases/download/v1.0-v1.19/gettext1.0-iconv1.19-shared-64-dev-msvc.zip
+      WINFLEXBISON_URL: https://github.com/lexxmark/winflexbison/releases/download/v2.5.25/win_flex_bison-2.5.25.zip
+    steps:
+      - uses: actions/checkout@v4
+
+      # Linux ジョブで生成した breeze-icons.rcc を取得
+      - uses: actions/download-artifact@v4
+        with:
+          name: breeze-icons-rcc
+          path: ${{ runner.temp }}\breeze
+
+      - name: Setup MSVC (x64)
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
+      # ---------- ツールチェーン類の調達 ----------
+      - name: Install Qt 5.15 (aqtinstall)
+        run: |
+          python -m pip install --quiet aqtinstall
+          aqt install-qt windows desktop $env:QT_VERSION $env:QT_SPEC -O "$env:RUNNER_TEMP\Qt"
+          $qtBin = "$env:RUNNER_TEMP\Qt\$env:QT_VERSION\msvc2019_64\bin"
+          if (-not (Test-Path "$qtBin\windeployqt.exe")) {
+            Write-Host "windeployqt not in default set, installing qttools module..."
+            aqt install-qt windows desktop $env:QT_VERSION $env:QT_SPEC -m qttools -O "$env:RUNNER_TEMP\Qt"
+          }
+          if (-not (Test-Path "$qtBin\Qt5Qml.dll") -and -not (Test-Path "$qtBin\..\lib\cmake\Qt5Qml")) {
+            Write-Host "Qt5Qml not in default set, installing qtdeclarative module..."
+            aqt install-qt windows desktop $env:QT_VERSION $env:QT_SPEC -m qtdeclarative -O "$env:RUNNER_TEMP\Qt"
+          }
+          "QT_BIN=$qtBin" | Add-Content $env:GITHUB_ENV
+
+      - name: Install ICU / gettext / flex / bison (prebuilt)
+        run: |
+          $deps = "$env:RUNNER_TEMP\msvc-deps"
+          New-Item -ItemType Directory -Force -Path $deps | Out-Null
+
+          # ICU (KDb が必須とする ICU i18n/uc)
+          Invoke-WebRequest $env:ICU_URL -OutFile "$deps\icu.zip"
+          Expand-Archive "$deps\icu.zip" "$deps\icu-x" -Force
+          $icu = if (Test-Path "$deps\icu-x\include") { "$deps\icu-x" } else { (Get-ChildItem "$deps\icu-x" -Directory | Select-Object -First 1).FullName }
+          "ICU_DIR=$icu" | Add-Content $env:GITHUB_ENV
+          "ICU_BIN=$icu\bin64" | Add-Content $env:GITHUB_ENV
+
+          # gettext (msgfmt と libintl)
+          Invoke-WebRequest $env:GETTEXT_URL -OutFile "$deps\gt-bin.zip"
+          Invoke-WebRequest $env:GETTEXT_DEV_URL -OutFile "$deps\gt-dev.zip"
+          Expand-Archive "$deps\gt-bin.zip" "$deps\gettext" -Force
+          Expand-Archive "$deps\gt-dev.zip" "$deps\gettext" -Force
+          # FindLibIntl は intl.lib / libintl.lib を探すためリネーム
+          Copy-Item "$deps\gettext\lib\intl.dll.lib" "$deps\gettext\lib\intl.lib" -Force
+          "GETTEXT_DIR=$deps\gettext" | Add-Content $env:GITHUB_ENV
+          "$deps\gettext\bin" | Add-Content $env:GITHUB_PATH
+
+          # flex / bison (solid のビルドに必須)
+          Invoke-WebRequest $env:WINFLEXBISON_URL -OutFile "$deps\wfb.zip"
+          Expand-Archive "$deps\wfb.zip" "$deps\winflexbison" -Force
+          "$deps\winflexbison" | Add-Content $env:GITHUB_PATH
+
+      # vcpkg: zlib (karchive) と gperf (kcodecs が必須) のみ
+      - name: Cache vcpkg binary packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}\vcpkg-archives
+          key: akexi-win-vcpkg-zlib-gperf-1
+
+      - name: Install zlib / gperf (vcpkg)
+        run: |
+          $ErrorActionPreference = 'Stop'
+          New-Item -ItemType Directory -Force -Path "$env:RUNNER_TEMP\vcpkg-archives" | Out-Null
+          $env:VCPKG_DEFAULT_BINARY_CACHE = "$env:RUNNER_TEMP\vcpkg-archives"
+          & "$env:VCPKG_INSTALLATION_ROOT\vcpkg.exe" install zlib gperf --triplet x64-windows
+          if ($LASTEXITCODE -ne 0) { throw "vcpkg install failed" }
+          $vk = "$env:VCPKG_INSTALLATION_ROOT\installed\x64-windows"
+          "VCPKG_INST=$vk" | Add-Content $env:GITHUB_ENV
+          "$vk\tools\gperf" | Add-Content $env:GITHUB_PATH
+
+      # ---------- KF5 / KDb 系依存ライブラリ ----------
+      - name: Cache KF5 dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}\kde-deps
+          key: akexi-win-msvc-deps-kf5${{ env.KF5_VERSION }}-libs${{ env.KDE_LIBS_VERSION }}-1
+
+      - name: Build dependencies (ECM, KF5, KDb, KProperty, KReport)
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $deps   = "$env:RUNNER_TEMP\kde-deps"
+          $src    = "$env:RUNNER_TEMP\kde-src"
+          $build  = "$env:RUNNER_TEMP\kde-build"
+          New-Item -ItemType Directory -Force -Path $deps, $src, $build | Out-Null
+          if (Test-Path "$deps\.build-complete") {
+            Write-Host "=== deps cached, skipping ==="
+            exit 0
+          }
+          $prefix = "$deps;$env:QT_BIN;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
+
+          function Build-One([string]$name, [string]$repo, [string]$tag) {
+            Write-Host "=================================================="
+            Write-Host "=== Building $name ($tag)"
+            Write-Host "=================================================="
+            if (-not (Test-Path "$src\$name")) {
+              git clone --depth 1 --branch $tag "https://github.com/KDE/$repo.git" "$src\$name"
+              if ($LASTEXITCODE -ne 0) { throw "git clone failed: $repo" }
+            }
+            # solid は bison >= 3.0 を要求するが win_bison は 2.7 系なので緩める
+            if ($name -eq 'solid') {
+              $p = "$src\solid\CMakeLists.txt"
+              (Get-Content $p -Raw) -replace 'find_package\(BISON 3\.0 REQUIRED\)', 'find_package(BISON REQUIRED)' | Set-Content $p
+            }
+            cmake -S "$src\$name" -B "$build\$name" -G Ninja `
+              -DCMAKE_BUILD_TYPE=Release `
+              -DCMAKE_POLICY_VERSION_MINIMUM=3.5 `
+              -DCMAKE_INSTALL_PREFIX=$deps `
+              "-DCMAKE_PREFIX_PATH=$prefix" `
+              "-DICU_ROOT=$env:ICU_DIR" `
+              -DBUILD_TESTING=OFF -DBUILD_QCH=OFF
+            if ($LASTEXITCODE -ne 0) { throw "cmake configure failed: $name" }
+            cmake --build "$build\$name"
+            if ($LASTEXITCODE -ne 0) { throw "build failed: $name" }
+            cmake --install "$build\$name"
+            if ($LASTEXITCODE -ne 0) { throw "install failed: $name" }
+          }
+
+          # --- ECM (KDE cmake モジュール) ---
+          Build-One 'extra-cmake-modules' 'extra-cmake-modules' "v$env:KF5_VERSION"
+          # --- KF5 tier1 ---
+          Build-One 'karchive' 'karchive' "v$env:KF5_VERSION"
+          Build-One 'kcodecs' 'kcodecs' "v$env:KF5_VERSION"
+          Build-One 'kconfig' 'kconfig' "v$env:KF5_VERSION"
+          Build-One 'kcoreaddons' 'kcoreaddons' "v$env:KF5_VERSION"
+          Build-One 'kwindowsystem' 'kwindowsystem' "v$env:KF5_VERSION"
+          Build-One 'kdbusaddons' 'kdbusaddons' "v$env:KF5_VERSION"
+          Build-One 'kguiaddons' 'kguiaddons' "v$env:KF5_VERSION"
+          Build-One 'kitemviews' 'kitemviews' "v$env:KF5_VERSION"
+          Build-One 'kwidgetsaddons' 'kwidgetsaddons' "v$env:KF5_VERSION"
+          Build-One 'ki18n' 'ki18n' "v$env:KF5_VERSION"
+          Build-One 'kitemmodels' 'kitemmodels' "v$env:KF5_VERSION"
+          Build-One 'sonnet' 'sonnet' "v$env:KF5_VERSION"
+          Build-One 'syntax-highlighting' 'syntax-highlighting' "v$env:KF5_VERSION"
+          # --- KF5 tier2/3 ---
+          Build-One 'kcrash' 'kcrash' "v$env:KF5_VERSION"
+          Build-One 'kauth' 'kauth' "v$env:KF5_VERSION"
+          Build-One 'kcompletion' 'kcompletion' "v$env:KF5_VERSION"
+          Build-One 'kjobwidgets' 'kjobwidgets' "v$env:KF5_VERSION"
+          Build-One 'kservice' 'kservice' "v$env:KF5_VERSION"
+          Build-One 'kglobalaccel' 'kglobalaccel' "v$env:KF5_VERSION"
+          Build-One 'kconfigwidgets' 'kconfigwidgets' "v$env:KF5_VERSION"
+          Build-One 'ktextwidgets' 'ktextwidgets' "v$env:KF5_VERSION"
+          Build-One 'kiconthemes' 'kiconthemes' "v$env:KF5_VERSION"
+          Build-One 'kxmlgui' 'kxmlgui' "v$env:KF5_VERSION"
+          Build-One 'solid' 'solid' "v$env:KF5_VERSION"
+          Build-One 'kbookmarks' 'kbookmarks' "v$env:KF5_VERSION"
+          # --- KF5 tier4 ---
+          Build-One 'kio' 'kio' "v$env:KF5_VERSION"
+          Build-One 'kparts' 'kparts' "v$env:KF5_VERSION"
+          Build-One 'ktexteditor' 'ktexteditor' "v$env:KF5_VERSION"
+          # --- KDb / KProperty / KReport ---
+          Build-One 'kproperty' 'kproperty' "v$env:KDE_LIBS_VERSION"
+          Build-One 'kdb' 'kdb' "v$env:KDE_LIBS_VERSION"
+          Build-One 'kreport' 'kreport' "v$env:KDE_LIBS_VERSION"
+
+          New-Item -ItemType File -Force -Path "$deps\.build-complete" | Out-Null
+          Write-Host "=== all dependencies built ==="
+
+      # ---------- Akexi 本体 ----------
+      - name: Build Akexi
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $deps    = "$env:RUNNER_TEMP\kde-deps"
+          $install = "$env:RUNNER_TEMP\akexi-install"
+          $stub    = "$env:RUNNER_TEMP\kdewin-stub"
+          New-Item -ItemType Directory -Force -Path "$stub\include" | Out-Null
+
+          # KDEWin スタブ (kdewin_export.h の WARNING マクロと kdewin リンクターゲットを
+          # 満たすための空実装。実体は不要)
+          @'
+          if(NOT TARGET kdewin)
+              add_library(kdewin INTERFACE IMPORTED)
+              target_include_directories(kdewin INTERFACE "${CMAKE_CURRENT_LIST_DIR}/include")
+          endif()
+          '@ | Set-Content "$stub\KDEWinConfig.cmake"
+          @'
+          #pragma once
+          #define _MSG0(msg) #msg
+          #define _MSG1(msg) _MSG0(msg)
+          #define _MSGLINENO __FILE__ "(" _MSG1(__LINE__) ") : warning: "
+          #ifndef WARNING
+          #define WARNING(msg) message(_MSGLINENO #msg)
+          #endif
+          '@ | Set-Content "$stub\include\kdewin_export.h"
+
+          $prefix = "$deps;$env:QT_BIN;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
+          cmake -S . -B build -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5 `
+            -DCMAKE_INSTALL_PREFIX=$install `
+            "-DCMAKE_PREFIX_PATH=$prefix" `
+            "-DICU_ROOT=$env:ICU_DIR" `
+            -DKDEWin_DIR=$stub `
+            -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
+          if ($LASTEXITCODE -ne 0) { throw "akexi configure failed" }
+          cmake --build build
+          if ($LASTEXITCODE -ne 0) { throw "akexi build failed" }
+          cmake --install build
+          if ($LASTEXITCODE -ne 0) { throw "akexi install failed" }
+
+      - name: Detect version
+        id: ver
+        run: |
+          $h = Get-Content build\src\KexiVersion.h -Raw
+          $m = [regex]::Match($h, '#define AKEXI_DISTRIBUTION_VERSION "([^"]+)"')
+          $v = if ($m.Success) { $m.Groups[1].Value } else { '0.0' }
+          "version=$v" | Add-Content $env:GITHUB_OUTPUT
+          "AKEXI_VERSION=$v" | Add-Content $env:GITHUB_ENV
+
+      # ---------- デプロイツリー組み立て ----------
+      - name: Assemble deploy tree
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $deps    = "$env:RUNNER_TEMP\kde-deps"
+          $install = "$env:RUNNER_TEMP\akexi-install"
+          $deploy  = "$env:RUNNER_TEMP\deploy\Akexi"
+          $deployBin = "$deploy\bin"
+          $v = $env:AKEXI_VERSION
+          New-Item -ItemType Directory -Force -Path $deployBin | Out-Null
+
+          # 1) Akexi のインストールツリー (bin / lib / share)
+          Copy-Item "$install\*" $deploy -Recurse -Force
+
+          # 2) KF5 / KDb / KProperty / KReport / ICU / gettext の DLL
+          Copy-Item "$deps\bin\*.dll" $deployBin -Force -ErrorAction SilentlyContinue
+          Copy-Item "$env:ICU_BIN\icu*.dll" $deployBin -Force -ErrorAction SilentlyContinue
+          Copy-Item "$env:GETTEXT_DIR\bin\*.dll" $deployBin -Force -ErrorAction SilentlyContinue
+
+          # 3) Qt デプロイ (Qt DLL / Qt プラグイン / MSVC ランタイム)
+          & "$env:QT_BIN\windeployqt.exe" --release --no-translations --compiler-runtime "$deployBin\akexi-$v.exe"
+          if ($LASTEXITCODE -ne 0) { throw "windeployqt failed" }
+
+          # 4) プラグインを exe 直下にも配置 (Qt/KF5 のプラグイン検索パスに exe ディレクトリが含まれる)
+          $plugRoot = Get-ChildItem -Path "$deploy\lib", "$deploy\bin" -Recurse -Depth 4 -Directory -Filter 'plugins' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+          if ($plugRoot -and -not $plugRoot.StartsWith("$deploy\bin", [StringComparison]::OrdinalIgnoreCase)) {
+            Get-ChildItem $plugRoot -Recurse -File -Filter *.dll | ForEach-Object {
+              $rel = $_.FullName.Substring($plugRoot.Length + 1)
+              $dst = Join-Path $deployBin $rel
+              New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
+              Copy-Item $_.FullName $dst -Force
+            }
+          }
+
+          # 5) Qt 以外の依存 DLL を再帰的に収集 (dumpbin で依存を辿る)
+          $searchDirs = @("$deps\bin", $env:QT_BIN, $env:ICU_BIN, "$env:GETTEXT_DIR\bin", $env:VCPKG_INST + '\bin')
+          $seen = @{}
+          $queue = [System.Collections.Queue]::new()
+          function Get-Imports([string]$file) {
+            $out = & dumpbin /nologo /DEPENDENTS $file 2>$null
+            foreach ($line in $out) {
+              if ($line -match '^\s+([^\s]+\.dll)\s*$') { $Matches[1].ToLowerInvariant() }
+            }
+          }
+          foreach ($f in (Get-ChildItem $deployBin -Recurse -File | Where-Object { $_.Extension -in '.exe', '.dll' })) {
+            if (-not $seen.ContainsKey($f.FullName.ToLowerInvariant())) {
+              $seen[$f.FullName.ToLowerInvariant()] = $true
+              $queue.Enqueue($f.FullName)
+            }
+          }
+          while ($queue.Count -gt 0) {
+            $f = $queue.Dequeue()
+            foreach ($imp in (Get-Imports $f)) {
+              if ($seen.ContainsKey($imp)) { continue }
+              $src2 = $searchDirs | ForEach-Object { Join-Path $_ $imp } | Where-Object { Test-Path $_ } | Select-Object -First 1
+              if ($src2) {
+                $seen[$imp] = $true
+                Copy-Item $src2 $deployBin -Force
+                $queue.Enqueue("$deployBin\$imp")
+              } else {
+                $seen[$imp] = $true  # システム DLL → 対象外
+              }
+            }
+          }
+
+          # 6) MSVC ランタイム (ビルド環境より新しい ICU 用に System32 のものを採用)
+          foreach ($rt in 'msvcp140.dll', 'vcruntime140.dll', 'vcruntime140_1.dll', 'concrt140.dll') {
+            $p = "$env:windir\System32\$rt"
+            if (Test-Path $p) { Copy-Item $p $deployBin -Force }
+          }
+
+          # 7) データ (rcc リソース等)。Qt は exe 直下の data/ も検索する
+          New-Item -ItemType Directory -Force -Path "$deployBin\data" | Out-Null
+          if (Test-Path "build\bin\data") { Copy-Item "build\bin\data\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue }
+          Copy-Item "$deploy\share\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue
+          New-Item -ItemType Directory -Force -Path "$deployBin\data\icons\breeze", "$deploy\share\icons\breeze" | Out-Null
+          Copy-Item "$env:RUNNER_TEMP\breeze\breeze-icons.rcc" "$deployBin\data\icons\breeze\breeze-icons.rcc" -Force
+          Copy-Item "$env:RUNNER_TEMP\breeze\breeze-icons.rcc" "$deploy\share\icons\breeze\breeze-icons.rcc" -Force
+
+          # 8) qt.conf (Qt のパスを exe 相対に解決させる)
+          "[Paths]" | Set-Content "$deployBin\qt.conf"
+          "Prefix = ." | Add-Content "$deployBin\qt.conf"
+          if ($plugRoot) {
+            $rel = [IO.Path]::GetRelativePath($deployBin, $plugRoot).Replace('\', '/')
+            "Plugins = $rel" | Add-Content "$deployBin\qt.conf"
+          }
+          "Data = ../share" | Add-Content "$deployBin\qt.conf"
+          "Translations = ../share/locale" | Add-Content "$deployBin\qt.conf"
+
+          Write-Host "=== deploy tree ==="
+          "{0:N1} MB" -f ((Get-ChildItem $deploy -Recurse -File | Measure-Object Length -Sum).Sum / 1MB)
+
+      # ---------- Inno Setup ----------
+      - name: Build installer (Inno Setup)
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $deploy = "$env:RUNNER_TEMP\deploy\Akexi"
+          $dist   = "$env:RUNNER_TEMP\dist"
+          $v      = $env:AKEXI_VERSION
+          New-Item -ItemType Directory -Force -Path $dist | Out-Null
+
+          @"
+          [Setup]
+          AppId={{7A6F4C2E-9B1D-4A3E-8C5F-A5E710000001}}
+          AppName=Akexi
+          AppVersion=$v
+          AppPublisher=Akexi project
+          DefaultDirName={autopf}\Akexi
+          DefaultGroupName=Akexi
+          OutputDir=$dist
+          OutputBaseFilename=Akexi-$v-win64-setup
+          Compression=lzma2/max
+          SolidCompression=yes
+          ArchitecturesInstallIn64BitMode=x64
+          PrivilegesRequired=admin
+          UninstallDisplayIcon={app}\bin\akexi-$v.exe
+
+          [Tasks]
+          Name: "desktopicon"; Description: "Create &desktop shortcut"; GroupDescription: "Additional tasks:"
+
+          [Files]
+          Source: "$deploy\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs ignoreversion
+
+          [Icons]
+          Name: "{group}\Akexi"; Filename: "{app}\bin\akexi-$v.exe"
+          Name: "{group}\Uninstall Akexi"; Filename: "{uninstallexe}"
+          Name: "{autodesktop}\Akexi"; Filename: "{app}\bin\akexi-$v.exe"; Tasks: desktopicon
+
+          [Run]
+          Filename: "{app}\bin\akexi-$v.exe"; Description: "Launch Akexi"; Flags: nowait postinstall skipifsilent
+          "@ | Set-Content installer.iss -Encoding UTF8
+
+          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) {
+            Write-Host "Inno Setup not found, installing via choco..."
+            choco install innosetup -y --no-progress
+          }
+          & $iscc installer.iss
+          if ($LASTEXITCODE -ne 0) { throw "ISCC failed" }
+          Get-ChildItem $dist
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: akexi-${{ env.AKEXI_VERSION }}-win64-setup
+          path: ${{ runner.temp }}/dist/Akexi-*-setup.exe
+          if-no-files-found: error
+
+      - name: Summary
+        if: always()
+        run: |
+          $v = if ($env:AKEXI_VERSION) { $env:AKEXI_VERSION } else { '(unknown)' }
+          $summary = @"
+
+          ## Windows インストーラ (Akexi-$v-win64-setup.exe)
+          - Qt / KF5 / KDb 等のランタイムを **すべて同梱** (Windows に Qt は不要)
+          - MSVC (windows-latest 標準 Visual Studio) でビルド
+          - Program Files\Akexi に展開、スタートメニュー/デスクトップにショートカット
+          "@
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value $summary
