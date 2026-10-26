@@ -189,6 +189,7 @@ jobs:
             aqt install-qt windows desktop $env:QT_VERSION $env:QT_SPEC -m qtdeclarative -O "$env:RUNNER_TEMP\Qt"
           }
           "QT_BIN=$qtBin" | Add-Content $env:GITHUB_ENV
+          "QT_ROOT=$(Split-Path $qtBin)" | Add-Content $env:GITHUB_ENV
 
       - name: Install ICU / gettext / flex / bison (prebuilt)
         run: |
@@ -253,7 +254,7 @@ jobs:
             Write-Host "=== deps cached, skipping ==="
             exit 0
           }
-          $prefix = "$deps;$env:QT_BIN;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
+          $prefix = "$deps;$env:QT_ROOT;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
 
           function Build-One([string]$name, [string]$repo, [string]$tag) {
             Write-Host "=================================================="
@@ -354,7 +355,7 @@ jobs:
           #endif
           '@ | Set-Content "$stub\include\kdewin_export.h"
 
-          $prefix = "$deps;$env:QT_BIN;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
+          $prefix = "$deps;$env:QT_ROOT;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
           $cmakeArgs = @(
             '-S', '.', '-B', 'build',
             '-G', 'Ninja',
