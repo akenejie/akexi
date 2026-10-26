@@ -291,6 +291,38 @@ jobs:
                 Set-Content $_.FullName $c
               }
             }
+            # アイコン rcc 生成マクロ: custom target のみで .qrc を生成しているため
+            # CMake 4 + Ninja では「ルールの無いファイル依存」エラーになる。
+            # add_custom_command(OUTPUT) 形式に書き換える
+            Get-ChildItem "$src\$name\cmake\modules" -Filter '*AddIconsRccFile.cmake' -ErrorAction SilentlyContinue | ForEach-Object {
+              $p2 = $_.FullName
+              $c2 = (Get-Content $p2 -Raw).Replace("`r`n", "`n")
+              $old2 = @(
+                '    add_custom_target(${_target}_build_qrc',
+                '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"',
+                '        # avoid adding the .qrc file to rcc due to rcc misfeature',
+                '        COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"',
+                '        DEPENDS "${_FILES}"',
+                '        SOURCES "${_FILES}"',
+                '        WORKING_DIRECTORY "${_BASE_DIR}"',
+                '        COMMENT "Building Qt resource file ${_QRC_FILE}"',
+                '        VERBATIM',
+                '    )'
+              ) -join "`n"
+              $new2 = @(
+                '    add_custom_command(OUTPUT "${_QRC_FILE}"',
+                '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${_QRC_FILE}.tmp"',
+                '        COMMAND ${CMAKE_COMMAND} -E rename "${_QRC_FILE}.tmp" "${_QRC_FILE}"',
+                '        DEPENDS "${_FILES}" ${_target}_copy_icons',
+                '        WORKING_DIRECTORY "${_BASE_DIR}"',
+                '        COMMENT "Building Qt resource file ${_QRC_FILE}"',
+                '        VERBATIM',
+                '    )'
+              ) -join "`n"
+              $c2 = $c2.Replace($old2, $new2)
+              if ($c2 -notmatch 'add_custom_command\(OUTPUT "\$\{_QRC_FILE\}"') { throw "rcc macro patch failed: $p2" }
+              Set-Content $p2 $c2 -NoNewline
+            }
             $cmakeArgs = @(
               '-S', "$src\$name", '-B', "$build\$name",
               '-G', 'Ninja',
@@ -378,6 +410,35 @@ jobs:
           #define WARNING(msg) message(_MSGLINENO #msg)
           #endif
           '@ | Set-Content "$stub\include\kdewin_export.h"
+
+          # CMake 4 + Ninja 対策: アイコン rcc マクロを add_custom_command(OUTPUT) 化
+          $akexiRccMacro = "cmake\modules\AkexiAddIconsRccFile.cmake"
+          $c2 = (Get-Content $akexiRccMacro -Raw).Replace("`r`n", "`n")
+          $old2 = @(
+            '    add_custom_target(${_target}_build_qrc',
+            '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"',
+            '        # avoid adding the .qrc file to rcc due to rcc misfeature',
+            '        COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"',
+            '        DEPENDS "${_FILES}"',
+            '        SOURCES "${_FILES}"',
+            '        WORKING_DIRECTORY "${_BASE_DIR}"',
+            '        COMMENT "Building Qt resource file ${_QRC_FILE}"',
+            '        VERBATIM',
+            '    )'
+          ) -join "`n"
+          $new2 = @(
+            '    add_custom_command(OUTPUT "${_QRC_FILE}"',
+            '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${_QRC_FILE}.tmp"',
+            '        COMMAND ${CMAKE_COMMAND} -E rename "${_QRC_FILE}.tmp" "${_QRC_FILE}"',
+            '        DEPENDS "${_FILES}" ${_target}_copy_icons',
+            '        WORKING_DIRECTORY "${_BASE_DIR}"',
+            '        COMMENT "Building Qt resource file ${_QRC_FILE}"',
+            '        VERBATIM',
+            '    )'
+          ) -join "`n"
+          $c2 = $c2.Replace($old2, $new2)
+          if ($c2 -notmatch 'add_custom_command\(OUTPUT "\$\{_QRC_FILE\}"') { throw 'akexi rcc macro patch failed' }
+          Set-Content $akexiRccMacro $c2 -NoNewline
 
           $prefix = "$deps;$env:QT_ROOT;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
           $cmakeArgs = @(
