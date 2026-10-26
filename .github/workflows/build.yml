@@ -311,8 +311,9 @@ jobs:
               ) -join "`n"
               $new2 = @(
                 '    add_custom_command(OUTPUT "${_QRC_FILE}"',
-                '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${_QRC_FILE}.tmp"',
-                '        COMMAND ${CMAKE_COMMAND} -E rename "${_QRC_FILE}.tmp" "${_QRC_FILE}"',
+                '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"',
+                '        # avoid adding the .qrc file to rcc due to rcc misfeature',
+                '        COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"',
                 '        DEPENDS "${_FILES}" ${_target}_copy_icons',
                 '        WORKING_DIRECTORY "${_BASE_DIR}"',
                 '        COMMENT "Building Qt resource file ${_QRC_FILE}"',
@@ -430,8 +431,9 @@ jobs:
           ) -join "`n"
           $new2 = @(
             '    add_custom_command(OUTPUT "${_QRC_FILE}"',
-            '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${_QRC_FILE}.tmp"',
-            '        COMMAND ${CMAKE_COMMAND} -E rename "${_QRC_FILE}.tmp" "${_QRC_FILE}"',
+            '        COMMAND ${Qt5Core_RCC_EXECUTABLE} --project -o "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc"',
+            '        # avoid adding the .qrc file to rcc due to rcc misfeature',
+            '        COMMAND ${CMAKE_COMMAND} -E rename "${CMAKE_CURRENT_BINARY_DIR}/${_target}.qrc" "${_QRC_FILE}"',
             '        DEPENDS "${_FILES}" ${_target}_copy_icons',
             '        WORKING_DIRECTORY "${_BASE_DIR}"',
             '        COMMENT "Building Qt resource file ${_QRC_FILE}"',
