@@ -38,8 +38,8 @@ jobs:
 
       - name: Install build dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
+          sudo env DEBIAN_FRONTEND=noninteractive apt-get update
+          sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
             build-essential cmake ninja-build gettext \
             extra-cmake-modules \
             qtbase5-dev qttools5-dev qttools5-dev-tools \
@@ -54,7 +54,7 @@ jobs:
 
       - name: Configure
         run: |
-          cmake -B build -G Ninja \
+          cmake -B build -G Ninja -Wno-dev \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
             -DCMAKE_INSTALL_PREFIX="$PWD/install" \
