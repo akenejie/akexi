@@ -348,6 +348,8 @@ jobs:
               '-DBUILD_TESTING=OFF', '-DBUILD_QCH=OFF',
               '-DKF_IGNORE_PLATFORM_CHECK=ON'
             )
+            # ICU 79 ヘッダは C++17 必須
+            if ($name -eq 'kdb') { $cmakeArgs += '-DCMAKE_CXX_STANDARD=17' }
             cmake @cmakeArgs
             if ($LASTEXITCODE -ne 0) { throw "cmake configure failed: $name" }
             cmake --build "$build\$name"
@@ -467,7 +469,8 @@ jobs:
             "-DCMAKE_PREFIX_PATH=$prefix",
             "-DICU_ROOT=$env:ICU_DIR",
             "-DKDEWin_DIR=$stub",
-            '-DBUILD_TESTING=OFF', '-DBUILD_EXAMPLES=OFF'
+            '-DBUILD_TESTING=OFF', '-DBUILD_EXAMPLES=OFF',
+            '-DCMAKE_CXX_STANDARD=17'
           )
           cmake @cmakeArgs
           if ($LASTEXITCODE -ne 0) { throw "akexi configure failed" }
