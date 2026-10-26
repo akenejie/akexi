@@ -432,6 +432,8 @@ jobs:
               add_library(kdewin INTERFACE IMPORTED)
               target_include_directories(kdewin INTERFACE "${CMAKE_CURRENT_LIST_DIR}/include")
           endif()
+          # kexi_global.h は kdewin にリンクしないターゲットからも include されるため全体に適用
+          include_directories("${CMAKE_CURRENT_LIST_DIR}/include")
           '@ | Set-Content "$stub\KDEWinConfig.cmake"
           @'
           #pragma once
