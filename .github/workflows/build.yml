@@ -291,6 +291,17 @@ jobs:
                 Set-Content $_.FullName $c
               }
             }
+            # 新しめの MSVC では後置きの Q_REQUIRED_RESULT ([[nodiscard]]) が C2416 になるため除去
+            # (nodiscard 警告が消えるだけの見た目上の変更)
+            if ($name -in @('kproperty', 'kdb', 'kreport')) {
+              Get-ChildItem "$src\$name\src" -Recurse -Include *.h, *.cpp -ErrorAction SilentlyContinue | ForEach-Object {
+                $c = Get-Content $_.FullName -Raw
+                if ($c -match 'Q_REQUIRED_RESULT') {
+                  $c = [regex]::Replace($c, '\bQ_REQUIRED_RESULT\b\s*', '')
+                  Set-Content $_.FullName $c -NoNewline
+                }
+              }
+            }
             # アイコン rcc 生成マクロ: custom target のみで .qrc を生成しているため
             # CMake 4 + Ninja では「ルールの無いファイル依存」エラーになる。
             # add_custom_command(OUTPUT) 形式に書き換える
