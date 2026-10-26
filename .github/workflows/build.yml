@@ -445,6 +445,14 @@ jobs:
           #endif
           '@ | Set-Content "$stub\include\kdewin_export.h"
 
+          # 最小限の unistd.h 代替 (元々 KDEWin が提供していたもの。
+          # ソース中の unistd.h include は実質未使用のため空で十分)
+          @'
+          #pragma once
+          #include <io.h>
+          #include <process.h>
+          '@ | Set-Content "$stub\include\unistd.h"
+
           # CMake 4 + Ninja 対策: アイコン rcc マクロを add_custom_command(OUTPUT) 化
           $akexiRccMacro = "cmake\modules\AkexiAddIconsRccFile.cmake"
           $c2 = (Get-Content $akexiRccMacro -Raw).Replace("`r`n", "`n")
