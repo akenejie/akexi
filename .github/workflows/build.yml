@@ -259,6 +259,8 @@ jobs:
       - name: Build dependencies (ECM, KF5, KDb, KProperty, KReport)
         run: |
           $ErrorActionPreference = 'Stop'
+          # ビルド中に実行される生成ツール (parsetrigrams 等) が DLL を見つけられるようにする
+          $env:PATH = "$env:QT_BIN;$env:ICU_BIN;$env:GETTEXT_DIR\bin;$env:VCPKG_INST\bin;$env:PATH"
           $deps   = "$env:RUNNER_TEMP\kde-deps"
           $src    = "$env:RUNNER_TEMP\kde-src"
           $build  = "$env:RUNNER_TEMP\kde-build"
@@ -345,6 +347,7 @@ jobs:
       - name: Build Akexi
         run: |
           $ErrorActionPreference = 'Stop'
+          $env:PATH = "$env:QT_BIN;$env:ICU_BIN;$env:GETTEXT_DIR\bin;$env:VCPKG_INST\bin;$env:PATH"
           $deps    = "$env:RUNNER_TEMP\kde-deps"
           $install = "$env:RUNNER_TEMP\akexi-install"
           $stub    = "$env:RUNNER_TEMP\kdewin-stub"
