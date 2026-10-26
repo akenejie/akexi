@@ -268,13 +268,17 @@ jobs:
               $p = "$src\solid\CMakeLists.txt"
               (Get-Content $p -Raw) -replace 'find_package\(BISON 3\.0 REQUIRED\)', 'find_package(BISON REQUIRED)' | Set-Content $p
             }
-            cmake -S "$src\$name" -B "$build\$name" -G Ninja `
-              -DCMAKE_BUILD_TYPE=Release `
-              -DCMAKE_POLICY_VERSION_MINIMUM=3.5 `
-              -DCMAKE_INSTALL_PREFIX=$deps `
-              "-DCMAKE_PREFIX_PATH=$prefix" `
-              "-DICU_ROOT=$env:ICU_DIR" `
-              -DBUILD_TESTING=OFF -DBUILD_QCH=OFF
+            $cmakeArgs = @(
+              '-S', "$src\$name", '-B', "$build\$name",
+              '-G', 'Ninja',
+              '-DCMAKE_BUILD_TYPE=Release',
+              '-DCMAKE_POLICY_VERSION_MINIMUM=3.5',
+              "-DCMAKE_INSTALL_PREFIX=$deps",
+              "-DCMAKE_PREFIX_PATH=$prefix",
+              "-DICU_ROOT=$env:ICU_DIR",
+              '-DBUILD_TESTING=OFF', '-DBUILD_QCH=OFF'
+            )
+            cmake @cmakeArgs
             if ($LASTEXITCODE -ne 0) { throw "cmake configure failed: $name" }
             cmake --build "$build\$name"
             if ($LASTEXITCODE -ne 0) { throw "build failed: $name" }
@@ -351,14 +355,18 @@ jobs:
           '@ | Set-Content "$stub\include\kdewin_export.h"
 
           $prefix = "$deps;$env:QT_BIN;$env:ICU_DIR;$env:GETTEXT_DIR;$env:VCPKG_INST"
-          cmake -S . -B build -G Ninja `
-            -DCMAKE_BUILD_TYPE=Release `
-            -DCMAKE_POLICY_VERSION_MINIMUM=3.5 `
-            -DCMAKE_INSTALL_PREFIX=$install `
-            "-DCMAKE_PREFIX_PATH=$prefix" `
-            "-DICU_ROOT=$env:ICU_DIR" `
-            -DKDEWin_DIR=$stub `
-            -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
+          $cmakeArgs = @(
+            '-S', '.', '-B', 'build',
+            '-G', 'Ninja',
+            '-DCMAKE_BUILD_TYPE=Release',
+            '-DCMAKE_POLICY_VERSION_MINIMUM=3.5',
+            "-DCMAKE_INSTALL_PREFIX=$install",
+            "-DCMAKE_PREFIX_PATH=$prefix",
+            "-DICU_ROOT=$env:ICU_DIR",
+            "-DKDEWin_DIR=$stub",
+            '-DBUILD_TESTING=OFF', '-DBUILD_EXAMPLES=OFF'
+          )
+          cmake @cmakeArgs
           if ($LASTEXITCODE -ne 0) { throw "akexi configure failed" }
           cmake --build build
           if ($LASTEXITCODE -ne 0) { throw "akexi build failed" }
