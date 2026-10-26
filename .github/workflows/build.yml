@@ -188,6 +188,19 @@ jobs:
             Write-Host "Qt5Qml not in default set, installing qtdeclarative module..."
             aqt install-qt windows desktop $env:QT_VERSION $env:QT_SPEC -m qtdeclarative -O "$env:RUNNER_TEMP\Qt"
           }
+          # Qt 5.15.2 ヘッダの既知問題を修正 (qtbase kde/5.15 の修正をバックポート):
+          # MSVC 1938 (VS 17.8) 以降 stdext の checked iterator は非推奨で新しめの STL では
+          # 宣言が見えないため、使わないようにする
+          $qcd = "$(Split-Path $qtBin)\include\QtCore\qcompilerdetection.h"
+          $c = Get-Content $qcd -Raw
+          $c = $c.Replace(
+            '#  define QT_MAKE_UNCHECKED_ARRAY_ITERATOR(x) stdext::make_unchecked_array_iterator(x) // Since _MSC_VER >= 1800',
+            "#  if _MSC_VER < 1938 // stdext is deprecated since VS 2022 17.8`r`n#  define QT_MAKE_UNCHECKED_ARRAY_ITERATOR(x) stdext::make_unchecked_array_iterator(x) // Since _MSC_VER >= 1800")
+          $c = $c.Replace(
+            '#  define QT_MAKE_CHECKED_ARRAY_ITERATOR(x, N) stdext::make_checked_array_iterator(x, size_t(N)) // Since _MSC_VER >= 1500',
+            "#  define QT_MAKE_CHECKED_ARRAY_ITERATOR(x, N) stdext::make_checked_array_iterator(x, size_t(N)) // Since _MSC_VER >= 1500`r`n#  endif")
+          if ($c -notmatch '_MSC_VER < 1938') { throw 'qcompilerdetection.h patch failed' }
+          Set-Content $qcd $c -NoNewline
           "QT_BIN=$qtBin" | Add-Content $env:GITHUB_ENV
           "QT_ROOT=$(Split-Path $qtBin)" | Add-Content $env:GITHUB_ENV
 
