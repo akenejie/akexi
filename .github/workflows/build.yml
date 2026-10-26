@@ -321,6 +321,7 @@ jobs:
               ) -join "`n"
               $c2 = $c2.Replace($old2, $new2)
               $c2 = $c2.Replace('    add_dependencies(${_target}_build_qrc ${_target}_copy_icons)', '    # qrc output command already depends on copy_icons')
+              $c2 = $c2.Replace('    add_dependencies(${_target}_build_rcc ${_target}_build_qrc)', '    # qrc file dependency now provides the ordering')
               if ($c2 -notmatch 'add_custom_command\(OUTPUT "\$\{_QRC_FILE\}"') { throw "rcc macro patch failed: $p2" }
               Set-Content $p2 $c2 -NoNewline
             }
@@ -439,6 +440,7 @@ jobs:
           ) -join "`n"
           $c2 = $c2.Replace($old2, $new2)
           $c2 = $c2.Replace('    add_dependencies(${_target}_build_qrc ${_target}_copy_icons)', '    # qrc output command already depends on copy_icons')
+          $c2 = $c2.Replace('    add_dependencies(${_target}_build_rcc ${_target}_build_qrc)', '    # qrc file dependency now provides the ordering')
           if ($c2 -notmatch 'add_custom_command\(OUTPUT "\$\{_QRC_FILE\}"') { throw 'akexi rcc macro patch failed' }
           Set-Content $akexiRccMacro $c2 -NoNewline
 
