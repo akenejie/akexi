@@ -50,7 +50,7 @@ jobs:
             libkf5completion-dev libkf5kio-dev libkf5texteditor-dev \
             libkf5crash-dev \
             libkdb3-dev libkproperty3-dev libkreport3-dev \
-            breeze-icon-theme patchelf
+            breeze-icon-theme breeze-icon-theme-rcc patchelf
 
       - name: Configure
         run: |
