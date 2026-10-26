@@ -284,6 +284,13 @@ jobs:
               $p = "$src\solid\CMakeLists.txt"
               (Get-Content $p -Raw) -replace 'find_package\(BISON 3\.0 REQUIRED\)', 'find_package(BISON REQUIRED)' | Set-Content $p
             }
+            # kproperty / kdb / kreport は CMP0059 OLD を要求するが CMake 4.x では廃止済み
+            if ($name -in @('kproperty', 'kdb', 'kreport')) {
+              Get-ChildItem "$src\$name\cmake\modules" -Filter 'Set*CMakePolicies.cmake' -ErrorAction SilentlyContinue | ForEach-Object {
+                $c = (Get-Content $_.FullName -Raw) -replace 'cmake_policy\(SET CMP0059 OLD\)', 'cmake_policy(SET CMP0059 NEW)'
+                Set-Content $_.FullName $c
+              }
+            }
             $cmakeArgs = @(
               '-S', "$src\$name", '-B', "$build\$name",
               '-G', 'Ninja',
