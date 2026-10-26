@@ -291,6 +291,22 @@ jobs:
                 Set-Content $_.FullName $c
               }
             }
+            # kreport: qt_wrap_cpp の呼び出しが誤っており(第1引数にターゲット名、
+            # 第2引数に変数名を渡している) moc がターゲットに含まれない。
+            # 正しい引数で呼び直し、生成された moc をソースに追加する
+            if ($name -eq 'kreport') {
+              $p = "$src\kreport\src\CMakeLists.txt"
+              $c = (Get-Content $p -Raw).Replace("`r`n", "`n")
+              $c = $c.Replace(
+                '    qt_wrap_cpp(KReport kreport_LIB_SRCS',
+                '    qt_wrap_cpp(moc_outfiles_kreport')
+              $c = $c.Replace(
+                '    list(APPEND kreport_INCLUDE_DIRS',
+                '    list(APPEND kreport_LIB_SRCS ${moc_outfiles_kreport})' + "`n" +
+                '    list(APPEND kreport_INCLUDE_DIRS')
+              if ($c -notmatch 'moc_outfiles_kreport') { throw 'kreport moc patch failed' }
+              Set-Content $p $c -NoNewline
+            }
             # 新しめの MSVC では後置きの Q_REQUIRED_RESULT ([[nodiscard]]) が C2416 になるため除去
             # (nodiscard 警告が消えるだけの見た目上の変更)
             if ($name -in @('kproperty', 'kdb', 'kreport')) {
