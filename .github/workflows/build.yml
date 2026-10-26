@@ -292,7 +292,8 @@ jobs:
               "-DCMAKE_INSTALL_PREFIX=$deps",
               "-DCMAKE_PREFIX_PATH=$prefix",
               "-DICU_ROOT=$env:ICU_DIR",
-              '-DBUILD_TESTING=OFF', '-DBUILD_QCH=OFF'
+              '-DBUILD_TESTING=OFF', '-DBUILD_QCH=OFF',
+              '-DKF_IGNORE_PLATFORM_CHECK=ON'
             )
             cmake @cmakeArgs
             if ($LASTEXITCODE -ne 0) { throw "cmake configure failed: $name" }
