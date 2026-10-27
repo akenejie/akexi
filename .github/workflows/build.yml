@@ -607,8 +607,10 @@ jobs:
               $src2 = @($deployBin) + $searchDirs | ForEach-Object { Join-Path $_ $imp } | Where-Object { Test-Path $_ } | Select-Object -First 1
               if ($src2) {
                 $seen[$imp] = $true
-                Copy-Item $src2 $deployBin -Force
-                $queue.Enqueue("$deployBin\$imp")
+                if ((Split-Path $src2 -Parent).ToLowerInvariant() -ne $deployBin.ToLowerInvariant()) {
+                  Copy-Item $src2 $deployBin -Force
+                  $queue.Enqueue("$deployBin\$imp")
+                }
               } else {
                 $seen[$imp] = $true  # システム DLL → 対象外
                 [void]$unresolved.Add($imp)
