@@ -560,10 +560,12 @@ jobs:
           # 1) Akexi のインストールツリー (bin / lib / share)
           Copy-Item "$install\*" $deploy -Recurse -Force
 
-          # 2) KF5 / KDb / KProperty / KReport / ICU / gettext の DLL
+          # 2) KF5 / KDb / KProperty / KReport / ICU / gettext / vcpkg(zlib) の DLL
           Copy-Item "$deps\bin\*.dll" $deployBin -Force -ErrorAction SilentlyContinue
           Copy-Item "$env:ICU_BIN\icu*.dll" $deployBin -Force -ErrorAction SilentlyContinue
           Copy-Item "$env:GETTEXT_DIR\bin\*.dll" $deployBin -Force -ErrorAction SilentlyContinue
+          # vcpkg (zlib は z.dll という名前になるため明示的に同梱)
+          Copy-Item "$env:VCPKG_INST\bin\*.dll" $deployBin -Force -ErrorAction SilentlyContinue
 
           # 3) Qt デプロイ (Qt DLL / Qt プラグイン / MSVC ランタイム)
           & "$env:QT_BIN\windeployqt.exe" --release --no-translations --compiler-runtime "$deployBin\akexi-$v.exe"
@@ -584,6 +586,7 @@ jobs:
           $searchDirs = @("$deps\bin", $env:QT_BIN, $env:ICU_BIN, "$env:GETTEXT_DIR\bin", $env:VCPKG_INST + '\bin')
           $seen = @{}
           $queue = [System.Collections.Queue]::new()
+          $unresolved = New-Object 'System.Collections.Generic.HashSet[string]'
           function Get-Imports([string]$file) {
             $out = & dumpbin /nologo /DEPENDENTS $file 2>$null
             foreach ($line in $out) {
@@ -607,8 +610,13 @@ jobs:
                 $queue.Enqueue("$deployBin\$imp")
               } else {
                 $seen[$imp] = $true  # システム DLL → 対象外
+                [void]$unresolved.Add($imp)
               }
             }
+          }
+          if ($unresolved.Count -gt 0) {
+            Write-Host "=== imports treated as system DLLs (unresolved) ==="
+            $unresolved | Sort-Object | ForEach-Object { Write-Host "  $_" }
           }
 
           # 6) MSVC ランタイム (ビルド環境より新しい ICU 用に System32 のものを採用)
