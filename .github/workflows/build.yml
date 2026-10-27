@@ -603,7 +603,8 @@ jobs:
             $f = $queue.Dequeue()
             foreach ($imp in (Get-Imports $f)) {
               if ($seen.ContainsKey($imp)) { continue }
-              $src2 = $searchDirs | ForEach-Object { Join-Path $_ $imp } | Where-Object { Test-Path $_ } | Select-Object -First 1
+              # deployBin に既にあれば解決済み (自前 DLL 等)
+              $src2 = @($deployBin) + $searchDirs | ForEach-Object { Join-Path $_ $imp } | Where-Object { Test-Path $_ } | Select-Object -First 1
               if ($src2) {
                 $seen[$imp] = $true
                 Copy-Item $src2 $deployBin -Force
