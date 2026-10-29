@@ -635,7 +635,7 @@ jobs:
           if (Test-Path "$deps\bin\data") { Copy-Item "$deps\bin\data\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue }
           Copy-Item "$deploy\share\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue
           # KProperty / KReport 等は data/icons/<name>.rcc を直接探すためフラットにも配置
-          New-Item -ItemType Directory -Force -Path "$deployBin\data\icons", "$deploy\share\icons\breeze" | Out-Null
+          New-Item -ItemType Directory -Force -Path "$deployBin\data\icons", "$deployBin\data\icons\breeze", "$deploy\share\icons\breeze" | Out-Null
           foreach ($d in @("$deps\bin\data", "$deps\share")) {
             Get-ChildItem $d -Recurse -Filter '*.rcc' -ErrorAction SilentlyContinue | ForEach-Object {
               Copy-Item $_.FullName (Join-Path "$deployBin\data\icons" $_.Name) -Force
