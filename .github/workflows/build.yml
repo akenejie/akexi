@@ -631,8 +631,16 @@ jobs:
           # 7) データ (rcc リソース等)。Qt は exe 直下の data/ も検索する
           New-Item -ItemType Directory -Force -Path "$deployBin\data" | Out-Null
           if (Test-Path "build\bin\data") { Copy-Item "build\bin\data\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue }
+          # 依存ライブラリ側のデータもマージ (Windows の KDEInstallDirs は DATA_INSTALL_DIR = bin/data)
+          if (Test-Path "$deps\bin\data") { Copy-Item "$deps\bin\data\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue }
           Copy-Item "$deploy\share\*" "$deployBin\data" -Recurse -Force -ErrorAction SilentlyContinue
-          New-Item -ItemType Directory -Force -Path "$deployBin\data\icons\breeze", "$deploy\share\icons\breeze" | Out-Null
+          # KProperty / KReport 等は data/icons/<name>.rcc を直接探すためフラットにも配置
+          New-Item -ItemType Directory -Force -Path "$deployBin\data\icons", "$deploy\share\icons\breeze" | Out-Null
+          foreach ($d in @("$deps\bin\data", "$deps\share")) {
+            Get-ChildItem $d -Recurse -Filter '*.rcc' -ErrorAction SilentlyContinue | ForEach-Object {
+              Copy-Item $_.FullName (Join-Path "$deployBin\data\icons" $_.Name) -Force
+            }
+          }
           Copy-Item "$env:RUNNER_TEMP\breeze\breeze-icons.rcc" "$deployBin\data\icons\breeze\breeze-icons.rcc" -Force
           Copy-Item "$env:RUNNER_TEMP\breeze\breeze-icons.rcc" "$deploy\share\icons\breeze\breeze-icons.rcc" -Force
 
